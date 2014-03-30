@@ -1,0 +1,4 @@
+DATABASE_URL=postgresql://___USERNAME___@localhost/gusto_development
+SECRET_TOKEN=
+TEST_DATABASE_URL=postgresql://___USERNAME___@localhost/gusto_test
+SECRET_KEY_BASE=
