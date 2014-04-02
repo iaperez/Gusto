@@ -1,0 +1,396 @@
+/* Registration Form Styles */
+
+#registration-form {
+	margin: 0px auto;
+	float: none;
+}
+
+#registration-form-2 {
+	margin: 0px auto;
+	float: none;
+	text-align: center;
+}
+
+.reg-images-box {
+	width: 100%;
+	border-radius: 6px; 
+	padding: 20px; 
+	border: 1px solid #eee;
+	box-shadow: 2px 2px 1px #c9c9c9;
+
+}
+
+.reg-image-row{
+	margin: 12px auto;
+}
+
+img.reg-image {
+
+}
+
+.register-header {
+	font-family: 'Oleo Script Swash Caps', cursive !important;
+	font-size: 1.6em;
+	text-align: center;
+	padding: 20px;
+}
+
+
+/* Store Page Styles */
+
+.store-profile {
+	margin: 10px auto;
+	width: 100%;
+	max-width: 1260px;
+	float: none;
+	background-color: white;
+	border-radius: 6px; 
+	padding: 20px; 
+	border: 1px solid #eee;
+	box-shadow: 2px 2px 1px #c9c9c9;
+}
+
+#store-profile-map {
+	min-height: 300px;
+	border: 1px dotted #e3e3e3;
+}
+
+img.store-profile-main-img {
+	float: left;
+}
+
+
+.store-profile-topbar{
+	margin: 0px 0px 8px 16px;
+}
+
+.store-profile-bookmark{
+	font-size: .8em;
+}
+.store-profile-bookmark a{
+	color: #6f6f6f;
+}
+
+.store-profile-titlebar {
+	float: left;
+	padding-left: 14px;
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+.store-profile-title {
+	font-size: 24pt;
+	padding-left: 0px;
+}
+
+.store-survey-link {
+	margin-top: 13px;
+}
+
+#survey-bar {
+	display: none;
+	float: none;
+	text-align: center;
+}
+
+.survey-question {
+	display: inline-block;
+	font-size: .8em;
+}
+
+.survey-response {
+	display: inline-block;
+
+}
+.survey-submit {
+	display: inline-block;
+
+}
+
+.store-profile-location {
+	font-size: 12pt;
+	float: left;
+	padding: 20px 0px;
+}
+
+.store-profile-leftcol {
+	float: left;
+	position: relative;
+}
+
+.store-profile-item-thumbs {
+	float:left;
+	padding:4px 4px 0px 14px;
+}
+
+.store-profile-comments {
+	padding: 20px 0px;
+}
+
+.store-profile-add-comment {
+	padding: 20px 0px;
+}
+
+
+.store-profile-bottom-bar{
+	position: absolute;
+	bottom: 16px;
+	left: 20px;
+}
+.store-profile-bottom-bar a{
+	color: #6f6f6f;
+}
+
+ul.store-profile-icons {
+	list-style-type: none;
+	margin-left:0px;
+	margin-top: -16px;
+}
+
+ul.store-profile-icons li {
+	padding-right: 8px;
+	display: inline;
+}
+
+ul.store-profile-categories {
+	list-style-type: none;
+	margin-right: 20px;
+	margin-bottom: 0px;
+}
+
+ul.store-profile-categories li {
+	display: inline;
+	font-size: .7em;
+	color: #858585;
+	padding: 2px 4px;
+	border-radius: 4px;
+	border: 1px solid #e6e6e6;
+}
+
+.store-profile-meter .meter-item {
+	float: left;
+	height: 20px;
+	width: 100%;
+	margin-bottom: 4px;
+}
+
+.store-profile-meter .meter-item-label {
+	float: left;
+	width: 25%;
+	font-size: .8em;
+}
+
+.store-profile-meter .meter-item-bar {
+	float: left;
+	height: 20px;
+	color: white;
+	font-size: .7em;
+	padding: 2px;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+
+.store-profile-tags {
+	float: left;
+	padding: 8px 0px;
+}
+.store-profile-tags .tags-label {
+	float: left;
+	font-size: .7em;
+	white-space: nowrap;
+}
+.store-profile-tags ul.tags {
+	float: left;
+	display: inline;
+	list-style-type: none;
+	margin-top: -8px;
+	height: 20px;
+}
+
+.store-profile-tags li {
+	display: inline;
+	font-size: .7em;
+	color: #000;
+	background-color: #f5f5f5;
+	padding: 2px 4px;
+	border-radius: 8px;
+	border: 1px solid #e6e6e6;
+}
+
+
+/* Finder Bar Styles */
+
+.finder-header {
+	/*	font-family: 'Oleo Script Swash Caps', cursive !important;*/
+	/* Find a cool font here, maybe? */
+	font-size: 1.3em;
+	margin-bottom: 12px;	
+}
+
+.finder-main-bar {
+	margin: 10px auto 0px auto;
+	width: 90%;
+	float: none;
+	font-size: 1.4rem;
+	text-align: center;
+}
+
+.finder-main-select {
+	font-size: 1.2rem;
+	width: 200px;
+}
+
+#finder-extra-bars {
+	margin: 0px auto 10px auto;
+	width: 90%;
+	float: none;
+	font-size: 1.0rem;
+	text-align: center;
+}
+
+.finder-extra-bar {
+	float: none;
+}
+
+.finder-extra-select {
+	font-size: 1.0rem;
+	width: 250px;
+	margin-right: 8px;
+}
+
+#finder-submit{
+	margin-top: 8px;
+	margin-bottom: 0px;
+}
+
+/* Store Search Result Styles */
+
+.store-result {
+	margin: 10px auto;
+	width: 90%;
+	max-width: 1260px;
+	float: none;
+	background-color: white;
+	border-radius: 6px; 
+	padding: 20px; 
+	border: 1px solid #eee;
+	box-shadow: 2px 2px 1px #c9c9c9;
+}
+
+img.store-result-main-img {
+	float: left;
+}
+
+.store-result-leftcol {
+	float: left;
+	position: relative;
+}
+
+.store-result-item-thumbs {
+	float:left;
+	padding:4px 4px 0px 14px;
+}
+
+.store-result-title {
+	font-size: 18pt;
+	margin-bottom: 6px;
+}
+
+.store-result-title a {
+	color: #000;
+}
+
+.store-result-location {
+	font-size: 12pt;
+	margin-bottom: 4px;	
+}
+
+.store-result-top-bar{
+	font-size: .7em;
+	margin-bottom: 6px;
+}
+.store-result-top-bar a{
+	color: #6f6f6f;
+}
+
+.store-result-bottom-bar{
+	position: absolute;
+	bottom: 16px;
+	left: 20px;
+}
+.store-result-bottom-bar a{
+	color: #6f6f6f;
+}
+
+ul.store-result-icons {
+	list-style-type: none;
+	margin-left:0px;
+	margin-top: -16px;
+}
+
+ul.store-result-icons li {
+	padding-right: 8px;
+	display: inline;
+}
+
+ul.store-result-categories {
+	list-style-type: none;
+	margin-left: 0px;
+}
+
+ul.store-result-categories li {
+	display: inline;
+	font-size: .6em;
+	color: #858585;
+	padding: 2px 4px;
+	border-radius: 4px;
+	border: 1px solid #e6e6e6;
+}
+
+.store-result-meter .meter-item {
+	float: left;
+	height: 15px;
+	width: 100%;
+	margin-bottom: 4px;
+}
+
+.store-result-meter .meter-item-label {
+	float: left;
+	width: 30%;
+	font-size: .7em;
+}
+
+.store-result-meter .meter-item-bar {
+	float: left;
+	height: 15px;
+	color: white;
+	font-size: .7em;
+	padding: 2px;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+/* Misc Styles */
+
+.black {
+	color: #000;
+}
+.white {
+	color: #FFF;
+}
+i.bookmark {
+	color: #244AA3;
+}

@@ -1,0 +1,245 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gusto</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic|Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="_css/normalize.css" />
+  <link rel="stylesheet" href="_css/foundation.css" />
+  <link rel="stylesheet" href="_css/foundation-overrides.css" />
+  <link rel="stylesheet" href="_css/style.css" />
+  <link rel="stylesheet" href="_css/font-awesome/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="_js/vendor/modernizr.js"></script>
+  <script src="_js/vendor/jquery.js"></script>
+  <script src="_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="_js/foundation.min.js"></script>
+  <script src="_js/script.js"></script>
+  </head>
+<body>
+
+<div class="wrapper">
+
+  <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name sitename">
+          Gusto
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        
+      </ul>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="has-form">
+            <div class="row collapse">
+              <div class="small-3 columns">
+                <label for="set-location" class="right inline">Location:</label>
+              </div>              
+              <div class="small-6 columns">
+                <input id="set-location" type="text" placeholder="City, State or ZIP" value="Berkeley, CA">
+              </div>
+              <div class="small-3 columns">
+                <a href="#" id="set-location-button" class="button expand">Set</a>
+              </div>
+            </div>          
+          </li>          
+          <li><a href="register.html">Create Account</a></li>
+          <li><a href="">Sign In</a></li>     
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+  <div class="main">
+    <form id="finder-form">
+
+      <div class="row">
+        <div class="small-12 columns text-right">
+          Current Location: <span id="current-location">Berkeley, CA</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="finder-main-bar small-12 columns">
+            <div class="finder-header">
+            I'm looking for stores...<br>
+            </div>
+            that sell
+            <select id="finder-store-type" class="finder-main-select">
+              <option value="clothing">Clothing</option>
+              <option value="furniture">Furniture</option>
+              <option value="decorations">Decorations</option>
+              <option value="accessories">Accessories</option>
+              <option value="all">Anything</option>
+            </select>
+            and that are
+            <select id="finder-store-quality" class="finder-main-select">
+              <option value="adventurous">Adventurous</option>
+              <option value="efficient">Efficient</option>
+              <option value="bargains">Bargain-friendly</option>
+            </select>
+            
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="finder-extra-bars" class="small-6 columns hide"></div>
+      </div>
+      <div class="row text-center">
+        <a href="#" id="finder-more">More options</a>
+      </div>
+
+      <div class="row text-center">
+        <a href="#" class="button small" id="finder-submit">Submit</a>
+      </div>
+    </form>
+
+    <!-- Begin Store Listing -->
+    <div class="row">
+      <div class="store-result small-10 columns">
+        <div class="row">
+          <div class="store-result-leftcol small-3 columns">
+            <div class="store-result-top-bar">
+              <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a>
+            </div>
+            <div class="store-result-title">
+              <a href="">Anthropologie</a>
+            </div>
+            <div class="store-result-location">
+              <a href=""><i class="fa fa-map-marker" style="color: #6f6f6f;"></i></a>
+              123 Main Street<br>
+              Berkeley, CA
+            </div>
+            <div>
+              <ul class="store-result-categories">
+                <li>Clothing</li>
+                <li>Accessories</li>
+              </ul>
+            </div>
+<!--        <div class="store-result-iconbar">
+              <ul class="store-result-icons">
+                <li><i class="fa fa-tasks fw"></i> <span style="font-size:.7em;">15</span></li>
+                <li><i class="fa fa-comment fw"></i> <span style="font-size:.7em;">8</span></li>
+              </ul>
+            </div>
+ -->
+            <div class="store-result-meter">
+              <div class="meter-item">
+                <div class="meter-item-label">Adventure</div><div class="meter-item-bar" data-version="result" data-rating="8.0"></div>
+              </div>
+              <div class="meter-item">              
+                <div class="meter-item-label">Efficiency</div><div class="meter-item-bar" data-version="result" data-rating="6.1"></div>
+              </div>
+              <div class="meter-item">              
+                <div class="meter-item-label">Bargain</div><div class="meter-item-bar" data-version="result" data-rating="3.5"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="store-result-maincol small-9 columns">
+            <img class="store-result-main-img" src="_images/uploads/sample01.jpg">
+
+            <!-- <iframe style="width:100%;min-height:300px;" src="http://photo.merq.org/show.page?id=2591" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+
+          </div>       
+
+          <div class="store-result-bottom-bar">
+            <a href="store.html">View Store Profile</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Store Listing -->
+
+
+    <!-- Begin Store Listing -->
+    <div class="row">
+      <div class="store-result small-10 columns">
+        <div class="row">
+          <div class="store-result-leftcol small-3 columns">
+            <div class="store-result-top-bar">
+              <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a>
+            </div>
+            <div class="store-result-title">
+              <a href="">Global Exchange</a>
+            </div>
+            <div class="store-result-location">
+              <a href=""><i class="fa fa-map-marker" style="color: #6f6f6f;"></i></a>
+              100 College Ave<br>
+              Berkeley, CA
+            </div>
+            <div>
+              <ul class="store-result-categories">
+                <li>Clothing</li>
+                <li>Decorations</li>
+                <li>Accessories</li>
+              </ul>
+            </div>
+<!--        <div class="store-result-iconbar">
+              <ul class="store-result-icons">
+                <li><i class="fa fa-tasks fw"></i> <span style="font-size:.7em;">15</span></li>
+                <li><i class="fa fa-comment fw"></i> <span style="font-size:.7em;">8</span></li>
+              </ul>
+            </div>
+ -->
+            <div class="store-result-meter">
+              <div class="meter-item">
+                <div class="meter-item-label">Adventure</div><div class="meter-item-bar" data-version="result" data-rating="7.1"></div>
+              </div>
+              <div class="meter-item">              
+                <div class="meter-item-label">Efficiency</div><div class="meter-item-bar" data-version="result" data-rating="8.0"></div>
+              </div>
+              <div class="meter-item">              
+                <div class="meter-item-label">Bargain</div><div class="meter-item-bar" data-version="result" data-rating="5.1"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="store-result-maincol small-9 columns">
+            <img class="store-result-main-img" src="_images/uploads/sample02.jpg">
+            <div class="row">
+              <div class="store-result-item-thumbs">
+                <ul class="small-block-grid-12">
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample01.jpg"><img src="_images/uploads/thumbsample01.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample02.jpg"><img src="_images/uploads/thumbsample02.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample03.jpg"><img src="_images/uploads/thumbsample03.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample01.jpg"><img src="_images/uploads/thumbsample01.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample02.jpg"><img src="_images/uploads/thumbsample02.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample03.jpg"><img src="_images/uploads/thumbsample03.jpg">
+                  </a></li>              
+                </ul>
+              </div>
+            </div>
+          </div>          
+
+          <div class="store-result-bottom-bar">
+            <a href="store.html">View Store Profile</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Store Listing -->
+
+
+  </div>
+
+</div>
+</body>
+</html>
+
+
+
+
