@@ -1,0 +1,5 @@
+@mixin font-line($sizeValue) {
+  font-size: $sizeValue + em;
+  line-height: ($sizeValue * .8) + em;
+}
+

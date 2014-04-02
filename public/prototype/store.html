@@ -1,0 +1,225 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gusto</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic|Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="_css/normalize.css" />
+  <link rel="stylesheet" href="_css/foundation.css" />
+  <link rel="stylesheet" href="_css/foundation-overrides.css" />
+  <link rel="stylesheet" href="_css/style.css" />
+  <link rel="stylesheet" href="_css/font-awesome/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="_js/vendor/modernizr.js"></script>
+  <script src="_js/vendor/jquery.js"></script>
+  <script src="_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="_js/foundation.min.js"></script>
+  <script src="_js/script.js"></script>
+  </head>
+<body>
+
+<div class="wrapper">
+
+  <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name sitename">
+          Gusto
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        
+      </ul>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="has-form">
+            <div class="row collapse">
+              <div class="small-3 columns">
+                <label for="set-location" class="right inline">Location:</label>
+              </div>              
+              <div class="small-6 columns">
+                <input id="set-location" type="text" placeholder="City, State or ZIP" value="Berkeley, CA">
+              </div>
+              <div class="small-3 columns">
+                <a href="#" id="set-location-button" class="button expand">Set</a>
+              </div>
+            </div>          
+          </li>          
+          <li><a href="register.html">Create Account</a></li>
+          <li><a href="">Sign In</a></li>     
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+  <div class="main">
+
+    <div class="row">
+      <div class="small-12 columns" style="padding:8px;">
+        <a href="index.html">< Back to Results</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="store-profile small-12 columns">
+        <div class="row">
+          <div class="store-profile-topbar">
+            <div class="store-profile-bookmark"><a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="store-profile-titlebar"> 
+            <div class="store-profile-title small-5 columns left">Global Exchange</div>
+            <div class="store-survey-link small-2 columns center"><a href="#" id="store-survey-link">Been Here Before?</a></div>
+            <div class= "small-5 columns right text-right">
+              <ul class="store-profile-categories">
+                <li>Clothing</li>
+                <li>Decorations</li>
+                <li>Accessories</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div id="survey-bar">
+              <form id="survey-form">
+                <div class="survey-question">How was the ambience at Global Exchange?</div>
+                <div class="survey-response">
+                  <input type="range" id="survey-response" data-survey-question="ambience01" min="1" max="10">
+                </div>
+                <div class="survey-submit"><a href="#" id="survey-response-submit" class="button mini">Go</a></div>
+              </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="store-profile-leftcol small-3 columns">
+            <div id="store-profile-map">
+              <img src="_images/map_sample.png">
+            </div>
+
+          </div>
+
+          <div class="store-profile-maincol small-9 columns">
+            <img class="store-profile-main-img" src="_images/uploads/sample02.jpg">
+<!--             <div class="row">
+              <div class="store-profile-item-thumbs">
+                <ul class="small-block-grid-12">
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample01.jpg"><img src="_images/uploads/thumbsample01.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample02.jpg"><img src="_images/uploads/thumbsample02.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample03.jpg"><img src="_images/uploads/thumbsample03.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample01.jpg"><img src="_images/uploads/thumbsample01.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample02.jpg"><img src="_images/uploads/thumbsample02.jpg">
+                  </a></li>
+                  <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample03.jpg"><img src="_images/uploads/thumbsample03.jpg">
+                  </a></li>              
+                </ul>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="store-profile-leftcol small-3 columns">
+            <div class="store-profile-location">
+                100 College Ave<br>
+                Berkeley, CA 94705<br>
+                310-850-1928<br>
+                www.thisstore.com
+            </div>
+            <div class="store-profile-meter">
+              <div class="meter-item">
+                <div class="meter-item-label">Adventure</div><div class="meter-item-bar" data-version="profile" data-rating="7.1"></div>
+              </div>
+              <div class="meter-item">              
+                <div class="meter-item-label">Efficiency</div><div class="meter-item-bar" data-version="profile" data-rating="10.0"></div>
+              </div>
+              <div class="meter-item">              
+                <div class="meter-item-label">Bargain</div><div class="meter-item-bar" data-version="profile" data-rating="5.1"></div>
+              </div>
+            </div>
+
+            <div class="store-profile-tags">
+              <h5>This Store Is:</h5>
+              
+              <div>
+                <div class="tags-label">Owners Say...</div>
+                <ul class="tags">
+                  <li>Ethnic</li>
+                  <li>Trendy</li>
+                  <li>Eclectic</li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="tags-label">Experts Say...</div>
+                <ul class="tags">
+                  <li>Ethnic</li>
+                  <li>Eclectic</li>
+                  <li>Expensive</li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="tags-label">Shoppers Say...</div>
+                <ul class="tags">
+
+                  <li>Bustling</li>
+                  <li>Expensive</li>
+                  <li>Ethnic</li>                  
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="store-profile-midcol small-5 columns">
+            <div class="store-profile-comments">
+              <h6>Comments</h6>
+              <ul class="store-comments">
+                <li>Comment 1</li>
+                <li>Comment 2</li>
+                <li>Comment 3</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="store-profile-rightcol small-4 columns">
+            <div class="store-profile-add-comment">
+              <form>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label>Add Comment
+                      <textarea placeholder="What did you think of this place?"></textarea>
+                    </label>
+                    <a href="#" class="button tiny right">Submit</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
+
+
+
+
