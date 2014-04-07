@@ -4,8 +4,9 @@ ruby '2.0.0'
 
 gem 'pg'
 gem 'foundation-rails'
-gem 'spud_photos'
 
+gem 'paperclip'
+gem 'aws-sdk'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

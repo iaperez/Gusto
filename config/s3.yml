@@ -1,0 +1,16 @@
+staging:
+  aws_access_key: <%= ENV[AWS_ACCESS_KEY_ID] %>
+  aws_secret_access_key: <%= ENV[AWS_SECRET_ACCESS_KEY] %>
+  bucket_base_name: <%= ENV[AWS_BUCKET] %>
+
+production:
+  aws_access_key: <%= ENV[AWS_ACCESS_KEY_ID] %>
+  aws_secret_access_key: <%= ENV[AWS_SECRET_ACCESS_KEY] %>
+  bucket_base_name: <%= ENV[AWS_BUCKET] %>
+
+development:
+  aws_access_key: <%= ENV[AWS_ACCESS_KEY_ID] %>
+  aws_secret_access_key: <%= ENV[AWS_SECRET_ACCESS_KEY] %>
+  bucket_base_name: <%= ENV[AWS_BUCKET] %>
+
+
