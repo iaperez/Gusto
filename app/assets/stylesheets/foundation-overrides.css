@@ -1,0 +1,76 @@
+/*
+ * This stylesheet should hold rules that directly override something in foundation.css
+ */
+
+
+body,p,h1,h2,h3,h4,h5,h6,div,a,nav {
+	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+p { margin-bottom: .8em; }
+
+
+textarea {
+	height: 10em;
+}
+
+table {
+	// normalize fix
+	border-collapse:separate
+} 
+
+.inline {
+	margin: 0 0 1rem 0;
+	padding: 0.625rem 0;
+}
+
+.tabs {
+ 	dd {
+ 		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.18);
+ 	}
+
+ 	a {
+ 		&:hover { text-decoration: none; }
+ 	}
+	
+}
+
+.top-bar {
+	overflow: inherit;
+	color: white;
+}
+.top-bar .sitename {
+	font-family: 'Oleo Script Swash Caps', cursive !important;
+	font-size: 18pt;
+	padding: 0px 12px;
+}
+.top-bar label {
+	color: white;
+	padding-right: 6px;
+}
+
+a.button {
+	text-decoration:none;
+}
+
+a.button:hover {
+	text-decoration:none;
+}
+
+button.mini, .button.mini {
+	padding-top: 0.225rem;
+	padding-right: .75rem;
+	padding-bottom: 0.2875rem;
+	padding-left: .75rem;
+	font-size: 0.6875rem;
+	border-radius: 8px;
+}
+
+input#set-location {
+	height: 2.125rem;
+}
+
+
+
+
+
