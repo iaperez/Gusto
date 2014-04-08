@@ -5,13 +5,16 @@ ruby '2.0.0'
 
 gem 'pg'
 gem 'foundation-rails'
-
 gem 'paperclip'
 gem 'aws-sdk'
-
 gem 'font-awesome-rails'
-
 gem 'devise'
+
+
+group :production, :staging do
+	gem 'rails_12factor'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0.rc2'
@@ -47,4 +50,6 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
 
