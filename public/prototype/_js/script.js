@@ -174,4 +174,54 @@ $(document).ready(function() {
     // event.preventDefault();
   })
 
+  // Store Profile Form
+
+  $("#add-store-form-info-submit").click(function() {
+    event.preventDefault();
+    if ($("#new-store-name").val().length > 0) {
+      $("#add-store-form-info").slideUp();
+      $("#add-store-survey-1").slideDown();
+      $("#success-status").slideUp();
+    } else { 
+      $('#store-error').show();
+    }
+  })
+
+  $("#add-store-survey-1-submit").click(function() {
+    event.preventDefault();
+    $("#add-store-survey-1").slideUp();
+    $("#add-store-survey-2").slideDown();
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+  })
+
+  $("#add-store-survey-2-submit").click(function() {
+    event.preventDefault();
+    $("#add-store-survey-2").slideUp();
+    $("#add-store-survey-3").slideDown();
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+
+  })
+
+  $("#add-store-survey-3-submit").click(function() {
+    event.preventDefault();
+    $("#add-store-survey-3").slideUp();
+    $("#add-store-survey-4").slideDown();
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+
+  })
+
+  $("#add-store-survey-4-submit").click(function() {
+    event.preventDefault();
+    $("#add-store-survey-4").slideUp();
+    $("#add-store-survey-5").slideDown();
+    $('html, body').animate({ scrollTop: 0 }, 'slow');    
+  })
+
+  $("#final-form-submit").click(function() {
+    event.preventDefault();
+    $("#add-store-form").submit();
+  })
+
+
+
 });

@@ -1,0 +1,145 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gusto</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic|Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../_css/normalize.css" />
+  <link rel="stylesheet" href="../_css/foundation.css" />
+  <link rel="stylesheet" href="../_css/foundation-overrides.css" />
+  <link rel="stylesheet" href="../_css/style.css" />
+  <link rel="stylesheet" href="../_css/font-awesome/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="../_js/vendor/modernizr.js"></script>
+  <script src="../_js/vendor/jquery.js"></script>
+  <script src="../_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="../_js/foundation.min.js"></script>
+  <script src="../_js/script.js"></script>
+  <script type="text/javascript">
+  function confirm_delete() {
+      return confirm("Really Delete This Store?");
+  }
+
+  </script>
+
+  </head>
+  <?php
+
+  require("db_vars.php");
+
+  // connect to the database server and select the appropriate database for use
+  $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_error() );
+  mysql_select_db($authDBName);
+  ?>
+
+<body>
+
+<div class="wrapper">
+
+  <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name sitename">
+          Gusto
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        
+      </ul>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+
+        <!-- Right Nav Section -->
+        <ul class="right">        
+          <li><a href="stores.html">View All Stores</a></li> 
+          <li><a href="index.html">Add New Store</a></li> 
+        </ul>
+
+      </section>
+    </nav>
+  </div>
+
+  <div class="main">
+    <?php
+    if ($_GET["success"] == "true") {
+      echo '<div class="text-center" id="success-status">
+          <h4>Store Added Successfully</h4>
+      </div>';
+    } elseif ($_GET["success"] == 'false') {
+      echo '<div class="text-center" id="success-status">
+          <h4>Error: Store Not Added</h4>
+      </div>';      
+    }
+    ?>
+
+    <div class="row">
+      <div class="small-12 columns text-center">
+        <div class="register-header">
+        Stores in the Database
+        </div>
+        <a href="index.html" class="button small">Add New Store</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+      <table width="100%">
+        <thead>
+          <tr>
+            <th width="20%">Store Name</th>
+            <th width="20%">Address</th>
+            <th width="25%">Style Tags</th>
+            <th width="25%">Date Added</th>
+            <th width="100">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            $q = "SELECT * FROM store ORDER BY store_timestamp DESC;";
+            $result = mysql_db_query($authDBName, $q);
+            while($row = mysql_fetch_array($result)) {
+              $this_store_id = $row["store_id"];
+              $this_store_name = $row["store_name"];
+              $this_store_address = $row["store_address"];
+              $this_store_timestamp = $row["store_timestamp"];
+              $this_store_date = date("Y-m-d", mktime($this_store_timestamp));
+              
+              $this_tag_array = array();
+
+              $r = "SELECT * FROM store_tag, tag WHERE store_tag.store_tag_store_id=$this_store_id AND tag_id=store_tag.store_tag_tag_id";
+              $rresult = mysql_db_query($authDBName, $r);
+              while($rrow = mysql_fetch_array($rresult)) {
+                $tag_name = $rrow["tag_name"];
+                array_push($this_tag_array, $tag_name);
+              }
+              $this_tag_array_counted = array_count_values($this_tag_array);
+              echo "<form action='delete.php' method='post'>";
+                echo '<tr>';
+                echo '<td>'.$this_store_name.'</td>';
+                echo '<td>'.$this_store_address.'</td>';
+                echo '<td>';
+                foreach ($this_tag_array_counted as $k => $v) {
+                  echo $k." (".$v.")  ";
+                }
+                echo '</td>';
+                echo '<td>'.$this_store_timestamp.'</td>';
+                echo '<td><button class="small" onclick="return confirm_delete();">Delete</button>';
+                echo '<input type="hidden" name="delete_store_id" value="'.$this_store_id.'">';
+                echo '</td>';
+                echo '</tr>';
+              
+              echo "</form>";
+            }
+              
+          ?>
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

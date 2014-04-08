@@ -28,6 +28,8 @@ img.reg-image {
 
 }
 
+
+
 .register-header {
 	font-family: 'Oleo Script Swash Caps', cursive !important;
 	font-size: 1.6em;
@@ -35,6 +37,55 @@ img.reg-image {
 	padding: 20px;
 }
 
+/* Add Store Form and Survey */
+
+#add-store-form {
+	margin: 0px auto;
+	float: none;
+}
+
+#add-store-form-info {
+	margin: 0px auto;
+	float: none;
+	text-align: center;
+}
+
+.add-store-survey {
+	margin: 0px auto;
+	float: none;
+	text-align: center;
+}
+
+.survey-images-container {
+	width: 100%;
+	border-radius: 6px; 
+	padding: 20px; 
+	border: 1px solid #eee;
+	box-shadow: 2px 2px 1px #c9c9c9;
+	float: left;
+
+}
+
+.survey-image-box {
+	float: none;
+	margin: 10px auto;
+	width: 90%;
+	padding: 12px;
+	border: 1px solid #eee;
+	box-shadow: 2px 2px 2px rgb(250, 250, 250);		
+}
+
+img.survey-image {
+	max-height: 400px;
+}
+
+input.survey_radio {
+
+}
+
+input#new-store-name{
+	margin-bottom: 0px;
+}
 
 /* Store Page Styles */
 
