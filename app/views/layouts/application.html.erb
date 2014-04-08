@@ -46,14 +46,32 @@
               </div>
             </div>
           </li>
-          <li><a href="register.html">Create Account</a></li>
-          <li><a href="">Sign In</a></li>
+          <% if user_signed_in? %>
+          <li class = "has-dropdown">
+            <a href="#">
+                <i class="fa fa-user"></i> <%= current_user.email %>
+            </a>
+            <ul class="dropdown">
+              <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
+            </ul>
+          </li>
+          <% else %>
+          <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
+          <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> </li>
+          <% end %>
+
         </ul>
       </section>
     </nav>
   </div>
 
-
+  <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
   <%= yield %>
   <%= javascript_include_tag "application" %>
 </div>
