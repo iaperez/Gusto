@@ -1,0 +1,15 @@
+<div class="fields">
+  <fieldset>
+    <div style="float:right;display:inline">
+      <%= link_to_remove_fields '<i class="fa fa-trash-o"></i> Remove Question'.html_safe, f %>
+    </div>
+    <%= f.label :content, "Question" %>
+    <%= f.text_area :content, :rows => 2 %>
+    <br/>
+    <%= f.fields_for :answers do |builder| %>
+        <%= render 'answer_fields', f: builder %>
+    <% end %>
+
+    <%= link_to_add_fields '<i class="fa fa-plus"></i> Add Answer'.html_safe, f, :answers %>
+  </fieldset>
+</div>
