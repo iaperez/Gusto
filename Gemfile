@@ -9,6 +9,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'cancan'
 
 
 group :production, :staging do
@@ -17,7 +18,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0.rc2'
+gem 'rails', '4.1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 # Use Uglifier as compressor for JavaScript assets
