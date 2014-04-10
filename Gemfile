@@ -10,7 +10,7 @@ gem 'aws-sdk'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'cancan'
-
+gem 'decent_exposure'
 
 group :production, :staging do
 	gem 'rails_12factor'
