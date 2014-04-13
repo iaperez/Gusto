@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: "this is the first test to try"
+  user_id: 1
+
+two:
+  location: "This is not working for me"
+  user_id: 2

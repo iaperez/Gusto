@@ -11,6 +11,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'cancan'
 gem 'decent_exposure'
+gem 'rolify'
 
 group :production, :staging do
 	gem 'rails_12factor'

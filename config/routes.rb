@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :preferences
+
   resources :surveys
 
   devise_for :users
