@@ -20,6 +20,25 @@
   </tbody>
 </table>
 
+
+<table>
+  <thead>
+  <tr>
+    <th>Surveys</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @available_surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.name %></td>
+        <td><%= link_to 'Start the quiz!', edit_survey_path(survey) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
 <br>
 
 <%= link_to 'New Preference', new_preference_path %>

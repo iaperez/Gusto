@@ -1,9 +1,12 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy, :answers]
+  before_action :authenticate_user!, :set_survey, only: [:show, :edit, :update, :destroy, :answers]
+  before_filter :authenticate_user!
+
   # GET /surveys
   # GET /surveys.json
   def index
     @surveys = Survey.all
+
   end
 
   # GET /surveys/1
@@ -64,6 +67,19 @@ class SurveysController < ApplicationController
     @questions = @survey.questions
   end
 
+  def respond
+    set_survey
+  end
+
+  def responses
+    for feedback in params[:ANYTHING_ids] do
+      resp = Response.new
+      resp.user_id=current_user.id
+      resp.answer_id=feedback
+      resp.save!
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_survey
@@ -73,7 +89,7 @@ class SurveysController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def survey_params
     params.require(:survey).permit(:name,
-        :questions_attributes => [:id, :content, :_destroy,
-        :answers_attributes => [:id, :content, :_destroy]])
+                                   :questions_attributes => [:id, :content, :_destroy,
+                                   :answers_attributes => [:id, :content, :_destroy]])
   end
 end

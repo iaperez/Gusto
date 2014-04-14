@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="small-6  columns"><br/>
+
+    <p id="notice"><%= notice %></p>
+
+    <%= form_tag responses_survey_path, method: :put do %>
+        <p>
+          <strong>Name:</strong>
+          <%= @survey.name %>
+        </p>
+        <ol>
+          <% for question in @survey.questions %>
+              <li>
+                <%= h question.content %>
+                <ul>
+                  <% for answer in question.answers %>
+                      <li>
+                        <%= check_box_tag "answers_ids[]", answer.id %>
+                        <%= h answer.content %>
+                      </li>
+                  <% end %>
+                </ul>
+              </li>
+          <% end %>
+        </ol>
+        <div class="actions">
+          <%= submit_tag "Send your answers!",:class => 'button' %>
+        </div>
+        <%= link_to 'Back', surveys_path %>
+    <% end %>
+  </div>
+</div>

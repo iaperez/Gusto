@@ -8,6 +8,7 @@ class PreferencesController < ApplicationController
   def index
     if user_signed_in?
       @preferences = current_user.preferences.all
+      @available_surveys = Survey.all
     else
       @preferences = []
     end

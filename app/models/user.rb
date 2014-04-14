@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :preferences
   has_many :responses
+  has_many :questions, through: :responses
 end
