@@ -12,6 +12,7 @@ gem 'devise'
 gem 'cancan'
 gem 'decent_exposure'
 gem 'rolify'
+gem 'geocoder'
 
 group :production, :staging do
 	gem 'rails_12factor'
