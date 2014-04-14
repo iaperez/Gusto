@@ -15,7 +15,11 @@
                 <ul>
                   <% for answer in question.answers %>
                       <li>
-                        <%= check_box_tag "answers_ids[]", answer.id %>
+                        <% if @responded_answers.include?(answer.id) %>
+                            <%= check_box_tag "answers_ids[]", answer.id, checked = true %>
+                        <% else %>
+                            <%= check_box_tag "answers_ids[]", answer.id %>
+                        <% end %>
                         <%= h answer.content %>
                       </li>
                   <% end %>

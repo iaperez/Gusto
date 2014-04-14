@@ -69,14 +69,21 @@ class SurveysController < ApplicationController
 
   def respond
     set_survey
+    @responded_answers = Response.where(user_id: current_user.id).pluck(:answer_id)
+    if @responded_answers.include?(1)
+      i=2
+    end
+    i=0
   end
 
   def responses
-    for feedback in params[:ANYTHING_ids] do
+    for feedback in params[:answers_ids] do
       resp = Response.new
       resp.user_id=current_user.id
       resp.answer_id=feedback
-      resp.save!
+      if Response.where(answer_id: feedback, user_id: current_user.id).count == 0
+        resp.save!
+      end
     end
   end
 
