@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  prices: 1
+  busyness: 1
+  noise: 1
+  adventure: 9.99
+  convenience: 9.99
+  bargain: 9.99
+  website: MyString
+  description: MyString
+
+two:
+  name: MyString
+  prices: 1
+  busyness: 1
+  noise: 1
+  adventure: 9.99
+  convenience: 9.99
+  bargain: 9.99
+  website: MyString
+  description: MyString

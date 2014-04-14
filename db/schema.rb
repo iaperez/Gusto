@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413193459) do
+ActiveRecord::Schema.define(version: 20140414050337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20140413193459) do
   create_table "answers", force: true do |t|
     t.integer  "question_id"
     t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "personalities", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,6 +71,67 @@ ActiveRecord::Schema.define(version: 20140413193459) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "store_categories", force: true do |t|
+    t.integer  "store_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "store_categories", ["category_id"], name: "index_store_categories_on_category_id", using: :btree
+  add_index "store_categories", ["store_id"], name: "index_store_categories_on_store_id", using: :btree
+
+  create_table "store_locations", force: true do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "store_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "store_locations", ["store_id"], name: "index_store_locations_on_store_id", using: :btree
+
+  create_table "store_personalities", force: true do |t|
+    t.integer  "store_id"
+    t.integer  "personality_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "store_personalities", ["personality_id"], name: "index_store_personalities_on_personality_id", using: :btree
+  add_index "store_personalities", ["store_id"], name: "index_store_personalities_on_store_id", using: :btree
+
+  create_table "store_styles", force: true do |t|
+    t.integer  "store_id"
+    t.integer  "style_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "store_styles", ["store_id"], name: "index_store_styles_on_store_id", using: :btree
+  add_index "store_styles", ["style_id"], name: "index_store_styles_on_style_id", using: :btree
+
+  create_table "stores", force: true do |t|
+    t.string   "name"
+    t.integer  "prices"
+    t.integer  "busyness"
+    t.integer  "noise"
+    t.decimal  "adventure"
+    t.decimal  "convenience"
+    t.decimal  "bargain"
+    t.string   "website"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "styles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "surveys", force: true do |t|
     t.string   "name"
