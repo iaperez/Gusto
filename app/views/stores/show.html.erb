@@ -65,8 +65,8 @@
                 <%= render "attribute_tag_list", name: 'Categories', list: @store.categories_names %>
                 <%= render "stores/attribute_count_list", name: 'Prices', rating: @store.prices, count_type: 'fa fa-usd fa-fw' %>
                 <%= render "stores/attribute_count_list", name: 'Variety', rating: @store.variety, count_type: 'fa fa-star-o fa-fw' %>
-                <%= render "stores/attribute_count_list", name: 'Sales', rating: @store.prices, count_type: 'fa fa-star-o fa-fw' %>
-                <%= render "stores/attribute_count_list", name: 'Discounts', rating: @store.discounts, count_type: 'fa fa-tag fa-fw' %>
+                <%= render "stores/attribute_count_list", name: 'Sales', rating: @store.sales, count_type: 'fa fa-tag fa-fw' %>
+                <%= render "stores/attribute_count_list", name: 'Discounts', rating: @store.discounts, count_type: 'fa fa-star-o fa-fw' %>
               </div>
               <div class="store-profile-attributes-box">
                 <div class="store-profile-attribute-type-header">

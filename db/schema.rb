@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415094741) do
+ActiveRecord::Schema.define(version: 20140415192948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 20140415094741) do
     t.string   "public_transit"
     t.string   "stores_nearby"
     t.string   "accessible"
+    t.integer  "sales"
   end
 
   create_table "styles", force: true do |t|
