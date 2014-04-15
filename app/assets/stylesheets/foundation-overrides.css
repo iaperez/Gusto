@@ -2,74 +2,102 @@
  * This stylesheet should hold rules that directly override something in foundation.css
  */
 
-
 body,p,h1,h2,h3,h4,h5,h6,div,a,nav {
-	font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    /*font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;*/
+    font-family: 'Crimson Text', serif !important;
+    color: #212121;
+}
+
+p{
+    line-height: 1.3;
+    font-size: 0.9rem;
+    color: #404040;
+}
+
+body {
+    /*background-image: url('../_images/background/squared_metal.png');*/
+    /*background-image: url('../_images/background/tweed.png');*/
+    background-image: url('../_images/background/squairy_light.png');
+    background-size: 200px 200px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dppx) {
+    body{
+        /*background-image:url('../_images/background/squared_metal_@2X.png');*/
+        /*background-image:url('../_images/background/tweed_@2X.png');*/
+        background-image:url('../_images/background/squairy_light_@2X.png');
+        background-size: 200px 200px;
+    }
 }
 
 p { margin-bottom: .8em; }
 
 
 textarea {
-	height: 10em;
+    height: 10em;
 }
 
 table {
-	// normalize fix
-	border-collapse:separate
-} 
+// normalize fix
+border-collapse:separate
+}
 
 .inline {
-	margin: 0 0 1rem 0;
-	padding: 0.625rem 0;
+    margin: 0 0 1rem 0;
+    padding: 0.625rem 0;
 }
 
 .tabs {
- 	dd {
- 		box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.18);
- 	}
-
- 	a {
- 		&:hover { text-decoration: none; }
- 	}
-	
+dd {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.18);
 }
+
+a {
+&:hover { text-decoration: none; }
+    }
+
+    }
 
 .top-bar {
-	overflow: inherit;
-	color: white;
+    overflow: inherit;
+    color: white;
 }
 .top-bar .sitename {
-	font-family: 'Oleo Script Swash Caps', cursive !important;
-	font-size: 18pt;
-	padding: 0px 12px;
+    font-family: 'Oleo Script Swash Caps', cursive !important;
+    font-size: 1.6rem;
+    padding: 0px 12px 0px 6px;
 }
 .top-bar label {
-	color: white;
-	padding-right: 6px;
+    color: white;
+    padding-right: 6px;
+}
+.top-bar ul li > a{
+    font-size: .9rem;
+}
+.top-bar input#set-location, #set-location-button {
+    height: 1.9rem;
+}
+.top-bar a.sitename{
+    color: white;
 }
 
 a.button {
-	text-decoration:none;
+    text-decoration:none;
 }
 
 a.button:hover {
-	text-decoration:none;
+    text-decoration:none;
 }
 
 button.mini, .button.mini {
-	padding-top: 0.225rem;
-	padding-right: .75rem;
-	padding-bottom: 0.2875rem;
-	padding-left: .75rem;
-	font-size: 0.6875rem;
-	border-radius: 8px;
+    padding-top: 0.225rem;
+    padding-right: .75rem;
+    padding-bottom: 0.2875rem;
+    padding-left: .75rem;
+    font-size: 0.6875rem;
+    border-radius: 8px;
 }
-
-input#set-location {
-	height: 2.125rem;
-}
-
 
 
 

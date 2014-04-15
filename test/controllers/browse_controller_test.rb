@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class BrowseControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   test "should get home" do
     get :home
     assert_response :success
