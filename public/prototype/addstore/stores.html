@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gusto</title>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic|Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,400italic,600italic,700italic|Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../_css/normalize.css" />
   <link rel="stylesheet" href="../_css/foundation.css" />
   <link rel="stylesheet" href="../_css/foundation-overrides.css" />
@@ -88,10 +88,11 @@
       <table width="100%">
         <thead>
           <tr>
-            <th width="20%">Store Name</th>
-            <th width="20%">Address</th>
-            <th width="25%">Style Tags</th>
-            <th width="25%">Date Added</th>
+            <th width="15%">Store Name</th>
+            <th width="15%">Address</th>
+            <th>Style Tags</th>
+            <th width="15%">Date Added</th>
+            <th width="15%">User</th>
             <th width="100">Delete</th>
           </tr>
         </thead>
@@ -103,6 +104,7 @@
               $this_store_id = $row["store_id"];
               $this_store_name = $row["store_name"];
               $this_store_address = $row["store_address"];
+              $this_store_username = $row["store_username"];
               $this_store_timestamp = $row["store_timestamp"];
               $this_store_date = date("Y-m-d", mktime($this_store_timestamp));
               
@@ -125,6 +127,8 @@
                 }
                 echo '</td>';
                 echo '<td>'.$this_store_timestamp.'</td>';
+                echo '<td>'.$this_store_username.'</td>';
+
                 echo '<td><button class="small" onclick="return confirm_delete();">Delete</button>';
                 echo '<input type="hidden" name="delete_store_id" value="'.$this_store_id.'">';
                 echo '</td>';
@@ -139,7 +143,28 @@
     </div>
     </div>
   </div>
+  <div class="push"></div>
+</div>
 
+<div class="contain-to-grid sticky">
+  <nav class="top-bar bottom-bar">
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="title-area">  
+        <li class="name sitename">
+          Gusto
+        </li>  
+      </ul>     
+
+      <!-- Right Nav Section -->
+      <ul class="right">  
+
+        <li><a href="register.html">Contact</a></li>
+        <li><a href="">About</a></li>
+        <li class="copyright">&copy; 2014 Gusto</li>     
+      </ul>
+    </section>
+  </nav>
 </div>
 </body>
 </html>

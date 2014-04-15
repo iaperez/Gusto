@@ -55,9 +55,10 @@ $(document).ready(function() {
       // navigator.geolocation.getCurrentPosition(success,error,options);       
   }  
 
+
   // This takes the rating from the data-rating tag and sets the color and width of the bar
 
-  $(".meter-item-bar").each(function() {
+  $(".rating-item-bar").each(function() {
     var rating = $(this).data("rating");
     var version = $(this).data("version");
     var barwidth = rating*10;
@@ -77,21 +78,39 @@ $(document).ready(function() {
     }
     $(this).css({"background-color" : barcolor, "width" : barwidth});
     $(this).text(rating);
+  });
 
+  // This takes the rating from the data-rating tag and sets the color of the border
+
+  $(".type-rating-item").each(function() {
+    var rating = $(this).data("rating");
+    var version = $(this).data("version");
+    var bordercolor = "#d9d9d9";
+    if (rating < 5) {
+      // bordercolor = "#DE5F28"; // red
+      bordercolor = "#C5D7E8"; // blue gray
+    } else if (rating > 5 && rating < 7.5) {
+      // bordercolor = "#E6CF4E"; // yellow
+      bordercolor = "#83B9EB"; // muted blue
+    } else if (rating > 7.5) {
+      // bordercolor = "#469E50"; // green
+      bordercolor = "#3693EB"; // bright blue
+    }
+    $(this).css({"border-color" : bordercolor});
+    $(this).children(".type-rating-number").text(rating);
   });
 
   // Finder Bar Navigation Scripts
-
-  var extraBarCount = 0;
-  var finderBar = "<div class='finder-extra-bar'>and that \
-              <select id='finder-store-extra-COUNT' class='finder-extra-select'> \
-                <option value=''></option> \
-                <option value=''>have a quiet ambience</option> \
-                <option value=''>have plentiful parking</option> \
-                <option value=''>have a very attentive staff</option> \
-              </select> \
-              <i class='fa fa-times fa-lg extra-bar-delete'></i> \
-              </div>"; 
+  // var extraBarCount = 0;
+  // var finderBar = "<div class='finder-extra-bar'>and that \
+  //             <select id='finder-store-extra-COUNT' class='finder-extra-select'> \
+  //               <option value=''></option> \
+  //               <option value=''>have a quiet ambience</option> \
+  //               <option value=''>have plentiful parking</option> \
+  //               <option value=''>have a very attentive staff</option> \
+  //             </select> \
+  //             <i class='fa fa-times fa-lg extra-bar-delete'></i> \
+  //             </div>"; 
 
 
   // These add the extra select bar when use makes selection from the main bars
@@ -113,40 +132,19 @@ $(document).ready(function() {
   //   extraBarCount++;
   // });
 
-  $(document).on("click", ".extra-bar-delete", function() {
-    event.preventDefault();
-    $(this).parent().remove();
-    extraBarCount--;
-  });
-
-  $("#finder-more").click(function() {
-    var thisFinderBar = finderBar.replace("COUNT", extraBarCount+1);
-    $("#finder-extra-bars").append(thisFinderBar).show();
-    extraBarCount++;
-  });
-
-  $("#set-location-button").click(function() {
-    event.preventDefault();
-    $("#current-location").text($("#set-location").val());
-  });
-
-  // $(document).on("click", ".show-full-profile", function() {
+  // $(document).on("click", ".extra-bar-delete", function() {
   //   event.preventDefault();
-  //   $(this).text("Hide Full Profile").toggleClass("show-full-profile hide-full-profile");
-  //   // $(this).parents('div.store-result').animate({"height": "700px"}, 400);
-  //   $(this).parent().siblings('div.store-result-full-profile').show();
+  //   $(this).parent().remove();
+  //   extraBarCount--;
   // });
 
-  // $(document).on("click", ".hide-full-profile", function() {
-  //   event.preventDefault();
-  //   $(this).text("Show Full Profile").toggleClass("show-full-profile hide-full-profile");
-  //   $(this).parent().siblings('div.store-result-full-profile').hide();
-  //   // $(this).parents('div.store-result').animate({"height": "auto"}, 400);
-
+  // $("#finder-more").click(function() {
+  //   var thisFinderBar = finderBar.replace("COUNT", extraBarCount+1);
+  //   $("#finder-extra-bars").append(thisFinderBar).show();
+  //   extraBarCount++;
   // });
 
   // Add store to favorites
-
   $(document).on("click", ".add-to-bookmarks", function () {
     event.preventDefault();
     $(this).children("i.bookmark").addClass("fa-bookmark").removeClass("fa-bookmark-o");
@@ -154,24 +152,16 @@ $(document).ready(function() {
     $(this).removeClass(".add-to-bookmarks");
   });
 
+  // The one-question survey at the top of store profiles
   $("#store-survey-link").click(function() {
     event.preventDefault();
     $('#survey-bar').slideDown();
   });  
 
-  $("#finder-submit").click(function() {
-    event.preventDefault();
-  })
-
   $("#register-submit").click(function() {
     event.preventDefault();
     $("#registration-form").slideUp();
     $("#registration-form-2").slideDown();
-
-  })
-
-  $(".reg-image").click(function() {
-    // event.preventDefault();
   })
 
   // Store Profile Form
@@ -222,6 +212,103 @@ $(document).ready(function() {
     $("#add-store-form").submit();
   })
 
+  $(".attribute-details-icon").click(function() {
+    event.preventDefault();
+    if ($(this).hasClass("open")) {
 
+      $(this).children("i").addClass("fa-plus-square-o").removeClass("fa-minus-square-o");
+      $(this).removeClass("open").parent().siblings(".attribute-details").fadeOut();
+      $(this).parents(".store-profile-attribute").animate({ height: 36}, 300, function() {});
+
+
+
+
+    } else {
+
+      $(this).children("i").addClass("fa-minus-square-o").removeClass("fa-plus-square-o");
+      $(this).parents(".store-profile-attribute").animate({ height: 100}, 300, function() {});
+
+      $(this).parent().siblings(".attribute-details").html("This will show the owner/expert/shopper breakdown of the rating");
+      $(this).parent().siblings(".attribute-details").fadeIn();
+      $(this).addClass("open");
+    }
+
+    
+    
+    
+    
+  })
+
+  $(".toggle-extra-bars").click(function(){
+    event.preventDefault();
+    if ($(this).hasClass("open")) {
+      $(this).removeClass("open").parent().siblings("#finder-extra-bars").slideUp();
+    } else {
+      $(this).addClass("open").parent().siblings("#finder-extra-bars").slideDown();
+    }
+
+  });
+
+  $(".category-extra-show").click(function(){
+    event.preventDefault();
+    $(this).hide();
+    $(this).parent().siblings(".category-extra").show();
+  });
+
+  $(".finder-extra-select").change(function() { 
+    if ($(this).text() != "label") {
+      var thisLabelText = $(this).find("option[value='label']").text();
+      console.log(thisLabelText);
+      $(this).parent().siblings(".category-name").text(thisLabelText);
+    }
+  }); 
+
+  $("#finder-submit").click(function(){
+    event.preventDefault();
+    loadResults();
+  });  
+
+  function loadResults() {
+
+    $("#finder-extra-bars").slideUp();
+    $("#store-results").fadeOut().delay(300);
+    $("#store-results").fadeIn();
+
+
+    var queryStoreType = $("#finder-store-type").val(); // adventure/bargain...
+    var queryStoreCategory = $("#finder-store-category").val(); // furniture/clothing...
+    var queryStorePersonality = $("#finder-store-personality").val(); // welcoming/friendly...
+    var queryString = "Stores selling ";
+
+    if (queryStoreCategory != "") {
+      queryString += queryStoreCategory;
+    } else {
+      queryString += "anything";
+    }
+
+    queryString += " that are ";
+
+    if (queryStorePersonality != "") {
+      queryString += queryStorePersonality;
+    } else {
+      queryString += "any personality";
+    }
+
+    queryString += " and good for ";
+
+    if (queryStoreType != "") {
+      queryString += queryStoreType;
+    } else {
+      queryString += "all types of shopping";
+    }
+
+    $(".store-result-query").hide().delay(800).text(queryString).show();
+    
+  };
+
+
+
+  // Here's how to grey out and deactivate a select box
+  // $("#finder-store-goods-1").attr('disabled','disabled').css({"background-color": "#e3e3e3", "opacity": 0.5});
 
 });

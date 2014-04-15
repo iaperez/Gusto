@@ -30,6 +30,7 @@
 		$error = 0;
 		$new_store_name = mysql_real_escape_string($_POST['new_store_name']);
 		$new_store_address = mysql_real_escape_string($_POST['new_store_address']);
+		$new_store_username = mysql_real_escape_string($_POST['new_store_username']);
 		$new_store_survey_01_tag_id = $_POST['survey_01'];
 		$new_store_survey_02_tag_id = $_POST['survey_02'];
 		$new_store_survey_03_tag_id = $_POST['survey_03'];
@@ -37,7 +38,7 @@
 		$new_store_survey_05_tag_id = $_POST['survey_05'];
 
 		//Insert the store information
-		$insertQuery_str = "INSERT INTO store (store_name, store_address, store_timestamp) VALUES ('$new_store_name', '$new_store_address', NOW());";
+		$insertQuery_str = "INSERT INTO store (store_name, store_address, store_username, store_timestamp) VALUES ('$new_store_name', '$new_store_address', '$new_store_username', NOW());";
 		$insertresult = mysql_db_query($authDBName, $insertQuery_str);
 		if ($DEBUG) {echo "<br><br>Entered Store ".$new_store_name." into Database<br>";}
 		if ($DEBUG) {echo "Entered Address ".$new_store_address." into Database<br><br>";}
