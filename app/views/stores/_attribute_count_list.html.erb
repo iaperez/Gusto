@@ -1,10 +1,12 @@
 <div class="store-profile-attribute">
   <div class="store-profile-attribute-content">
-    <div class="attribute-label"><%=name%></div>
+    <div class="attribute-label"><%= name %></div>
     <div class="attribute-rating">
-      <%(1..rating).each do |n|%>
-      <i class='<%=count_type%>'></i>
-      <%end%>
+      <% if rating.is_a? Numeric %>
+          <% (1..rating).each do |n| %>
+              <i class='<%= count_type %>'></i>
+          <% end %>
+      <% end %>
     </div>
   </div>
   <div class="attribute-details hide"></div>
