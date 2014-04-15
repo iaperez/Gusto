@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140414050337) do
+ActiveRecord::Schema.define(version: 20140415053653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20140414050337) do
   end
 
   create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "music_styles", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -72,6 +78,12 @@ ActiveRecord::Schema.define(version: 20140414050337) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
+  create_table "scents", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "store_categories", force: true do |t|
     t.integer  "store_id"
     t.integer  "category_id"
@@ -93,6 +105,16 @@ ActiveRecord::Schema.define(version: 20140414050337) do
 
   add_index "store_locations", ["store_id"], name: "index_store_locations_on_store_id", using: :btree
 
+  create_table "store_music_styles", force: true do |t|
+    t.integer  "store_id"
+    t.integer  "music_style_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "store_music_styles", ["music_style_id"], name: "index_store_music_styles_on_music_style_id", using: :btree
+  add_index "store_music_styles", ["store_id"], name: "index_store_music_styles_on_store_id", using: :btree
+
   create_table "store_personalities", force: true do |t|
     t.integer  "store_id"
     t.integer  "personality_id"
@@ -102,6 +124,17 @@ ActiveRecord::Schema.define(version: 20140414050337) do
 
   add_index "store_personalities", ["personality_id"], name: "index_store_personalities_on_personality_id", using: :btree
   add_index "store_personalities", ["store_id"], name: "index_store_personalities_on_store_id", using: :btree
+
+  create_table "store_scents", force: true do |t|
+    t.integer  "store_id"
+    t.integer  "scent_id"
+    t.decimal  "degree"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "store_scents", ["scent_id"], name: "index_store_scents_on_scent_id", using: :btree
+  add_index "store_scents", ["store_id"], name: "index_store_scents_on_store_id", using: :btree
 
   create_table "store_styles", force: true do |t|
     t.integer  "store_id"
@@ -122,9 +155,10 @@ ActiveRecord::Schema.define(version: 20140414050337) do
     t.decimal  "convenience"
     t.decimal  "bargain"
     t.string   "website"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "img_url"
   end
 
   create_table "styles", force: true do |t|

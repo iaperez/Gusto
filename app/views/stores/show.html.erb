@@ -1,49 +1,150 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="main-content-box store-profile small-12 columns">
 
-<p>
-  <strong>Name:</strong>
-  <%= @store.name %>
-</p>
+    <div class="row">
+      <div class="store-profile-titlebar">
+        <div class="store-profile-title small-5 columns left"><%= @store.name %></div>
+        <!-- <div class="store-survey-link small-2 columns center"><a href="#" id="store-survey-link">Been Here Before?</a></div> -->
+        <div class="small-5 columns right text-right">
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Prices:</strong>
-  <%= @store.prices %>
-</p>
+    <div class="row">
+      <div class="store-profile-leftcol small-3 columns">
+        <div id="store-profile-map">
+          <%= image_tag 'http://placehold.it/500x500', class: 'store-profile-main-img' %>
+        </div>
+      </div>
 
-<p>
-  <strong>Busyness:</strong>
-  <%= @store.busyness %>
-</p>
+      <div class="store-profile-maincol small-9 columns">
+        <div class="inner-content-box store-main-img-container">
+          <%= image_tag @store.img_url, class: 'store-profile-main-img' %>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <strong>Noise:</strong>
-  <%= @store.noise %>
-</p>
+    <div class="row">
+      <div class="store-profile-leftcol small-3 columns">
+        <div class="store-profile-location">
+          <p>
+            100 College Ave<br>
+            Berkeley, CA 94705<br>
+            310-850-1928<br>
+            <a href=""> <%= @store.website %></a>
+          </p>
+        </div>
+        <div class="store-profile-review">
+          <%= @store.description %>
+        </div>
+      </div>
 
-<p>
-  <strong>Adventure:</strong>
-  <%= @store.adventure %>
-</p>
+      <div class="store-profile-maincol small-9 columns">
+        <div class="inner-content-box store-profile-type-rating-container">
+          <div class="store-profile-type-rating">
+            <div class="attribute-label">Gusto Scores:</div>
+            <ul class="type-ratings">
+              <li class="type-rating-item" data-rating="8.0">Adventure <span class="type-rating-number">8.0</span></li>
+              <li class="type-rating-item" data-rating="6.4">Convenience <span class="type-rating-number">6.4</span>
+              </li>
+              <li class="type-rating-item" data-rating="2.9">Bargain <span class="type-rating-number">2.9</span></li>
+            </ul>
+            <div class="rating-tooltip"><i class="fa fa-question-circle tooltip-icon"></i> What are these?</div>
+          </div>
+        </div>
 
-<p>
-  <strong>Convenience:</strong>
-  <%= @store.convenience %>
-</p>
+        <div class="store-profile-details-container inner-content-box">
+          <div class="row">
+            <div class="store-profile-details small-6 columns">
+              <div class="store-profile-attributes-box">
+                <div class="store-profile-attribute-type-header">
+                  Goods
+                </div>
+                <!-- CATEGORIES-->
+                <div class="store-profile-attribute">
+                  <div class="store-profile-attribute-content">
+                    <div class="attribute-label">Categories</div>
+                    <ul class="tags">
+                      <li>Clothing</li>
+                      <li>Decorations</li>
+                      <li>Accessories</li>
+                    </ul>
+                    <!-- <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div> -->
+                  </div>
+                  <div class="attribute-details hide"></div>
+                </div>
+                <!-- PRICES-->
+                <div class="store-profile-attribute">
+                  <div class="store-profile-attribute-content">
+                    <div class="attribute-label">Prices</div>
+                    <div class="attribute-rating">
+                      <i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i>
+                    </div>
+                    <div class="attribute-description">Moderate Prices</div>
+                    <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                  </div>
+                  <div class="attribute-details hide"></div>
+                </div>
+                <!-- Variaety-->
+                <div class="store-profile-attribute">
+                  <div class="store-profile-attribute-content">
+                    <div class="attribute-label">Variety</div>
+                    <div class="attribute-rating">
+                      <i class="fa fa-star-o fa-fw"></i><i class="fa fa-star-o fa-fw"></i><i class="fa fa-star-o fa-fw"></i><i class="fa fa-star-o fa-fw"></i><i class="fa fa-star-o fa-fw"></i>
+                    </div>
+                    <div class="attribute-description">High Variety</div>
+                    <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                  </div>
+                  <div class="attribute-details hide"></div>
+                </div>
+                <div class="store-profile-attribute">
+                  <div class="store-profile-attribute-content">
+                    <div class="attribute-label">Sales</div>
+                    <div class="attribute-rating">
+                      <i class="fa fa-tag fa-fw"></i><i class="fa fa-tag fa-fw"></i><i class="fa fa-tag fa-fw"></i><i class="fa fa-tag fa-fw"></i><i class="fa fa-tag fa-fw"></i>
+                    </div>
+                    <div class="attribute-description">Daily/Weekly</div>
+                    <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                  </div>
+                  <div class="attribute-details hide"></div>
+                </div>
 
-<p>
-  <strong>Bargain:</strong>
-  <%= @store.bargain %>
-</p>
+                <div class="store-profile-attribute last padded">
+                  <div class="store-profile-attribute-content">
+                    <div class="attribute-label">Discounts</div>
+                    <div class="attribute-rating">
+                      <i class="fa fa-star-o fa-fw"></i>
+                    </div>
+                    <div class="attribute-description">5% or less</div>
+                    <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                  </div>
+                  <div class="attribute-details hide"></div>
+                </div>
+              </div>
+              <div class="store-profile-attributes-box">
+                <div class="store-profile-attribute-type-header">
+                  Space
+                </div>
 
-<p>
-  <strong>Website:</strong>
-  <%= @store.website %>
-</p>
+              </div>
+            </div>
+            <div class="store-profile-details small-6 columns">
+              <div class="store-profile-attributes-box">
+                <div class="store-profile-attribute-type-header">
+                  Ambience
+                </div>
+              </div>
+              <div class="store-profile-attributes-box">
+                <div class="store-profile-attribute-type-header">
+                  Location
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @store.description %>
-</p>
-
-<%= link_to 'Edit', edit_store_path(@store) %> |
-<%= link_to 'Back', stores_path %>
+      </div>
+    </div>
+  </div>
+</div>
