@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415053653) do
+ActiveRecord::Schema.define(version: 20140415094741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20140415053653) do
     t.integer  "music_style_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "degree"
   end
 
   add_index "store_music_styles", ["music_style_id"], name: "index_store_music_styles_on_music_style_id", using: :btree
@@ -120,6 +121,7 @@ ActiveRecord::Schema.define(version: 20140415053653) do
     t.integer  "personality_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "degree"
   end
 
   add_index "store_personalities", ["personality_id"], name: "index_store_personalities_on_personality_id", using: :btree
@@ -141,6 +143,7 @@ ActiveRecord::Schema.define(version: 20140415053653) do
     t.integer  "style_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "degree"
   end
 
   add_index "store_styles", ["store_id"], name: "index_store_styles_on_store_id", using: :btree
@@ -159,6 +162,14 @@ ActiveRecord::Schema.define(version: 20140415053653) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "img_url"
+    t.integer  "variety"
+    t.integer  "discounts"
+    t.integer  "size"
+    t.integer  "organization"
+    t.integer  "parking"
+    t.string   "public_transit"
+    t.string   "stores_nearby"
+    t.string   "accessible"
   end
 
   create_table "styles", force: true do |t|

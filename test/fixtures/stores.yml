@@ -10,6 +10,11 @@ one:
   bargain: 9.99
   website: MyString
   description: MyString
+  variety: 3
+  discounts: 4
+  size: 5
+  organization: 3
+  parking: 4
 
 two:
   name: MyString
@@ -21,3 +26,8 @@ two:
   bargain: 9.99
   website: MyString
   description: MyString
+  variety: 3
+  discounts: 4
+  size: 5
+  organization: 3
+  parking: 4
