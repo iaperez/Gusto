@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :searches
+
   resources :stores
 
   resources :preferences
@@ -11,7 +13,9 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  root :to => 'browse#home'
+  root :to => 'searches#new'
+
+  get 'browse/home'
 
   get 'browse/profile'
 

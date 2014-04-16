@@ -1,0 +1,24 @@
+<%= form_for(@search) do |f| %>
+    <% if @search.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
+
+          <ul>
+            <% @search.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="finder-header">
+      I'm looking for stores...<br>
+    </div>
+    that sell
+
+    <%= f.collection_select :category_id, Category.order(:name), :id, :name, {include_blank: true}, {:class => "finder-main-select"}  %>
+    and are
+    <%= f.collection_select :personality_id, Personality.order(:name), :id, :name, {include_blank: true}, {:class => "finder-main-select"} %>
+    <div class="actions">
+      <%= f.submit 'Search', :class => 'button' %>
+    </div>
+<% end %>

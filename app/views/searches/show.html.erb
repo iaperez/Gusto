@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="main-content-box finder-form-container small-9 columns">
+    <div class="row">
+      <div class="finder-main-bar small-12 columns">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="store-results show">
+  <div class="content-box-transparent store-result-query"></div>
+  <% @search.stores.each do |store| %>
+      <div class="main-content-box store-result">
+        <div class="row">
+          <div class="store-result-details">
+            <div class="store-result-top-bar">
+              <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a>
+            </div>
+            <div class="store-result-title">
+              <a href=""> <%= store.name %></a>
+            </div>
+            <div class="store-result-location">
+              <a href=""><i class="fa fa-map-marker" style="color: #6f6f6f;"></i></a>
+              123 Main Street | Berkeley, CA
+            </div>
+            <div class="inner-content store-result-attributes-box">
+              <%= render "stores/attribute_tag_list_store_result", name: 'Categories', list: store.categories_names %>
+              <%= render "stores/attribute_tag_list_store_result", name: 'Style', list: store.styles_names_degrees %>
+              <%= render "stores/attribute_tag_list_store_result", name: 'Personality', list: store.personalities_names_degrees %>
+              <%= render "stores/attribute_tag_list_store_result", name: 'Music', list: store.music_styles_names_degrees %>
+            </div>
+          </div>
+          <div class="inner-content-box store-result-main-img-box">
+            <img class="store-result-main-img" src="<%= store.img_url %>">
+          </div>
+
+          <div class="inner-content-box-shaded store-result-bottom-bar">
+            <a href="../stores/<%= store.id %>">View Store Profile</a>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
