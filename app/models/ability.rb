@@ -6,7 +6,16 @@ class Ability
     #
 
     user ||= User.new # guest user (not logged in)
+
+    #only authenticated users can manage preferences,
+    #and their only preferences
     can :manage, Preference, :user_id => user.id
+
+    if user.has_role? :admin
+      can :manage, Store
+    else
+      can :read, Store
+    end
 
     #   if user.admin?
     #     can :manage, :all

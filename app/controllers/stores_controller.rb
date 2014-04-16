@@ -1,5 +1,7 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:show]
+  authorize_resource decent_exposure: true
 
   # GET /stores
   # GET /stores.json
