@@ -11,6 +11,7 @@ class Store < ActiveRecord::Base
   has_many :scents, through: :store_scents
   has_many :music_styles, through: :store_music_styles
 
+  mount_uploader :image, ImageUploader
 
   def categories_list
     categories.pluck(:name).join(", ")

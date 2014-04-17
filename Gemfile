@@ -5,7 +5,6 @@ ruby '2.0.0'
 
 gem 'pg'
 gem 'foundation-rails'
-gem 'paperclip'
 gem 'aws-sdk'
 gem 'font-awesome-rails'
 gem 'devise'
@@ -13,6 +12,7 @@ gem 'cancan'
 gem 'decent_exposure'
 gem 'rolify'
 gem 'geocoder'
+gem 'carrierwave'
 
 group :production, :staging do
 	gem 'rails_12factor'

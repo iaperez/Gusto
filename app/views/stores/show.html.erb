@@ -10,11 +10,12 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="store-profile-leftcol small-3 columns">
         <div id="store-profile-map">
-          <%= image_tag 'http://placehold.it/500x500', class: 'store-profile-main-img' %>
+          <%= @store.image.to_s%>
+          <%= image_tag @store.image.to_s if @store.image? %>
+
         </div>
       </div>
 

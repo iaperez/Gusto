@@ -94,6 +94,7 @@ class StoresController < ApplicationController
                                   :parking,
                                   :public_transit,
                                   :stores_nearby,
-                                  :accessible)
+                                  :accessible,
+                                  :image)
   end
 end
