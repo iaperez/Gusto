@@ -13,6 +13,9 @@ gem 'decent_exposure'
 gem 'rolify'
 gem 'geocoder'
 gem 'carrierwave'
+gem 'fog'
+gem 'unf'
+gem 'carrierwave_direct'
 
 group :production, :staging do
 	gem 'rails_12factor'

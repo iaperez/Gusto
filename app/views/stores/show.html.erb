@@ -13,9 +13,7 @@
     <div class="row">
       <div class="store-profile-leftcol small-3 columns">
         <div id="store-profile-map">
-          <%= @store.image.to_s%>
           <%= image_tag @store.image.to_s if @store.image? %>
-
         </div>
       </div>
 
