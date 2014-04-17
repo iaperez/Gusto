@@ -13,6 +13,8 @@ class Store < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  validates_presence_of :name
+
   def categories_list
     categories.pluck(:name).join(", ")
   end
