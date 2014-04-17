@@ -4,18 +4,22 @@ CarrierWave.configure do |config|
     config.storage = :file
     config.enable_processing = false
     config.root = "#{Rails.root}/tmp/uploads/#{DateTime.now.to_f}.#{rand(999)}.#{rand(999)}"
+  elsif (defined?(SNAP_CI)).nil?
+    config.storage = :file
+    config.enable_processing = false
+    config.root = "#{Rails.root}/tmp/uploads/#{DateTime.now.to_f}.#{rand(999)}.#{rand(999)}"
   else
     config.fog_credentials = {
         provider: 'AWS',
-        # just to make snap-ci works :(
-        aws_access_key_id: 'AKIAIMRG2I3WSV3U7ESQ',
-        aws_secret_access_key: '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'
+        aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
     }
-    config.fog_directory = 'testgusto'
+    config.fog_directory = ENV['AWS_S3_BUCKET']
     config.storage = :fog
   end
 
   config.cache_dir = "#{Rails.root}/tmp/uploads/#{DateTime.now.to_f}.#{rand(999)}.#{rand(999)}"
+  config.fog_directory  = ENV['AWS_S3_BUCKET']
   config.fog_public     = false
   config.fog_attributes = {}
 end
