@@ -4,7 +4,7 @@ CarrierWave.configure do |config|
     config.storage = :file
     config.enable_processing = false
     config.root = "#{Rails.root}/tmp/uploads/#{DateTime.now.to_f}.#{rand(999)}.#{rand(999)}"
-  elsif (defined?(SNAP_CI)).nil?
+  elsif (defined?(SNAP_CI))
     config.storage = :file
     config.enable_processing = false
     config.root = "#{Rails.root}/tmp/uploads/#{DateTime.now.to_f}.#{rand(999)}.#{rand(999)}"
