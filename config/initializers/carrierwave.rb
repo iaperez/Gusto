@@ -11,9 +11,8 @@ CarrierWave.configure do |config|
   else
     config.fog_credentials = {
         provider: 'AWS',
-        # just to make snap_ci works
-        aws_access_key_id: 'AKIAIMRG2I3WSV3U7ESQ',
-        aws_secret_access_key: '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'
+        aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
     }
     config.fog_directory = 'testgusto'
     config.storage = :fog
