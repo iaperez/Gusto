@@ -1,15 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  id: 1
+  name: StoreNameOne
   prices: 1
   busyness: 1
   noise: 1
   adventure: 9.99
   convenience: 9.99
   bargain: 9.99
-  website: MyString
-  description: MyString
+  website: www.storetestone.com
+  description: This is not working one
   variety: 3
   discounts: 4
   size: 5
@@ -17,15 +18,16 @@ one:
   parking: 4
 
 two:
-  name: MyString
+  id: 2
+  name: StoreNameTwo
   prices: 1
   busyness: 1
   noise: 1
   adventure: 9.99
   convenience: 9.99
   bargain: 9.99
-  website: MyString
-  description: MyString
+  website: www.storetesttwo.com
+  description: This is not working two
   variety: 3
   discounts: 4
   size: 5
