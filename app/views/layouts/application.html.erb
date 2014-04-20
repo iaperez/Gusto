@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-
-
   <title><%= content_for?(:title) ? yield(:title) : "Gusto" %></title>
-
-  <%= stylesheet_link_tag "application" %>
-
   <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application" %>
   <%= csrf_meta_tags %>
-
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic|Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
-
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,400italic,600italic,700italic|Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag "foundation-overrides" %>
   <%= stylesheet_link_tag "style" %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <%= stylesheet_link_tag "flaticon" %>
+  <%= javascript_include_tag "script" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
 <div class="wrapper">
-  <div class="contain-to-grid">
+  <div class="contain-to-grid sticky">
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
-        <li class="name sitename">
-          <a href="index.html" class="sitename">Gusto</a>
+        <li class="sitename">
+          <a href="/" class="sitename">Gusto</a>
         </li>
         <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-
       </ul>
       <section class="top-bar-section">
         <!-- Left Nav Section -->
@@ -48,18 +43,18 @@
             </div>
           </li>
           <% if user_signed_in? %>
-          <li class = "has-dropdown">
-            <a href="#">
-                <i class="fa fa-user"></i> <%= current_user.email %>
-            </a>
-            <ul class="dropdown">
-              <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
-            </ul>
-          </li>
+              <li class="has-dropdown">
+                <a href="#">
+                  <i class="fa fa-user"></i> <%= current_user.email %>
+                </a>
+                <ul class="dropdown">
+                  <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %> </li>
+                </ul>
+              </li>
           <% else %>
-          <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>
-          <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> </li>
+              <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> </li>
+              <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %> </li>
           <% end %>
 
         </ul>
@@ -68,15 +63,33 @@
   </div>
 
   <% if notice %>
-     <!-- <p class="alert alert-success"><%= notice %></p>    -->
+      <!-- <p class="alert alert-success"><%= notice %></p>    -->
   <% end %>
   <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
-  <%=  yield %>
+  <%= yield %>
+</div>
+<div class="contain-to-grid sticky">
+  <nav class="top-bar bottom-bar">
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="title-area">
+        <li class="name sitename">
+          Gusto
+        </li>
+      </ul>
 
-  <%= javascript_include_tag "application" %>
+      <!-- Right Nav Section -->
+      <ul class="right">
+
+        <li><a href="register.html">Contact</a></li>
+        <li><a href="">About</a></li>
+        <li class="copyright">&copy; 2014 Gusto</li>
+      </ul>
+    </section>
+  </nav>
 </div>
 </body>
 </html>
