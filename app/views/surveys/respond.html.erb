@@ -27,8 +27,9 @@
                             <% end %>
                             <%= h answer.content %>
                           </h5>
+                          <%= image_tag answer.image.to_s if answer.image? %>
                         </div>
-                        <%= image_tag answer.image.to_s if answer.image? %>
+
 
                       </li>
                   <% end %>
