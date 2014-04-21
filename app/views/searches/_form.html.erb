@@ -19,7 +19,7 @@
         that sell
         <%= f.collection_select :category_id, Category.order(:name), :id, :name, {include_blank: true}, {:class => "finder-main-select"} %>
         and I want
-        <%= f.collection_select :personality_id, Personality.order(:name), :id, :name, {include_blank: true}, {:class => "finder-main-select"} %>
+        <%= f.collection_select :features_id, Feature.order(:name), :id, :name, {include_blank: true}, {:class => "finder-main-select"} %>
       </div>
     </div>
     <div class="row">
@@ -30,38 +30,88 @@
       <div id="finder-extra-options" class="inner-content-box small-12 columns">
 
         <div class="extra-option-container">
+          <%= f.hidden_field :space_type_id %>
           <div class="flaticon-store1 extra-option-header-icon"></div>
           <div class="extra-option-header gusto">Space</div>
-          <div class="extra-option">Large</div>
-          <div class="extra-option">Cozy</div>
+          <% SpaceType.all.each do |nn| %>
+              <% if @search.space_type_id.blank? %>
+                  <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
+              <% else %>
+                  <% if @search.space_type_id == nn.id %>
+                      <div class="extra-option option-selected" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% else %>
+                      <div class="extra-option option-inactive" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% end %>
+              <% end %>
+          <% end %>
         </div>
 
         <div class="extra-option-container">
+          <%= f.hidden_field :location_type_id %>
           <div class="flaticon-map32 extra-option-header-icon"></div>
           <div class="extra-option-header gusto">Location</div>
-          <div class="extra-option">Urban</div>
-          <div class="extra-option">Suburban</div>
+          <% LocationType.all.each do |nn| %>
+              <% if @search.location_type_id.blank? %>
+                  <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
+              <% else %>
+                  <% if @search.location_type_id == nn.id %>
+                      <div class="extra-option option-selected" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% else %>
+                      <div class="extra-option option-inactive" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% end %>
+              <% end %>
+          <% end %>
         </div>
 
         <div class="extra-option-container">
+          <%= f.hidden_field :goods_type_id %>
           <div class="flaticon-full22 extra-option-header-icon"></div>
           <div class="extra-option-header gusto">Goods</div>
-          <div class="extra-option">Affordable</div>
-          <div class="extra-option">High-End</div>
+          <% GoodsType.all.each do |nn| %>
+              <% if @search.goods_type_id.blank? %>
+                  <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
+              <% else %>
+                  <% if @search.goods_type_id == nn.id %>
+                      <div class="extra-option option-selected" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% else %>
+                      <div class="extra-option option-inactive" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% end %>
+              <% end %>
+          <% end %>
         </div>
 
         <div class="extra-option-container">
+          <%= f.hidden_field :ambience_type_id %>
           <div class="flaticon-bright1 extra-option-header-icon"></div>
           <div class="extra-option-header gusto">Ambience</div>
-          <div class="extra-option">Mellow</div>
-          <div class="extra-option">Bustling</div>
+          <% AmbienceType.all.each do |nn| %>
+              <% if @search.ambience_type_id.blank? %>
+                  <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
+              <% else %>
+                  <% if @search.ambience_type_id == nn.id %>
+                      <div class="extra-option option-selected" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% else %>
+                      <div class="extra-option option-inactive" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% end %>
+              <% end %>
+          <% end %>
         </div>
 
         <div class="extra-option-container">
+          <%= f.hidden_field :character_type_id %>
           <div class="flaticon-face3 extra-option-header-icon"></div>
           <div class="extra-option-header gusto">Character</div>
-          <div class="extra-option">Friendly</div>
-          <div class="extra-option">Hands-Off</div>
+          <% CharacterType.all.each do |nn| %>
+              <% if @search.character_type_id.blank? %>
+                  <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
+              <% else %>
+                  <% if @search.character_type_id == nn.id %>
+                      <div class="extra-option option-selected" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% else %>
+                      <div class="extra-option option-inactive" id="<%= nn.id %>"> <%= nn.name %></div>
+                  <% end %>
+              <% end %>
+          <% end %>
         </div>
 
         <div class="extra-options-hide">

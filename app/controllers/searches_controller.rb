@@ -70,6 +70,6 @@ class SearchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def search_params
-      params.require(:search).permit(:category_id, :personality_id)
+      params.require(:search).permit(:category_id, :features_id, :space_type_id, :location_type_id, :goods_type_id , :ambience_type_id, :character_type_id)
     end
 end

@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417033653) do
+ActiveRecord::Schema.define(version: 20140421025946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ambience_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -24,6 +30,30 @@ ActiveRecord::Schema.define(version: 20140417033653) do
   end
 
   create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "character_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "features", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "goods_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "location_types", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -86,13 +116,24 @@ ActiveRecord::Schema.define(version: 20140417033653) do
 
   create_table "searches", force: true do |t|
     t.integer  "category_id"
-    t.integer  "personality_id"
+    t.integer  "features_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "space_type_id"
+    t.integer  "location_type_id"
+    t.integer  "goods_type_id"
+    t.integer  "ambience_type_id"
+    t.integer  "character_type_id"
   end
 
   add_index "searches", ["category_id"], name: "index_searches_on_category_id", using: :btree
-  add_index "searches", ["personality_id"], name: "index_searches_on_personality_id", using: :btree
+  add_index "searches", ["features_id"], name: "index_searches_on_features_id", using: :btree
+
+  create_table "space_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "store_categories", force: true do |t|
     t.integer  "store_id"
@@ -103,6 +144,17 @@ ActiveRecord::Schema.define(version: 20140417033653) do
 
   add_index "store_categories", ["category_id"], name: "index_store_categories_on_category_id", using: :btree
   add_index "store_categories", ["store_id"], name: "index_store_categories_on_store_id", using: :btree
+
+  create_table "store_features", force: true do |t|
+    t.integer  "store_id"
+    t.integer  "type_id"
+    t.decimal  "degree"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "store_features", ["store_id"], name: "index_store_features_on_store_id", using: :btree
+  add_index "store_features", ["type_id"], name: "index_store_features_on_type_id", using: :btree
 
   create_table "store_locations", force: true do |t|
     t.string   "address"

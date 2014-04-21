@@ -1,9 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  category_id: 
-  personality_id: 
-
+  category_id: 1
+  features_id: 1
 two:
-  category_id: 
-  personality_id: 
+  category_id: 2
+  features_id: 2

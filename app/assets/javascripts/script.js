@@ -21,6 +21,22 @@ function mapsInitialize(lat, long, targetID) {
     });
 }
 
+(function() {
+    $(document).on('click', 'form .remove_fields', function(event) {
+        $(this).prev('input[type=hidden]').val('1');
+        $(this).closest('.fields').hide();
+        return event.preventDefault();
+    });
+
+   $(document).on('click', 'form .add_fields', function(event) {
+        var regexp, time;
+        time = new Date().getTime();
+        regexp = new RegExp($(this).data('id'), 'g');
+        $(this).before($(this).data('fields').replace(regexp, time));
+        return event.preventDefault();
+    });
+}).call(this);
+
 $(document).ready(function() {
 
     /////////// Geolocation stuff ///////////
@@ -287,11 +303,14 @@ $(document).ready(function() {
             // deselect
             $(this).removeClass("option-selected");
             $(this).siblings(".extra-option").removeClass("option-inactive");
+            $(this).siblings("input[type=hidden]").val('')
+
         } else if ($(this).hasClass("option-inactive")) {
             // do nothing
         } else {
             $(this).addClass("option-selected");
             $(this).siblings(".extra-option").addClass("option-inactive");
+            $(this).siblings("input[type=hidden]").val(this.id)
         }
     });
 
