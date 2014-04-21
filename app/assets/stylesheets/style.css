@@ -791,7 +791,7 @@ img.store-result-main-img-thumb.last {
 
 .store-result-details ul.tags {
     float: left;
-    display: inline;
+    display: inline-flex;
     list-style-type: none;
     margin: 2px 0px;
 }

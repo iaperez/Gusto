@@ -1,0 +1,13 @@
+<ul class="tags">
+  <% tag_list.each do |t| %>
+      <% if t.is_a?(Array) %>
+          <li style='opacity:<%= t[1]%>'>
+            <%= t[0] %>
+          </li>
+      <% else %>
+          <li>
+            <%= t %>
+          </li>
+      <% end %>
+  <% end %>
+</ul>
