@@ -1,36 +1,48 @@
-<div class="row">
-  <div class="small-6  columns"><br/>
+<p id="notice"><%= notice %></p>
 
-    <p id="notice"><%= notice %></p>
-
-    <%= form_tag responses_survey_path, method: :put do %>
+<%= form_tag responses_survey_path, method: :put do %>
+    <div class="large-8 columns">
+      <div class="row">
         <p>
-          <strong>Name:</strong>
-          <%= @survey.name %>
+          <h1><%= @survey.name %></h1>
+
         </p>
-        <ol>
-          <% for question in @survey.questions %>
-              <li>
-                <%= h question.content %>
-                <ul>
-                  <% for answer in question.answers %>
-                      <li>
-                        <% if @responded_answers.include?(answer.id) %>
-                            <%= check_box_tag "answers_ids[]", answer.id, checked = true %>
-                        <% else %>
-                            <%= check_box_tag "answers_ids[]", answer.id %>
-                        <% end %>
-                        <%= h answer.content %>
-                      </li>
-                  <% end %>
-                </ul>
-              </li>
-          <% end %>
-        </ol>
-        <div class="actions">
-          <%= submit_tag "Send your answers!",:class => 'button' %>
+      </div>
+    </div>
+    <% for question in @survey.questions %>
+        <div class="large-8 columns">
+          <div class="row">
+            <h3><%= question.content %></h3>
+          </div>
         </div>
-        <%= link_to 'Back', surveys_path %>
+        <div class="large-8 columns">
+          <div class="row">
+            <% for answer in question.answers %>
+                <div class="large-4 small-6 columns">
+                  <%= image_tag answer.image.to_s if answer.image? %>
+                  <div class="panel">
+                    <h6 class="subheader"></h6>
+                    <h5>
+                      <% if @responded_answers.include?(answer.id) %>
+                          <%= check_box_tag "answers_ids[]", answer.id, checked = true %>
+                      <% else %>
+                          <%= check_box_tag "answers_ids[]", answer.id %>
+                      <% end %>
+                      <%= h answer.content %>
+                    </h5>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+        </div>
     <% end %>
-  </div>
-</div>
+    <div class="large-8 columns">
+      <div class="row">
+        <div class="actions">
+          <%= submit_tag "Send your answers!", :class => 'button' %>
+          <br>
+          <%= link_to 'Back', surveys_path %>
+        </div>
+      </div>
+    </div>
+<% end %>
