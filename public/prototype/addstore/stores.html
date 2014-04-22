@@ -17,6 +17,8 @@
   <script src="../_js/vendor/jquery.js"></script>
   <script src="../_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
   <script src="../_js/foundation.min.js"></script>
+  <script src="../_js/foundation.dropdown.js"></script>
+  <script src="../_js/foundation.topbar.js"></script>  
   <script src="../_js/script.js"></script>
   <script type="text/javascript">
   function confirm_delete() {
@@ -28,7 +30,7 @@
   </head>
   <?php
 
-  require("db_vars.php");
+  require("../_php/db_vars.php");
 
   // connect to the database server and select the appropriate database for use
   $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_error() );
@@ -117,7 +119,7 @@
                 array_push($this_tag_array, $tag_name);
               }
               $this_tag_array_counted = array_count_values($this_tag_array);
-              echo "<form action='delete.php' method='post'>";
+              echo "<form action='../_php/delete.php' method='post'>";
                 echo '<tr>';
                 echo '<td>'.$this_store_name.'</td>';
                 echo '<td>'.$this_store_address.'</td>';

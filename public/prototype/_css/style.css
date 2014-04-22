@@ -1,4 +1,8 @@
+/*/////////////////////////////////////////////////*/
+/* Reference and Notes */
+/*/////////////////////////////////////////////////*/
 /* 
+
 COLORS 
 almost-white: #fcfcfc;
 gray01: #f5f5f5;
@@ -8,8 +12,9 @@ gray04: #d9d9d9;
 gray05: #BDBDBD;
 gray06: #ABABAB;
 gray07: #7D7D7D; //
-gray08: #404040;
-gray09: #212121;
+gray08: #575757;
+gray09: #404040;
+gray10: #212121;
 
 FONTS
 
@@ -22,7 +27,11 @@ VENDOR PREFIX REFERENCE:
 -moz - Firefox 1-3.6:
 none - Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+
 
-/* Site Wide Styles */
+*/
+
+/*/////////////////////////////////////////////////*/
+/* Site-Wide Styles */
+/*/////////////////////////////////////////////////*/
 
 html, body { width:100%; height:100%; }
 .wrapper { 
@@ -30,27 +39,6 @@ html, body { width:100%; height:100%; }
 	height:auto !important;
 	height:100%;    
 	margin: 0 auto -50px;  /* Bottom value must = footer height */
-}
-
-.push { width:100%; height:50px; position:relative; bottom:0; }
-
-/* Footer/Bottom Bar */
-
-.bottom-bar{
-  overflow: hidden;
-  height: 50px;
-  line-height: 50px;
-  position: relative;
-  background: #333333;
-	bottom: 0px;
-	width: 100%;
-	margin-bottom: 0px;
-}
-
-.bottom-bar li.copyright{
-	font-size: .9rem;
-	padding: 0 20px 2px 15px;
-	line-height: 45px;
 }
 
 .main-content-box{
@@ -96,35 +84,38 @@ html, body { width:100%; height:100%; }
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);*/
 }
 
+/*/////////////////////////////////////////////////*/
+/* Footer */
+/*/////////////////////////////////////////////////*/
 
-/* Registration Form Styles */
+/* This is a spacer that pushes the bottom bar to the bottom of the window */
+.push { width:100%; height:50px; position:relative; bottom:0; }
+
+.bottom-bar{
+  overflow: hidden;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  background: #333333;
+	bottom: 0px;
+	width: 100%;
+	margin-bottom: 0px;
+}
+
+.bottom-bar li.copyright{
+	font-size: .9rem;
+	padding: 0 20px 2px 15px;
+	line-height: 45px;
+}
+
+/*/////////////////////////////////////////////////*/
+/* User Registration Form */
+/*/////////////////////////////////////////////////*/
+
 
 #registration-form {
 	margin: 0px auto;
 	float: none;
-}
-
-#registration-form-2 {
-	margin: 0px auto;
-	float: none;
-	text-align: center;
-}
-
-.reg-images-box {
-	width: 100%;
-	border-radius: 6px; 
-	padding: 20px; 
-	border: 1px solid #eee;
-	box-shadow: 2px 2px 1px #c9c9c9;
-
-}
-
-.reg-image-row{
-	margin: 12px auto;
-}
-
-img.reg-image {
-
 }
 
 .register-header {
@@ -134,7 +125,15 @@ img.reg-image {
 	padding: 20px;
 }
 
-/* Add Store Form and Survey */
+.register-survey {
+	margin: 0px auto;
+	float: none;
+	text-align: center;
+}
+
+/*/////////////////////////////////////////////////*/
+/* Add Store Form */
+/*/////////////////////////////////////////////////*/
 
 #add-store-form {
 	margin: 0px auto;
@@ -152,6 +151,14 @@ img.reg-image {
 	float: none;
 	text-align: center;
 }
+
+input#new-store-name{
+	margin-bottom: 0px;
+}
+
+/*/////////////////////////////////////////////////*/
+/* Image Survey */
+/*/////////////////////////////////////////////////*/
 
 .survey-images-container {
 	width: 100%;
@@ -172,21 +179,17 @@ img.survey-image {
 }
 
 input.survey_radio {
-
 }
 
-input#new-store-name{
-	margin-bottom: 0px;
-}
-
-/* Store Page Styles */
+/*/////////////////////////////////////////////////*/
+/* Store Profile */
+/*/////////////////////////////////////////////////*/
 
 .store-profile {
 	margin: 10px auto;
 	width: 100%;
 	max-width: 1260px;
 	float: none;
-
 }
 
 #store-profile-map {
@@ -196,15 +199,17 @@ input#new-store-name{
 
 img.store-profile-main-img {
 	float: left;
+/*	-webkit-box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);
+  -moz-box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);
+  box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);*/
 }
-
 
 .store-profile-topbar{
 	margin: 0px 0px 8px 16px;
 }
 
 .store-profile-bookmark{
-	font-size: .8em;
+	font-size: .9em;
 }
 .store-profile-bookmark a{
 	color: #6f6f6f;
@@ -267,7 +272,7 @@ img.store-profile-main-img {
 
 .store-profile-item-thumbs {
 	float:left;
-	padding:4px 4px 0px 14px;
+	padding:4px 14px 0px 14px;
 }
 
 
@@ -275,6 +280,7 @@ img.store-profile-main-img {
 	position: absolute;
 	bottom: 16px;
 	left: 20px;
+	color: #6f6f6f;
 }
 .store-profile-bottom-bar a{
 	color: #6f6f6f;
@@ -369,6 +375,22 @@ ul.store-profile-categories li {
 	color: #000;
 }
 
+#rating-tooltip-box {
+	position: absolute;
+	display: none;
+	bottom: 10px;
+	right: 20px;
+	width: 300px;
+	height: 200px;
+	background-color: #fff;
+	padding: 2px 8px;
+	margin-right: 6px;
+	border-radius: 8px;
+	border: 1px solid #d9d9d9;
+}
+
+
+
 .store-profile-details {
 	float: left;
 }
@@ -447,7 +469,7 @@ ul.store-profile-categories li {
 	font-weight: 400;
 	margin: 0px 6px;
 	width: 25%;
-	color: #7D7D7D;
+	color: #575757;
 }
 
 .store-profile-attribute .attribute-details {
@@ -456,7 +478,7 @@ ul.store-profile-categories li {
 	width: 100%;
 	/*height: 80px;*/
 	padding-left: 20px;
-	font-size: .9em;
+	font-size: .9rem;
 }
 
 .store-profile-attribute .attribute-details-icon {
@@ -472,6 +494,100 @@ ul.store-profile-categories li {
 	margin: 1px 12px 0px 12px;
 }
 
+.store-profile-attribute .flaticon-sale{
+	font-size: 1.3rem;
+}
+.store-profile-attribute .flaticon-shelf1{
+	font-size: 1.3rem;
+}
+
+.attribute-details-container{
+	font-size: .8rem;
+	color: #575757;
+	height: 26px;
+	margin-left: 14px;
+	padding: 8px 0px;
+}
+
+.attribute-details-label{
+	float: left;
+	color: inherit;
+	width: 25%;
+	text-align: right;
+	padding-right: 8px;
+	white-space: nowrap;
+}
+
+.attribute-details-description{
+	float: left;
+	color: inherit;
+	font-size: .8rem;
+	white-space: nowrap;
+	font-weight: 400;
+	margin: 0px 6px;
+	width: 25%;
+}
+
+.attribute-details-rating{
+	float: left;
+	white-space: nowrap;
+	color: inherit;
+}
+
+.attribute-details-user-select{
+	float: left;
+	white-space: nowrap;
+	color: inherit;
+}
+.attribute-details-user-tags{
+	float: left;
+	white-space: nowrap;
+	color: inherit;
+}
+
+.attribute-details-user-description{
+	float: left;
+	color: inherit;
+	font-size: .8rem;
+	white-space: nowrap;
+	font-weight: 400;
+	margin: 0px 6px;
+	width: 25%;
+}
+
+.user-select {
+	margin-top: 4px;
+	border-top: 1px dotted #e3e3e3;
+}
+
+.user-rating-icon {
+	opacity: 0.25;
+	cursor: pointer;
+}
+
+.attribute-details-tags-container {
+	float: left;
+	/*white-space: nowrap;*/
+	color: inherit;
+}
+
+ul.attribute-details-tags {
+	display: inline;
+	list-style-type: none;
+	margin-left: 0px;
+	line-height: 12px;
+}
+
+ul.attribute-details-tags li {
+	display: inline;
+	font-size: .7em;
+	color: #000;
+	background-color: #f5f5f5;
+	padding: 1px 3px;
+	border-radius: 6px;
+	border: 1px solid #e6e6e6;
+}
+
 .store-profile-comment-box{
 	margin: 8px 0px;
 	padding: 12px;
@@ -484,120 +600,9 @@ ul.store-profile-categories li {
 	margin:	0px;
 }
 
-
-/* Finder Bar Styles */
-
-#finder-form{
-	min-height: 600px
-}
-
-.finder-form-container {
-	float: none;
-	margin: 6px auto 0px auto;
-
-}
-
-.finder-header {
-	/*	font-family: 'Oleo Script Swash Caps', cursive !important;*/
-	/* Find a cool font here, maybe? */
-	font-size: 1.3em;
-	margin-bottom: 12px;	
-}
-
-.finder-extra-header {
-	margin: 0px auto 10px auto;
-	text-align: center;
-	font-size: 1.2em;
-}
-.toggle-extra-bars{
-	/*color: #7D7D7D;*/
-}
-
-.finder-main-bar {
-	margin: 10px auto 0px auto;
-	width: 90%;
-	float: none;
-	font-size: 1.2rem;
-	text-align: center;
-}
-
-.finder-main-select {
-	font-family: 'Crimson Text', serif;
-	font-size: 1rem;
-	width: 200px;
-	line-height: 20px;
-}
-
-#finder-extra-bars {
-	margin: 0px auto 10px auto;
-	font-size: 1.0rem;
-	text-align: center;
-	display: none;
-}
-
-.finder-extra-bar-category{
-
-  width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-.text-vert-center{
-	height: 30px;
-	line-height: 35px;
-}
-
-.finder-extra-bar-category .category-name {
-	float: left;
-	text-align: right;
-	height: 30px;
-	line-height: 35px;
-	width: 40%;
-	padding-right: 12px;
-}
-
-.finder-extra-bar-category .category-select {
-	float: left;
-	text-align: left;
-
-
-}
-
-.finder-extra-bar-category .category-extra-show {
-	height: 30px;
-	line-height: 35px;
-	float: left;
-	text-align: left;
-}
-
-.finder-extra-bar-category .category-extra {
-
-	float: left;
-	text-align: left;
-	display: none;
-}
-
-.finder-extra-bar {
-	float: none;
-}
-
-.finder-extra-select {
-	font-size: 1.0rem;
-	width: 250px;
-	margin-right: 8px;
-}
-
-
-
-#finder-submit{
-	margin-top: 8px;
-	margin-bottom: 0px;
-	padding: .5rem 1.5rem;
-}
-
-/* Store Search Result Styles */
+/*/////////////////////////////////////////////////*/
+/* Store Search Results */
+/*/////////////////////////////////////////////////*/
 
 #store-results {
 	display:none;
@@ -621,6 +626,43 @@ ul.store-profile-categories li {
 
 img.store-result-main-img {
 	float: left;
+/*	-webkit-box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);
+  -moz-box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);
+  box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);*/
+}
+
+img.store-result-main-img-narrow {
+	float: left;
+	width: 43%;
+	margin-right: 8px;
+/*	-webkit-box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);
+  -moz-box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);
+  box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);*/
+}
+
+/* Use the left and right designations if it's only a two photo layout without thumbs on right*/
+img.store-result-main-img-narrow.left {
+	float: left;
+	width: 47%;
+	margin: 0px 10px;
+}
+
+img.store-result-main-img-narrow.right {
+	float: right;
+	width: 47%;
+	margin: 0px 10px;
+}
+
+img.store-result-main-img-thumb {
+	margin-bottom: 22px;
+	float: right;
+	width: 12%;
+/*	-webkit-box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);
+  -moz-box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);
+  box-shadow: 1px 1px 1px rgba(125, 125, 125, 0.5);*/
+}
+img.store-result-main-img-thumb.last {
+	margin-bottom: 0px;
 }
 
 .store-result-item-thumbs {
@@ -654,8 +696,9 @@ img.store-result-main-img {
 	float: left;
 	width: 100%;
 	padding: 8px;
-	margin-top: 4px;
+	margin: 8px 0px;
 	background-color: #f0f0f0;
+	color: #6f6f6f;
 }
 .store-result-bottom-bar a{
 	color: #6f6f6f;
@@ -698,11 +741,9 @@ img.store-result-main-img {
 
 .store-result-main-img-box {
 	width: 70%;
-	float: left;
+	float: right;
 }
 .store-result-details {
-	padding-left: 8px;
-	padding-right: 0px;
 	float: left;
 	width: 30%;
 }
@@ -802,20 +843,201 @@ img.store-result-main-img {
 
 .store-result-attribute .attribute-rating {
 	float: left;
-	/*font-size: 1em;*/
+	font-size: .7em;
 	white-space: nowrap;
 	margin: 1px 12px 0px 12px;
 }
 
+.store-result-attribute .attribute-description {
+	float: left;
+	font-size: .7em;
+}
 
-/* Misc Styles */
+
+/*/////////////////////////////////////////////////*/
+/* Finder Bar Styles */
+/*/////////////////////////////////////////////////*/
+
+#finder-form{
+	/*min-height: 400px*/
+}
+
+.finder-form-container {
+	float: none;
+	margin: 6px auto 0px auto;
+
+}
+
+.finder-header {
+	/*	font-family: 'Oleo Script Swash Caps', cursive !important;*/
+	/* Find a cool font here, maybe? */
+	font-size: 1.3em;
+	margin-bottom: 12px;	
+}
+
+.finder-extra-header {
+	margin: 0px auto 10px auto;
+	text-align: center;
+	font-size: 1.2em;
+}
+.toggle-extra-options{
+	/*color: #7D7D7D;*/
+}
+
+.finder-main-bar {
+	margin: 10px auto 0px auto;
+	width: 90%;
+	float: none;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.finder-main-select {
+	font-family: 'Crimson Text', serif;
+	font-size: 1rem;
+	width: 200px;
+	line-height: 20px;
+}
+
+#finder-submit{
+	margin-top: 8px;
+	margin-bottom: 0px;
+	padding: .5rem 1.5rem;
+}
+
+#finder-extra-options {
+	display: none;
+	float: none;
+	margin: 10px auto 10px auto;
+	text-align: center;
+	width: 85%;
+}
+
+.extra-options-hide{
+	width: 100%;
+	text-align: center;
+	height: 20px;
+	float: left;
+}
+
+a.extra-options-hide-link{
+	text-transform: uppercase;
+	font-size: 0.5rem;
+	opacity: 0.5;
+}
+
+a.extra-options-hide-link:hover{
+	opacity: 1.0;
+}
+
+.extra-option-container {
+	float: left;
+	width: 20%;
+	background-color: #fff;
+	color: #575757;
+	text-align: center;
+	padding: 0px 4px 12px 4px;
+}
+
+.extra-option-header-icon {
+	text-align: center;
+	font-size: 2.4rem;
+	color: inherit;
+	padding-top: 8px;
+}
+
+.extra-option-header-icon.flaticon-store1{
+	font-size: 2.0rem;
+	padding-top: 14px;
+}
+
+.extra-option-header {
+	text-align: center;
+	font-size: 1.4rem;
+	color: inherit;
+	padding: 8px 0px;
+	border-bottom: 1px dotted #e3e3e3;
+	margin-bottom: 10px
+}
+
+.extra-option {
+	font-size: 1.1rem;
+	padding: 8px 0px;
+	color: inherit;
+	border: 1px solid #fff;
+	cursor: pointer;
+}
+
+.extra-option.option-inactive {
+	font-size: 1.1rem;
+	padding: 8px 0px;
+	color: #e3e3e3;
+	border: 1px solid #fff;
+}
+
+.extra-option.option-selected {
+	font-size: 1.1rem;
+	padding: 8px 0px;
+	color: #000;
+	border-radius: 3px;
+	border: 1px dotted #7D7D7D;
+	background-color: #fcfcfc;
+}
+
+/* Unused Finder Stuff */
+
+/*.text-vert-center{
+	height: 30px;
+	line-height: 35px;
+}
+.finder-extra-bar-category{
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.finder-extra-bar-category .category-name {
+	float: left;
+	text-align: right;
+	height: 30px;
+	line-height: 35px;
+	width: 40%;
+	padding-right: 12px;
+}
+.finder-extra-bar-category .category-select {
+	float: left;
+	text-align: left;
+}
+.finder-extra-bar-category .category-extra-show {
+	height: 30px;
+	line-height: 35px;
+	float: left;
+	text-align: left;
+}
+.finder-extra-bar-category .category-extra {
+	float: left;
+	text-align: left;
+	display: none;
+}
+.finder-extra-bar {
+	float: none;
+}
+.finder-extra-select {
+	font-size: 1.0rem;
+	width: 250px;
+	margin-right: 8px;
+}*/
+/* End unused finder stuff */
+
+/*/////////////////////////////////////////////////*/
+/* Text and Miscellaneous Styles */
+/*/////////////////////////////////////////////////*/
 
 .gray-ital{
 	font-style: italic;
 	color: #404040;
 	font-size: .8em;
 }
-
 .black {
 	color: #000;
 }
@@ -825,6 +1047,28 @@ img.store-result-main-img {
 i.bookmark {
 	color: #404040;
 }
+i.inactive {
+	opacity: .2;
+}
+.gusto {
+	font-family: 'Oleo Script Swash Caps', cursive !important;
+	font-weight: normal !important;
+	font-size: 1.3rem !important;
+}
+.gusto-sm {
+	font-family: 'Oleo Script Swash Caps', cursive !important;
+	font-weight: normal !important;
+	font-size: 1rem !important;
+}
 
+.gusto-icon {
+	font-family: 'Oleo Script Swash Caps', cursive !important;
+	padding: 0px 5px 0px 4px;
+}
+
+
+/*/////////////////////////////////////////////////*/
 /* Media Styles */
+/*/////////////////////////////////////////////////*/
+
 

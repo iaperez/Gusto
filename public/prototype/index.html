@@ -9,14 +9,17 @@
   <link rel="stylesheet" href="_css/normalize.css" />
   <link rel="stylesheet" href="_css/foundation.css" />
   <link rel="stylesheet" href="_css/foundation-overrides.css" />
-  <link rel="stylesheet" href="_css/style.css" />
   <link rel="stylesheet" href="_css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/flaticons/flaticon.css"> 
+  <link rel="stylesheet" href="_css/style.css" />
   <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="_js/vendor/modernizr.js"></script>
   <script src="_js/vendor/jquery.js"></script>
   <script src="_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
   <script src="_js/foundation.min.js"></script>
+  <script src="_js/foundation.dropdown.js"></script>
+  <script src="_js/foundation.topbar.js"></script>
   <script src="_js/script.js"></script>
   </head>
 <body>
@@ -49,9 +52,17 @@
                 <a href="#" id="set-location-button" class="button expand">Set</a>
               </div>
             </div>          
-          </li>          
-          <li><a href="register.html">Create Account</a></li>
-          <li><a href="login.html">Sign In</a></li>     
+          </li>
+          <li class="has-dropdown">
+            <a href="#"><i class="fa fa-user fa-fw"></i> Jake2014</a>
+            <ul class="dropdown">
+              <li><a href="#">Edit Profile</a></li>
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          </li>
+ 
+<!--           <li><a href="register.html">Create Account</a></li>
+          <li><a href="login.html">Sign In</a></li>      -->
         </ul>
       </section>
     </nav>
@@ -74,14 +85,7 @@
                 <option value="accessories">Accessories</option>
                 <option value="">Anything</option>
               </select>
-               and are
-              <select id="finder-store-personality" class="finder-main-select">
-                <option value="welcoming">Welcoming</option>
-                <option value="lively">Lively</option>
-                <option value="fun">Fun</option>
-                <option value="high-class">High-Class</option>
-                <option value="private">Private</option>
-              </select>
+
               and I want
               <select id="finder-store-type" class="finder-main-select">
                 <option value="adventure">Adventure</option>
@@ -93,153 +97,52 @@
         </div>
         <div class="row">
           <div class="finder-extra-header small-12 columns">
-              <a href="" class="toggle-extra-bars">And I <em>specifically</em> want stores where ...</a>
+              <a href="" class="toggle-extra-options">And I <em>specifically prefer</em> stores that are ...</a>
               <br><span class="gray-ital">(optional)</span>
           </div>
-          <div id="finder-extra-bars" class="small-12 columns">
+          <div id="finder-extra-options" class="inner-content-box small-12 columns">
+
+            <div class="extra-option-container">
+              <div class="flaticon-store1 extra-option-header-icon"></div>
+              <div class="extra-option-header gusto">Space</div>
+              <div class="extra-option">Large</div>
+              <div class="extra-option">Cozy</div>
+            </div>
+
             
-            <div class="finder-extra-bar-category">
-              <div class="category-name"></div>
-              <div class="category-select">
-                <select id="finder-store-space-1" class="finder-extra-select">
-                  <option value="label">The space is</option>
-                  <option value=""></option>
-                  <option value="">small in size</option>
-                  <option value="">large in size</option>
-                  <option value="">highly organized</option>
-                  <option value="">rather disorganized</option>
-                  <option value="">very quiet</option>
-                  <option value="">very loud</option>
-                  <option value="">often crowded</option>
-                  <option value="">rarely crowded</option>
-                </select>
-              </div>
-              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
-              <div class="category-extra">
-                and... 
-                <select id="finder-store-space-2" class="finder-extra-select">
-                  <option value="label">The space is</option>
-                  <option value=""></option>
-                  <option value="">small in size</option>
-                  <option value="">large in size</option>
-                  <option value="">highly organized</option>
-                  <option value="">rather disorganized</option>
-                  <option value="">very quiet</option>
-                  <option value="">very loud</option>
-                  <option value="">often crowded</option>
-                  <option value="">rarely crowded</option>
-                </select>
-              </div>
+            <div class="extra-option-container">
+              <div class="flaticon-map32 extra-option-header-icon"></div>
+              <div class="extra-option-header gusto">Location</div>
+              <div class="extra-option">Urban</div>
+              <div class="extra-option">Suburban</div>
             </div>
 
-            <div class="finder-extra-bar-category">
-              <div class="category-name"></div>
-              <div class="category-select">
-                <select id="finder-store-goods-1" class="finder-extra-select">
-                  <option value="label">The goods are</option>
-                  <option value=""></option>
-                  <option value="">inexpensive</option>
-                  <option value="">expensive</option>
-                  <option value="">in high variety</option>
-                  <option value="">in low variety</option>
-                  <option value="">often on sale</option>
-                  <option value="">deeply discounted</option>
-                </select>
-              </div>
-              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
-              <div class="category-extra">
-                and... 
-                <select id="finder-store-goods-2" class="finder-extra-select">
-                  <option value="label">The goods are</option>
-                  <option value=""></option>
-                  <option value="">inexpensive</option>
-                  <option value="">expensive</option>
-                  <option value="">in high variety</option>
-                  <option value="">in low variety</option>
-                  <option value="">often on sale</option>
-                  <option value="">deeply discounted</option>
-                </select>
-              </div>
+
+            <div class="extra-option-container">
+              <div class="flaticon-full22 extra-option-header-icon"></div>
+              <div class="extra-option-header gusto">Goods</div>
+              <div class="extra-option">Affordable</div>
+              <div class="extra-option">High-End</div>
             </div>
 
-            <div class="finder-extra-bar-category">
-              <div class="category-name"></div>
-              <div class="category-select">
-                <select id="finder-store-location-1" class="finder-extra-select">
-                  <option value="label">The location is</option>
-                  <option value=""></option>
-                  <option value="">easy for parking</option>
-                  <option value="">near other stores</option>
-                  <option value="">close to public transit</option>
-                  <option value="">wheelchair-accessible</option>
-                </select>
-              </div>
-              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
-              <div class="category-extra">
-                and... 
-                <select id="finder-store-location-2" class="finder-extra-select">
-                  <option value="label">The location is</option>
-                  <option value=""></option>
-                  <option value="">easy for parking</option>
-                  <option value="">near other stores</option>
-                  <option value="">close to public transit</option>
-                  <option value="">wheelchair-accessible</option>
-                </select>
-              </div>
+            <div class="extra-option-container">
+              <div class="flaticon-bright1 extra-option-header-icon"></div>
+              <div class="extra-option-header gusto">Ambience</div>
+              <div class="extra-option">Mellow</div>
+              <div class="extra-option">Bustling</div>
             </div>
 
-            <div class="finder-extra-bar-category">
-              <div class="category-name"></div>
-              <div class="category-select">
-                <select id="finder-store-music-1" class="finder-extra-select">
-                  <option value="label">The music they play is</option>
-                  <option value=""></option>
-                  <option value="">classic rock</option>
-                  <option value="">jazz</option>
-                  <option value="">classical</option>
-                  <option value="">world</option>
-                </select>
-              </div>
-              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
-              <div class="category-extra">
-                and... 
-                <select id="finder-store-music-2" class="finder-extra-select">
-                  <option value="label">The music they play is</option>
-                  <option value=""></option>
-                  <option value="">classic rock</option>
-                  <option value="">jazz</option>
-                  <option value="">classical</option>
-                  <option value="">world</option>
-                </select>
-              </div>
-
-            <div class="finder-extra-bar-category">
-              <div class="category-name"></div>
-              <div class="category-select">
-                <select id="finder-store-scent-1" class="finder-extra-select">
-                  <option value="label">It smells like</option>
-                  <option value=""></option>
-                  <option value="">perfume</option>
-                  <option value="">flowers</option>
-                  <option value="">fruit</option>
-                  <option value="">earth</option>
-                  <option value="">incense</option>
-                </select>
-              </div>
-              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
-              <div class="category-extra">
-                and... 
-                <select id="finder-store-scent-2" class="finder-extra-select">
-                  <option value="label">It smells like</option>
-                  <option value=""></option>
-                  <option value="">perfume</option>
-                  <option value="">flowers</option>
-                  <option value="">fruit</option>
-                  <option value="">earth</option>
-                  <option value="">incense</option>
-                </select>
-              </div>
+            <div class="extra-option-container">
+              <div class="flaticon-face3 extra-option-header-icon"></div>
+              <div class="extra-option-header gusto">Character</div>
+              <div class="extra-option">Friendly</div>
+              <div class="extra-option">Hands-Off</div>
             </div>
+
+            <div class="extra-options-hide">
+              <a class="extra-options-hide-link">[Hide These Options]</a>
+            </div>
+
           </div>
         </div>
 
@@ -256,97 +159,6 @@
       <div class="content-box-transparent store-result-query"></div>
 
       <!-- Begin Store Listing -->
-    
-      <div class="main-content-box store-result">
-        <div class="row">
-          <div class="store-result-details">
-            <div class="store-result-top-bar">
-              <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a>
-            </div>
-            <div class="store-result-title">
-              <a href="">Anthropologie</a>
-            </div>
-            <div class="store-result-location">
-              <a href=""><i class="fa fa-map-marker" style="color: #6f6f6f;"></i></a>
-              123 Main Street | Berkeley, CA
-            </div>
-
-            <div class="inner-content store-result-attributes-box">
-
-              <div class="store-result-attribute">
-                <div class="store-result-type-rating">
-
-                  <ul class="type-ratings">
-                    <li class="type-rating-item" data-rating="8.0">Adventure <span class="type-rating-number">8.0</span></li>
-                    <li class="type-rating-item" data-rating="6.4">Convenience <span class="type-rating-number">6.4</span></li>                  
-                    <li class="type-rating-item" data-rating="2.9">Bargain <span class="type-rating-number">2.9</span></li>                  
-                  </ul>
-                </div>
-              </div>
-
-
-              <div class="store-result-attribute">
-                <div class="store-result-attribute-content">
-                  <div class="attribute-label">Categories</div>
-                  <ul class="categories">
-                    <li>Clothing</li>
-                    <li>Accessories</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="store-result-attribute">
-                <div class="store-result-attribute-content">
-                  <div class="attribute-label">Style</div>
-                  <ul class="tags">
-                    <li style="opacity:1.0">Contemporary</li>
-                    <li style="opacity:0.5">Rustic</li>                  
-                  </ul>
-                </div>
-              </div>
-
-              <div class="store-result-attribute">
-                <div class="store-result-attribute-content">
-                  <div class="attribute-label">Personality</div>
-                  <ul class="tags">
-                    <li style="opacity:1.0">Welcoming</li>
-                    <li style="opacity:0.5">Lively</li>                  
-                    <li style="opacity:0.2">Laid Back</li>                  
-                  </ul>
-                </div>
-              </div>
-
-              <div class="store-result-attribute last">
-                <div class="store-result-attribute-content">
-                  <div class="attribute-label">Music Genres</div>
-                  <ul class="tags">
-                    <li style="opacity:1.0">Hard Rock</li>
-                    <li style="opacity:0.7">Electronic</li>                  
-                    <li style="opacity:0.4">Indie Rock</li>                  
-                  </ul>
-                </div>
-              </div>
-
-
-
-            </div>
-
-          </div>
-
-          <div class="inner-content-box store-result-main-img-box">
-            <img class="store-result-main-img" src="_images/uploads/sample01.jpg">
-          </div>     
-
-          <div class="inner-content-box-shaded store-result-bottom-bar">
-            <a href="store.html">View Store Profile</a>
-          </div>
-
-        </div>
-      </div>
-      
-      <!-- End Store Listing --> 
-
-      <!-- Begin Store Listing -->
       
       <div class="main-content-box store-result">
         <div class="row">
@@ -355,11 +167,11 @@
               <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a>
             </div>
             <div class="store-result-title">
-              <a href="">Global Exchange</a>
+              <a href="store.html">Global Exchange</a>
             </div>
             <div class="store-result-location">
               <a href=""><i class="fa fa-map-marker" style="color: #6f6f6f;"></i></a>
-              123 College Avenue | Berkeley, CA
+              2840 College Ave | Berkeley, CA
             </div>
 
             <div class="inner-content store-result-attributes-box">
@@ -370,7 +182,7 @@
                   <ul class="type-ratings">
                     <li class="type-rating-item" data-rating="6.1">Adventure <span class="type-rating-number">6.1</span></li>
                     <li class="type-rating-item" data-rating="9.0">Convenience <span class="type-rating-number">9.0</span></li>                  
-                    <li class="type-rating-item" data-rating="3.5">Bargain <span class="type-rating-number">3.5</span></li>                  
+                    <li class="type-rating-item" data-rating="8.0">Bargain <span class="type-rating-number">8.0</span></li>                  
                   </ul>
                 </div>
               </div>
@@ -389,42 +201,30 @@
 
               <div class="store-result-attribute">
                 <div class="store-result-attribute-content">
-                  <div class="attribute-label">Style</div>
+                  <div class="attribute-label">Character</div>
                   <ul class="tags">
-                    <li style="opacity:1.0">Ethnic</li>
-                    <li style="opacity:0.5">Rustic</li>                  
+                    <li style="opacity:1.0">Hands Off</li>
+                    <li style="opacity:0.3">Friendly</li>                                  
                   </ul>
                 </div>
               </div>
 
               <div class="store-result-attribute">
                 <div class="store-result-attribute-content">
-                  <div class="attribute-label">Personality</div>
-                  <ul class="tags">
-                    <li style="opacity:1.0">Welcoming</li>
-                    <li style="opacity:0.5">Laid Back</li>                  
-                    <li style="opacity:0.2">Hands-Off</li>                  
-                  </ul>
+                  <div class="attribute-label">Prices</div>
+                  <div class="attribute-rating">
+                    <i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw inactive"></i><i class="fa fa-usd fa-fw inactive"></i><i class="fa fa-usd fa-fw inactive"></i><i class="fa fa-usd fa-fw inactive"></i>
+                  </div>
+                  <div class="attribute-description">Very Inexpensive</div>
                 </div>
               </div>
-
-              <div class="store-result-attribute last">
-                <div class="store-result-attribute-content">
-                  <div class="attribute-label">Music Genres</div>
-                  <ul class="tags">
-                    <li style="opacity:1.0">World</li>                                 
-                  </ul>
-                </div>
-              </div>
-
-
 
             </div>
 
           </div>
 
           <div class="inner-content-box store-result-main-img-box">
-            <img class="store-result-main-img" src="_images/uploads/sample02.jpg">
+            <a href="store.html"><img class="store-result-main-img" src="_images/store_photos/01/Global_Exchange_Pano.jpg"></a>
           </div>     
 
           <div class="inner-content-box-shaded store-result-bottom-bar">
@@ -435,6 +235,89 @@
       </div>
     
       <!-- End Store Listing -->
+
+      <!-- Begin Store Listing -->
+    
+      <div class="main-content-box store-result">
+        <div class="row">
+          <div class="store-result-details">
+            <div class="store-result-top-bar">
+              <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a>
+            </div>
+            <div class="store-result-title">
+              Therapy
+            </div>
+            <div class="store-result-location">
+              <a href=""><i class="fa fa-map-marker" style="color: #6f6f6f;"></i></a>
+              123 College Avenue | Berkeley, CA
+            </div>
+
+            <div class="inner-content store-result-attributes-box">
+
+              <div class="store-result-attribute">
+                <div class="store-result-type-rating">
+
+                  <ul class="type-ratings">
+                    <li class="type-rating-item" data-rating="5.0">Adventure <span class="type-rating-number">5.0</span></li>
+                    <li class="type-rating-item" data-rating="3.2">Convenience <span class="type-rating-number">3.2</span></li>                  
+                    <li class="type-rating-item" data-rating="7.1">Bargain <span class="type-rating-number">7.1</span></li>                  
+                  </ul>
+                </div>
+              </div>
+
+
+              <div class="store-result-attribute">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Categories</div>
+                  <ul class="categories">
+                    <li>Clothing</li>
+                    <li>Accessories</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="store-result-attribute">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Character</div>
+                  <ul class="tags">
+                    <li style="opacity:1.0">Hands Off</li>
+                    <li style="opacity:0.3">Friendly</li>                                  
+                  </ul>
+                </div>
+              </div>
+
+              <div class="store-result-attribute">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Prices</div>
+                  <div class="attribute-rating">
+                    <i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw inactive"></i><i class="fa fa-usd fa-fw inactive"></i><i class="fa fa-usd fa-fw inactive"></i><i class="fa fa-usd fa-fw inactive"></i>
+                  </div>
+                  <div class="attribute-description">Very Inexpensive</div>
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <div class="inner-content-box store-result-main-img-box">
+            <img class="store-result-main-img-narrow left" src="_images/store_photos/02/Therapy_Store2.jpg">
+            <img class="store-result-main-img-narrow right" src="_images/store_photos/02/Therapy_Store.jpg">
+<!--             <img class="store-result-main-img-thumb" src="_images/store_photos/02/Therapy_Merch1.jpg">
+            <img class="store-result-main-img-thumb" src="_images/store_photos/02/Therapy_Merch2.jpg">
+            <img class="store-result-main-img-thumb" src="_images/store_photos/02/Therapy_Merch3.jpg"> -->
+          </div>     
+
+          <div class="inner-content-box-shaded store-result-bottom-bar">
+            View Store Profile
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- End Store Listing --> 
+
 
     </div>
 

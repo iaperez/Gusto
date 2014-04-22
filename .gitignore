@@ -22,3 +22,4 @@ db/seed/*
 /doc/notes.txt
 .powder
 *.swp
+/public/prototype/_files

@@ -1,0 +1,474 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gusto</title>
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,400italic,600italic,700italic|Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="_css/normalize.css" />
+  <link rel="stylesheet" href="_css/foundation.css" />
+  <link rel="stylesheet" href="_css/foundation-overrides.css" />
+  <link rel="stylesheet" href="_css/style.css" />
+  <link rel="stylesheet" href="_css/font-awesome/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="_js/vendor/modernizr.js"></script>
+  <script src="_js/vendor/jquery.js"></script>
+  <script src="_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="_js/foundation.min.js"></script>
+  <script src="_js/script.js"></script>
+  </head>
+<body>
+
+<div class="wrapper">
+
+  <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name sitename">
+          <a href="index.html" class="sitename">Gusto</a>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        
+      </ul>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="has-form">
+            <div class="row collapse">
+              <div class="small-3 columns">
+                <label for="set-location" class="right inline">Location:</label>
+              </div>              
+              <div class="small-6 columns">
+                <input id="set-location" type="text" placeholder="City, State or ZIP" value="Berkeley, CA">
+              </div>
+              <div class="small-3 columns">
+                <a href="#" id="set-location-button" class="button expand">Set</a>
+              </div>
+            </div>          
+          </li>          
+          <li><a href="register.html">Create Account</a></li>
+          <li><a href="login.html">Sign In</a></li>     
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+  <div class="main">
+    <form id="finder-form">
+      <div class="row">
+      <div class="main-content-box finder-form-container small-9 columns">
+        <div class="row">
+          <div class="finder-main-bar small-12 columns">
+              <div class="finder-header">
+              I'm looking for stores...<br>
+              </div>
+              that sell
+              <select id="finder-store-category" class="finder-main-select">
+                <option value="clothing">Clothing</option>
+                <option value="furniture">Furniture</option>
+                <option value="decorations">Decorations</option>
+                <option value="accessories">Accessories</option>
+                <option value="">Anything</option>
+              </select>
+               and are
+              <select id="finder-store-personality" class="finder-main-select">
+                <option value="welcoming">Welcoming</option>
+                <option value="lively">Lively</option>
+                <option value="fun">Fun</option>
+                <option value="high-class">High-Class</option>
+                <option value="private">Private</option>
+              </select>
+              and I want
+              <select id="finder-store-type" class="finder-main-select">
+                <option value="adventure">Adventure</option>
+                <option value="convenience">Convenience</option>
+                <option value="bargains">Bargains</option>
+              </select>
+              
+          </div>
+        </div>
+        <div class="row">
+          <div class="finder-extra-header small-12 columns">
+              <a href="" class="toggle-extra-bars">And I <em>specifically</em> want stores where ...</a>
+              <br><span class="gray-ital">(optional)</span>
+          </div>
+          <div id="finder-extra-bars" class="small-12 columns">
+            
+            <div class="finder-extra-bar-category">
+              <div class="category-name"></div>
+              <div class="category-select">
+                <select id="finder-store-space-1" class="finder-extra-select">
+                  <option value="label">The space is</option>
+                  <option value=""></option>
+                  <option value="">small in size</option>
+                  <option value="">large in size</option>
+                  <option value="">highly organized</option>
+                  <option value="">rather disorganized</option>
+                  <option value="">very quiet</option>
+                  <option value="">very loud</option>
+                  <option value="">often crowded</option>
+                  <option value="">rarely crowded</option>
+                </select>
+              </div>
+              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
+              <div class="category-extra">
+                and... 
+                <select id="finder-store-space-2" class="finder-extra-select">
+                  <option value="label">The space is</option>
+                  <option value=""></option>
+                  <option value="">small in size</option>
+                  <option value="">large in size</option>
+                  <option value="">highly organized</option>
+                  <option value="">rather disorganized</option>
+                  <option value="">very quiet</option>
+                  <option value="">very loud</option>
+                  <option value="">often crowded</option>
+                  <option value="">rarely crowded</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="finder-extra-bar-category">
+              <div class="category-name"></div>
+              <div class="category-select">
+                <select id="finder-store-goods-1" class="finder-extra-select">
+                  <option value="label">The goods are</option>
+                  <option value=""></option>
+                  <option value="">inexpensive</option>
+                  <option value="">expensive</option>
+                  <option value="">in high variety</option>
+                  <option value="">in low variety</option>
+                  <option value="">often on sale</option>
+                  <option value="">deeply discounted</option>
+                </select>
+              </div>
+              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
+              <div class="category-extra">
+                and... 
+                <select id="finder-store-goods-2" class="finder-extra-select">
+                  <option value="label">The goods are</option>
+                  <option value=""></option>
+                  <option value="">inexpensive</option>
+                  <option value="">expensive</option>
+                  <option value="">in high variety</option>
+                  <option value="">in low variety</option>
+                  <option value="">often on sale</option>
+                  <option value="">deeply discounted</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="finder-extra-bar-category">
+              <div class="category-name"></div>
+              <div class="category-select">
+                <select id="finder-store-location-1" class="finder-extra-select">
+                  <option value="label">The location is</option>
+                  <option value=""></option>
+                  <option value="">easy for parking</option>
+                  <option value="">near other stores</option>
+                  <option value="">close to public transit</option>
+                  <option value="">wheelchair-accessible</option>
+                </select>
+              </div>
+              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
+              <div class="category-extra">
+                and... 
+                <select id="finder-store-location-2" class="finder-extra-select">
+                  <option value="label">The location is</option>
+                  <option value=""></option>
+                  <option value="">easy for parking</option>
+                  <option value="">near other stores</option>
+                  <option value="">close to public transit</option>
+                  <option value="">wheelchair-accessible</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="finder-extra-bar-category">
+              <div class="category-name"></div>
+              <div class="category-select">
+                <select id="finder-store-music-1" class="finder-extra-select">
+                  <option value="label">The music they play is</option>
+                  <option value=""></option>
+                  <option value="">classic rock</option>
+                  <option value="">jazz</option>
+                  <option value="">classical</option>
+                  <option value="">world</option>
+                </select>
+              </div>
+              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
+              <div class="category-extra">
+                and... 
+                <select id="finder-store-music-2" class="finder-extra-select">
+                  <option value="label">The music they play is</option>
+                  <option value=""></option>
+                  <option value="">classic rock</option>
+                  <option value="">jazz</option>
+                  <option value="">classical</option>
+                  <option value="">world</option>
+                </select>
+              </div>
+
+            <div class="finder-extra-bar-category">
+              <div class="category-name"></div>
+              <div class="category-select">
+                <select id="finder-store-scent-1" class="finder-extra-select">
+                  <option value="label">It smells like</option>
+                  <option value=""></option>
+                  <option value="">perfume</option>
+                  <option value="">flowers</option>
+                  <option value="">fruit</option>
+                  <option value="">earth</option>
+                  <option value="">incense</option>
+                </select>
+              </div>
+              <div class="category-extra-show"><a href="" class="category-extra-show">and...</a></div>
+              <div class="category-extra">
+                and... 
+                <select id="finder-store-scent-2" class="finder-extra-select">
+                  <option value="label">It smells like</option>
+                  <option value=""></option>
+                  <option value="">perfume</option>
+                  <option value="">flowers</option>
+                  <option value="">fruit</option>
+                  <option value="">earth</option>
+                  <option value="">incense</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row text-center">
+          <a href="#" class="button small" id="finder-submit">Search</a>
+        </div>
+      </div>
+      </div>
+    </form>
+
+    <!-- Begin Results Display -->
+
+    <div id="store-results">
+      <div class="content-box-transparent store-result-query"></div>
+
+      <!-- Begin Store Listing -->
+      
+      <div class="main-content-box store-result">
+        <div class="row">
+          <div class="store-result-details">
+            <div class="store-result-top-bar">
+              <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a>
+            </div>
+            <div class="store-result-title">
+              <a href="">Global Exchange</a>
+            </div>
+            <div class="store-result-location">
+              <a href=""><i class="fa fa-map-marker" style="color: #6f6f6f;"></i></a>
+              123 College Avenue | Berkeley, CA
+            </div>
+
+            <div class="inner-content store-result-attributes-box">
+
+              <div class="store-result-attribute">
+                <div class="store-result-type-rating">
+
+                  <ul class="type-ratings">
+                    <li class="type-rating-item" data-rating="6.1">Adventure <span class="type-rating-number">6.1</span></li>
+                    <li class="type-rating-item" data-rating="9.0">Convenience <span class="type-rating-number">9.0</span></li>                  
+                    <li class="type-rating-item" data-rating="3.5">Bargain <span class="type-rating-number">3.5</span></li>                  
+                  </ul>
+                </div>
+              </div>
+
+
+              <div class="store-result-attribute">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Categories</div>
+                  <ul class="categories">
+                    <li>Clothing</li>
+                    <li>Decorations</li>
+                    <li>Accessories</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="store-result-attribute">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Style</div>
+                  <ul class="tags">
+                    <li style="opacity:1.0">Ethnic</li>
+                    <li style="opacity:0.5">Rustic</li>                  
+                  </ul>
+                </div>
+              </div>
+
+              <div class="store-result-attribute">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Personality</div>
+                  <ul class="tags">
+                    <li style="opacity:1.0">Welcoming</li>
+                    <li style="opacity:0.5">Laid Back</li>                  
+                    <li style="opacity:0.2">Hands-Off</li>                  
+                  </ul>
+                </div>
+              </div>
+
+              <div class="store-result-attribute last">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Music Genres</div>
+                  <ul class="tags">
+                    <li style="opacity:1.0">World</li>                                 
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="inner-content-box store-result-main-img-box">
+            <img class="store-result-main-img" src="_images/store_photos/01/Global_Exchange_Pano.jpg">
+          </div>     
+
+          <div class="inner-content-box-shaded store-result-bottom-bar">
+            <a href="store.html">View Store Profile</a>
+          </div>
+
+        </div>
+      </div>
+    
+      <!-- End Store Listing -->
+
+      <!-- Begin Store Listing -->
+    
+      <div class="main-content-box store-result">
+        <div class="row">
+          <div class="store-result-details">
+            <div class="store-result-top-bar">
+              <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a>
+            </div>
+            <div class="store-result-title">
+              <a href="">Therapy</a>
+            </div>
+            <div class="store-result-location">
+              <a href=""><i class="fa fa-map-marker" style="color: #6f6f6f;"></i></a>
+              123 College Avenue | Berkeley, CA
+            </div>
+
+            <div class="inner-content store-result-attributes-box">
+
+              <div class="store-result-attribute">
+                <div class="store-result-type-rating">
+
+                  <ul class="type-ratings">
+                    <li class="type-rating-item" data-rating="8.0">Adventure <span class="type-rating-number">8.0</span></li>
+                    <li class="type-rating-item" data-rating="6.4">Convenience <span class="type-rating-number">6.4</span></li>                  
+                    <li class="type-rating-item" data-rating="2.9">Bargain <span class="type-rating-number">2.9</span></li>                  
+                  </ul>
+                </div>
+              </div>
+
+
+              <div class="store-result-attribute">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Categories</div>
+                  <ul class="categories">
+                    <li>Clothing</li>
+                    <li>Accessories</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="store-result-attribute">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Style</div>
+                  <ul class="tags">
+                    <li style="opacity:1.0">Contemporary</li>
+                    <li style="opacity:0.5">Rustic</li>                  
+                  </ul>
+                </div>
+              </div>
+
+              <div class="store-result-attribute">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Personality</div>
+                  <ul class="tags">
+                    <li style="opacity:1.0">Welcoming</li>
+                    <li style="opacity:0.5">Lively</li>                  
+                    <li style="opacity:0.2">Laid Back</li>                  
+                  </ul>
+                </div>
+              </div>
+
+              <div class="store-result-attribute last">
+                <div class="store-result-attribute-content">
+                  <div class="attribute-label">Music Genres</div>
+                  <ul class="tags">
+                    <li style="opacity:1.0">Hard Rock</li>
+                    <li style="opacity:0.7">Electronic</li>                  
+                    <li style="opacity:0.4">Indie Rock</li>                  
+                  </ul>
+                </div>
+              </div>
+
+
+
+            </div>
+
+          </div>
+
+          <div class="inner-content-box store-result-main-img-box">
+            <img class="store-result-main-img-narrow left" src="_images/store_photos/02/Therapy_Store2.jpg">
+            <img class="store-result-main-img-narrow right" src="_images/store_photos/02/Therapy_Store.jpg">
+<!--             <img class="store-result-main-img-thumb" src="_images/store_photos/02/Therapy_Merch1.jpg">
+            <img class="store-result-main-img-thumb" src="_images/store_photos/02/Therapy_Merch2.jpg">
+            <img class="store-result-main-img-thumb" src="_images/store_photos/02/Therapy_Merch3.jpg"> -->
+          </div>     
+
+          <div class="inner-content-box-shaded store-result-bottom-bar">
+            <a href="store.html">View Store Profile</a>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- End Store Listing --> 
+
+
+    </div>
+
+  </div>
+  <div class="push"></div>
+</div>
+
+<div class="contain-to-grid sticky">
+  <nav class="top-bar bottom-bar">
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="title-area">  
+        <li class="name sitename">
+          Gusto
+        </li>  
+      </ul>     
+
+      <!-- Right Nav Section -->
+      <ul class="right">  
+
+        <li><a href="register.html">Contact</a></li>
+        <li><a href="">About</a></li>
+        <li class="copyright">&copy; 2014 Gusto</li>     
+      </ul>
+    </section>
+  </nav>
+</div>
+
+</body>
+</html>
+
+
+
+

@@ -9,14 +9,17 @@
   <link rel="stylesheet" href="_css/normalize.css" />
   <link rel="stylesheet" href="_css/foundation.css" />
   <link rel="stylesheet" href="_css/foundation-overrides.css" />
-  <link rel="stylesheet" href="_css/style.css" />
   <link rel="stylesheet" href="_css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/flaticons/flaticon.css">
+  <link rel="stylesheet" href="_css/style.css" /> 
   <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="_js/vendor/modernizr.js"></script>
   <script src="_js/vendor/jquery.js"></script>
   <script src="_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
   <script src="_js/foundation.min.js"></script>
+  <script src="_js/foundation.dropdown.js"></script>
+  <script src="_js/foundation.topbar.js"></script>
   <script src="_js/script.js"></script>
   </head>
 <body>
@@ -50,8 +53,16 @@
               </div>
             </div>          
           </li>          
-          <li><a href="register.html">Create Account</a></li>
-          <li><a href="">Sign In</a></li>     
+          <li class="has-dropdown">
+            <a href="#"><i class="fa fa-user fa-fw"></i> Jake2014</a>
+            <ul class="dropdown">
+              <li><a href="#">Edit Profile</a></li>
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          </li>
+ 
+<!--           <li><a href="register.html">Create Account</a></li>
+          <li><a href="login.html">Sign In</a></li>      -->
         </ul>
       </section>
     </nav>
@@ -99,64 +110,55 @@
             <div id="store-profile-map">
               <img src="_images/map_sample.png">
             </div>
-
-          </div>
-
-          <div class="store-profile-maincol small-9 columns">
-            <div class="inner-content-box store-main-img-container">
-              <img class="store-profile-main-img" src="_images/uploads/sample02.jpg">
-  <!--             <div class="row">
-                <div class="store-profile-item-thumbs">
-                  <ul class="small-block-grid-12">
-                    <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample01.jpg"><img src="_images/uploads/thumbsample01.jpg">
-                    </a></li>
-                    <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample02.jpg"><img src="_images/uploads/thumbsample02.jpg">
-                    </a></li>
-                    <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample03.jpg"><img src="_images/uploads/thumbsample03.jpg">
-                    </a></li>
-                    <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample01.jpg"><img src="_images/uploads/thumbsample01.jpg">
-                    </a></li>
-                    <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample02.jpg"><img src="_images/uploads/thumbsample02.jpg">
-                    </a></li>
-                    <li style="padding:2px;"><a class="th" href="_images/uploads/thumbsample03.jpg"><img src="_images/uploads/thumbsample03.jpg">
-                    </a></li>              
-                  </ul>
-                </div>
-              </div> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="store-profile-leftcol small-3 columns">
             <div class="store-profile-location">
               <p>
-                100 College Ave<br>
+                2840 College Ave<br>
                 Berkeley, CA 94705<br>
                 310-850-1928<br>
-                <a href="">www.thisstore.com</a>
+                <a href="">www.globalexchange.com</a>
               </p>
             </div>
             <div class="store-profile-review">
-              <p>Kazakhstan is the greatest country in the world. All other countries are run by little girls. Kazakhstan is number one exporter of potassium. Other Central Asian countries have inferior potassium. Kazakhstan is the greatest country in the world. All other countries is the home of the gays.</p>
-              <p>He is my neighbor Nursultan Tuliagby. He is pain in my assholes. I get a window from a glass, he must get a window from a glass. I get a step, he must get a step. I get a clock radio, he cannot afford. Great success!</p>
+              <p>The swallow may fly south with the sun, and the house martin or the plover may seek warmer climes in winter, yet these are not strangers to our land. Where'd you get the coconuts? I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time! Now, look here, my good man. Ah, now we see the violence inherent in the system! Well, what do you want?</p>
+
+              <p>The Lady of the Lake, her arm clad in the purest shimmering samite, held aloft Excalibur from the bosom of the water, signifying by divine providence that I, Arthur, was to carry Excalibur. That is why I am your king. I have to push the pram a lot. Well, she turned me into a newt. You don't vote for kings. The swallow may fly south with the sun, and the house martin or the plover may seek warmer climes in winter, yet these are not strangers to our land. Well, what do you want?</p>
+
+              <p>Burn her anyway! Oh, ow! I'm not a witch. And this isn't my nose. This is a false one.</p>
+
             </div>
           </div>
 
           <div class="store-profile-maincol small-9 columns">
 
+            <div class="inner-content-box store-main-img-container">
+              <img class="store-profile-main-img" src="_images/store_photos/01/Global_Exchange_Pano.jpg">
+              <div class="row">
+                <div class="store-profile-item-thumbs">
+                  <ul class="small-block-grid-3">
+                    <li style="padding:2px;"><a href="_images/store_photos/01/Global_Exchange_Detail2.jpg"><img src="_images/store_photos/01/Global_Exchange_Detail2.jpg">
+                    </a></li>
+                    <li style="padding:2px;"><a href="_images/store_photos/01/Global_Exchange_Merch3.jpg"><img src="_images/store_photos/01/Global_Exchange_Merch3.jpg">
+                    </a></li>
+                    <li style="padding:2px;"><a href="_images/store_photos/01/Global_Exchange_Merch4.jpg"><img src="_images/store_photos/01/Global_Exchange_Merch4.jpg">
+                    </a></li>           
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
             <div class="inner-content-box store-profile-type-rating-container">
               <div class="store-profile-type-rating">
-                <div class="attribute-label">Gusto Scores: </div>
+                <div class="attribute-label gusto">Gusto Scores: </div>
                 <ul class="type-ratings">
                   <li class="type-rating-item" data-rating="8.0">Adventure <span class="type-rating-number">8.0</span></li>
                   <li class="type-rating-item" data-rating="6.4">Convenience <span class="type-rating-number">6.4</span></li>                  
                   <li class="type-rating-item" data-rating="2.9">Bargain <span class="type-rating-number">2.9</span></li>               
                 </ul>
-                <div class="rating-tooltip"><i class="fa fa-question-circle tooltip-icon"></i> What are these?</div> 
+<!--                 <div class="rating-tooltip"><i class="fa fa-question-circle tooltip-icon"></i> What are these?
+                  <div id="rating-tooltip-box">The Gusto Score is really interesting.</div>
+                </div> -->
               </div>
             </div>
-
             <div class="store-profile-details-container inner-content-box">
               <div class="row">
 
@@ -174,59 +176,50 @@
                               <li>Decorations</li>
                               <li>Accessories</li>
                             </ul>
-                          <!-- <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div> -->
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Prices</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i>
+                            <i class="fa fa-usd fa-fw"></i>
                           </div>
-                          <div class="attribute-description">Moderate Prices</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                          <div class="attribute-description">Very Inexpensive</div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Variety</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-star-o fa-fw"></i><i class="fa fa-star-o fa-fw"></i><i class="fa fa-star-o fa-fw"></i><i class="fa fa-star-o fa-fw"></i><i class="fa fa-star-o fa-fw"></i>
+                            <i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i>
                           </div>
-                          <div class="attribute-description">High Variety</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                          <div class="attribute-description">Very Large Variety</div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Sales</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-tag fa-fw"></i><i class="fa fa-tag fa-fw"></i><i class="fa fa-tag fa-fw"></i><i class="fa fa-tag fa-fw"></i><i class="fa fa-tag fa-fw"></i>
+                            <i class="fa fa-tag fa-fw"></i>
                           </div>
-                          <div class="attribute-description">Daily/Weekly</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                          <div class="attribute-description">Annually</div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute last padded">
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Discounts</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-star-o fa-fw"></i>
+                            <i class="flaticon-sale"></i>
                           </div>
                           <div class="attribute-description">5% or less</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
-                    </div>
+
+                     </div>
 
                     <div class="store-profile-attribute-type-box">
                       <div class="store-profile-attribute-type-header">Space</div>
@@ -235,48 +228,40 @@
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Size</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-building-o fa-fw"></i>
+                            <i class="fa fa-building-o fa-fw"></i><i class="fa fa-building-o fa-fw"></i><i class="fa fa-building-o fa-fw"></i>
                           </div>
-                          <div class="attribute-description">Very Small</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                          <div class="attribute-description">Medium</div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Organization</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-sitemap fa-fw"></i><i class="fa fa-sitemap fa-fw"></i><i class="fa fa-sitemap fa-fw"></i>
+                            <i class="flaticon-shelf1"></i><i class="flaticon-shelf1"></i>
                           </div>
-                          <div class="attribute-description">Well-Organized</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                          <div class="attribute-description">Disorganized</div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Busyness</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-group fa-fw"></i><i class="fa fa-group fa-fw"></i>
+                            <i class="fa fa-user fa-fw"></i><i class="fa fa-user fa-fw"></i>
                           </div>
                           <div class="attribute-description">Rarely Busy</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute last">
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Noise</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-volume-up fa-fw"></i>
+                            <i class="fa fa-bullhorn fa-fw"></i>
                           </div>
                           <div class="attribute-description">Very Quiet</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
                     </div>
 
@@ -296,22 +281,17 @@
                             <li style="opacity:1.0">Ethnic</li>
                             <li style="opacity:0.5">Rustic</li>               
                           </ul>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
                         <div class="store-profile-attribute-content">
-                          <div class="attribute-label">Personality</div>
+                          <div class="attribute-label">Character</div>
                           <ul class="tags">
-                            <li style="opacity:1.0">Welcoming</li>
-                            <li style="opacity:0.5">Laid Back</li>                  
-                            <li style="opacity:0.2">Hands-Off</li>                 
+                            <li style="opacity:1.0">Hands Off</li>               
+                            <li style="opacity:0.3">Friendly</li>                 
                           </ul>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
@@ -322,9 +302,7 @@
                             <li style="opacity:0.7">Wood</li>                  
                             <li style="opacity:0.3">Spice</li>                 
                           </ul>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
@@ -333,17 +311,18 @@
                           <ul class="tags">
                             <li style="opacity:1.0">World</li>
                           </ul>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
                     
                       <div class="store-profile-attribute last padded">
                         <div class="store-profile-attribute-content">
-                          <div class="attribute-label">Air</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                          <div class="attribute-label">Air & Space</div>
+                          <ul class="tags">
+                            <li style="opacity:1.0">Sunny</li>
+                            <li style="opacity:0.7">Warm</li>                  
+                            <li style="opacity:0.3">Bright</li>                 
+                          </ul>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
                     </div>
 
@@ -354,36 +333,30 @@
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Parking</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-road fa-fw"></i><i class="fa fa-road fa-fw"></i><i class="fa fa-road fa-fw"></i><i class="fa fa-road fa-fw"></i>
+                            <i class="flaticon-car66"></i>
                           </div>
                           <div class="attribute-description">Plentiful</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Stores Nearby?</div>
                           <div class="attribute-rating">
-                            <i class="fa fa-building"></i><i class="fa fa-building"></i><i class="fa fa-building"></i>
+                            <i class="flaticon-office17"></i>
                           </div>
                           <div class="attribute-description">Yes</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute">
                         <div class="store-profile-attribute-content">
                           <div class="attribute-label">Public Transit?</div>
                           <div class="attribute-rating">
-                            
+                            <i class="flaticon-bus21"></i>
                           </div>
                           <div class="attribute-description">No</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
 
                       <div class="store-profile-attribute last">
@@ -393,9 +366,7 @@
                             <i class="fa fa-wheelchair"></i>
                           </div>
                           <div class="attribute-description">Yes</div>
-                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
                         </div>
-                        <div class="attribute-details hide"></div>
                       </div>
                     </div>
 
@@ -405,6 +376,18 @@
 
               </div>
             </div>
+
+
+
+          </div>
+        </div>
+
+        <div class="row">
+
+
+          <div class="store-profile-maincol small-9 small-offset-3 columns">
+
+
 
             <div class="inner-content-box store-profile-comment-box hide">
               <div class="row">     
