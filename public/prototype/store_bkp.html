@@ -1,0 +1,935 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gusto</title>
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,600,700,400italic,600italic,700italic|Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="_css/normalize.css" />
+  <link rel="stylesheet" href="_css/foundation.css" />
+  <link rel="stylesheet" href="_css/foundation-overrides.css" />
+  <link rel="stylesheet" href="_css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="_css/flaticons/flaticon.css">
+  <link rel="stylesheet" href="_css/style.css" /> 
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="_js/vendor/modernizr.js"></script>
+  <script src="_js/vendor/jquery.js"></script>
+  <script src="_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="_js/foundation.min.js"></script>
+  <script src="_js/script.js"></script>
+  </head>
+<body>
+
+<div class="wrapper">
+
+  <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name sitename">
+          <a href="index.html" class="sitename">Gusto</a>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        
+      </ul>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="has-form">
+            <div class="row collapse">
+              <div class="small-3 columns">
+                <label for="set-location" class="right inline">Location:</label>
+              </div>              
+              <div class="small-6 columns">
+                <input id="set-location" type="text" placeholder="City, State or ZIP" value="Berkeley, CA">
+              </div>
+              <div class="small-3 columns">
+                <a href="#" id="set-location-button" class="button expand">Set</a>
+              </div>
+            </div>          
+          </li>          
+          <li><a href="register.html">Create Account</a></li>
+          <li><a href="">Sign In</a></li>     
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+  <div class="main">
+
+    <div class="row">
+      <div class="small-12 columns" style="padding:8px;">
+        <a href="index.html">< Back to Results</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="main-content-box store-profile small-12 columns">
+        <div class="row">
+          <div class="store-profile-topbar">
+            <div class="store-profile-bookmark"><a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="store-profile-titlebar"> 
+            <div class="store-profile-title small-5 columns left">Global Exchange</div>
+            <!-- <div class="store-survey-link small-2 columns center"><a href="#" id="store-survey-link">Been Here Before?</a></div> -->
+            <div class= "small-5 columns right text-right">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div id="survey-bar">
+              <form id="survey-form">
+                <div class="survey-question">How was the ambience at Global Exchange?</div>
+                <div class="survey-response">
+                  <input type="range" id="survey-response" data-survey-question="ambience01" min="1" max="10">
+                </div>
+                <div class="survey-submit"><a href="#" id="survey-response-submit" class="button mini">Go</a></div>
+              </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="store-profile-leftcol small-3 columns">
+            <div id="store-profile-map">
+              <img src="_images/map_sample.png">
+            </div>
+            <div class="store-profile-location">
+              <p>
+                2840 College Ave<br>
+                Berkeley, CA 94705<br>
+                310-850-1928<br>
+                <a href="">www.globalexchange.com</a>
+              </p>
+            </div>
+            <div class="store-profile-review">
+              <p>The swallow may fly south with the sun, and the house martin or the plover may seek warmer climes in winter, yet these are not strangers to our land. Where'd you get the coconuts? I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time! Now, look here, my good man. Ah, now we see the violence inherent in the system! Well, what do you want?</p>
+
+              <p>The Lady of the Lake, her arm clad in the purest shimmering samite, held aloft Excalibur from the bosom of the water, signifying by divine providence that I, Arthur, was to carry Excalibur. That is why I am your king. I have to push the pram a lot. Well, she turned me into a newt. You don't vote for kings. The swallow may fly south with the sun, and the house martin or the plover may seek warmer climes in winter, yet these are not strangers to our land. Well, what do you want?</p>
+
+              <p>Burn her anyway! Oh, ow! I'm not a witch. And this isn't my nose. This is a false one.</p>
+
+            </div>
+          </div>
+
+          <div class="store-profile-maincol small-9 columns">
+
+            <div class="inner-content-box store-main-img-container">
+              <img class="store-profile-main-img" src="_images/store_photos/01/Global_Exchange_Pano.jpg">
+              <div class="row">
+                <div class="store-profile-item-thumbs">
+                  <ul class="small-block-grid-3">
+                    <li style="padding:2px;"><a href="_images/store_photos/01/Global_Exchange_Detail2.jpg"><img src="_images/store_photos/01/Global_Exchange_Detail2.jpg">
+                    </a></li>
+                    <li style="padding:2px;"><a href="_images/store_photos/01/Global_Exchange_Merch3.jpg"><img src="_images/store_photos/01/Global_Exchange_Merch3.jpg">
+                    </a></li>
+                    <li style="padding:2px;"><a href="_images/store_photos/01/Global_Exchange_Merch4.jpg"><img src="_images/store_photos/01/Global_Exchange_Merch4.jpg">
+                    </a></li>           
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="inner-content-box store-profile-type-rating-container">
+              <div class="store-profile-type-rating">
+                <div class="attribute-label gusto">Gusto Scores: </div>
+                <ul class="type-ratings">
+                  <li class="type-rating-item" data-rating="8.0">Adventure <span class="type-rating-number">8.0</span></li>
+                  <li class="type-rating-item" data-rating="6.4">Convenience <span class="type-rating-number">6.4</span></li>                  
+                  <li class="type-rating-item" data-rating="2.9">Bargain <span class="type-rating-number">2.9</span></li>               
+                </ul>
+                <div class="rating-tooltip"><i class="fa fa-question-circle tooltip-icon"></i> What are these?</div> 
+              </div>
+            </div>
+            <div class="store-profile-details-container inner-content-box">
+              <div class="row">
+
+                <div class="store-profile-details small-6 columns">
+                  
+                  <div class="store-profile-attributes-box">
+                    <div class="store-profile-attribute-type-box">
+                      <div class="store-profile-attribute-type-header">Goods</div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Categories</div>
+                            <ul class="tags">
+                              <li>Clothing</li>
+                              <li>Decorations</li>
+                              <li>Accessories</li>
+                            </ul>
+                          <!-- <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div> -->
+                        </div>
+                        <div class="attribute-details hide"></div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Prices</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i>
+                          </div>
+                          <div class="attribute-description">Moderate</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Moderate</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Moderate</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (12) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i><i class="fa fa-usd fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">High</div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Rating: </i>
+                            </div>
+                            <div class="attribute-details-user-select">
+                              <i class="fa fa-usd fa-fw user-rating-icon" data-rating-value="1" data-rating-label="Very Inexpensive"></i><i class="fa fa-usd fa-fw user-rating-icon" data-rating-value="2" data-rating-label="Inexpensive"></i><i class="fa fa-usd fa-fw user-rating-icon" data-rating-value="3" data-rating-label="Moderate"></i><i class="fa fa-usd fa-fw user-rating-icon" data-rating-value="4" data-rating-label="Expensive"></i><i class="fa fa-usd fa-fw user-rating-icon" data-rating-value="5" data-rating-label="Very Expensive"></i>
+                            </div>
+                            <div class="attribute-details-user-description"></div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Variety</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i>
+                          </div>
+                          <div class="attribute-description">Very Large Variety</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Very Large Variety</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Very Large Variety</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (12) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i><i class="fa fa-shopping-cart fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Large Variety</div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Rating: </i>
+                            </div>
+                            <div class="attribute-details-user-select">
+                              <i class="fa fa-shopping-cart fa-fw user-rating-icon" data-rating-value="1" data-rating-label="Very Small Variety"></i><i class="fa fa-shopping-cart fa-fw user-rating-icon" data-rating-value="2" data-rating-label="Small Variety"></i><i class="fa fa-shopping-cart fa-fw user-rating-icon" data-rating-value="3" data-rating-label="Moderate Variety"></i><i class="fa fa-shopping-cart fa-fw user-rating-icon" data-rating-value="4" data-rating-label="Large Variety"></i><i class="fa fa-shopping-cart fa-fw user-rating-icon" data-rating-value="5" data-rating-label="Very Large Variety"></i>
+                            </div>
+                            <div class="attribute-details-user-description"></div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Sales</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-tag fa-fw"></i>
+                          </div>
+                          <div class="attribute-description">Annually</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-tag fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Annually</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-tag fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Annually</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (5) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              
+                            </div>
+                            <div class="attribute-details-description">Never</div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Rating: </i>
+                            </div>
+                            <div class="attribute-details-user-select">
+                              <i class="fa fa-tag fa-fw user-rating-icon" data-rating-value="1" data-rating-label="Annually"></i><i class="fa fa-tag fa-fw user-rating-icon" data-rating-value="2" data-rating-label="Semi-Annually"></i><i class="fa fa-tag fa-fw user-rating-icon" data-rating-value="3" data-rating-label="Quarterly"></i><i class="fa fa-tag fa-fw user-rating-icon" data-rating-value="4" data-rating-label="Monthly"></i><i class="fa fa-tag fa-fw user-rating-icon" data-rating-value="5" data-rating-label="Daily/Weekly"></i>
+                            </div>
+                            <div class="attribute-details-user-description"></div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="store-profile-attribute last padded">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Discounts</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-star-o fa-fw"></i>
+                          </div>
+                          <div class="attribute-description">5% or less</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-star-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">5% or less</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-star-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">5% or less</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (6) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              
+                            </div>
+                            <div class="attribute-details-description">N/A</div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Rating: </i>
+                            </div>
+                            <div class="attribute-details-user-select">
+                              <i class="fa fa-star-o fa-fw user-rating-icon" data-rating-value="1" data-rating-label="5% or less"></i><i class="fa fa-star-o fa-fw user-rating-icon" data-rating-value="2" data-rating-label="5-10%"></i><i class="fa fa-star-o fa-fw user-rating-icon" data-rating-value="3" data-rating-label="10-25%"></i><i class="fa fa-star-o fa-fw user-rating-icon" data-rating-value="4" data-rating-label="25-50%"></i><i class="fa fa-star-o fa-fw user-rating-icon" data-rating-value="5" data-rating-label="Over 50%"></i>
+                            </div>
+                            <div class="attribute-details-user-description"></div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="store-profile-attribute-type-box">
+                      <div class="store-profile-attribute-type-header">Space</div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Size</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-building-o fa-fw"></i><i class="fa fa-building-o fa-fw"></i><i class="fa fa-building-o fa-fw"></i>
+                          </div>
+                          <div class="attribute-description">Medium</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-building-o fa-fw"></i><i class="fa fa-building-o fa-fw"></i><i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Medium</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-building-o fa-fw"></i><i class="fa fa-building-o fa-fw"></i><i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Medium</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (12) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-building-o fa-fw"></i><i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Small</div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Rating: </i>
+                            </div>
+                            <div class="attribute-details-user-select">
+                              <i class="fa fa-building-o fa-fw user-rating-icon" data-rating-value="1" data-rating-label="Very Small"></i><i class="fa fa-building-o fa-fw user-rating-icon" data-rating-value="2" data-rating-label="Small"></i><i class="fa fa-building-o fa-fw user-rating-icon" data-rating-value="3" data-rating-label="Medium"></i><i class="fa fa-building-o fa-fw user-rating-icon" data-rating-value="4" data-rating-label="Large"></i><i class="fa fa-building-o fa-fw user-rating-icon" data-rating-value="5" data-rating-label="Very Large"></i>
+                            </div>
+                            <div class="attribute-details-user-description"></div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Organization</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-sitemap fa-fw"></i><i class="fa fa-sitemap fa-fw"></i>
+                          </div>
+                          <div class="attribute-description">Disorganized</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-sitemap fa-fw"></i><i class="fa fa-sitemap fa-fw"></i><i class="fa fa-sitemap fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Somewhat Organized</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-sitemap fa-fw"></i><i class="fa fa-sitemap fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Disorganized</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (12) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-sitemap fa-fw"></i><i class="fa fa-sitemap fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Disorganized</div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Rating: </i>
+                            </div>
+                            <div class="attribute-details-user-select">
+                              <i class="fa fa-sitemap fa-fw user-rating-icon" data-rating-value="1" data-rating-label="Very Disorganized"></i><i class="fa fa-sitemap fa-fw user-rating-icon" data-rating-value="2" data-rating-label="Disorganized"></i><i class="fa fa-sitemap fa-fw user-rating-icon" data-rating-value="3" data-rating-label="Somewhat Organized"></i><i class="fa fa-sitemap fa-fw user-rating-icon" data-rating-value="4" data-rating-label="Well-Organized"></i><i class="fa fa-sitemap fa-fw user-rating-icon" data-rating-value="5" data-rating-label="Extremely Organized"></i>
+                            </div>
+                            <div class="attribute-details-user-description"></div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Busyness</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-user fa-fw"></i><i class="fa fa-user fa-fw"></i>
+                          </div>
+                          <div class="attribute-description">Rarely Busy</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+                          
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-user fa-fw"></i><i class="fa fa-user fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Rarely Busy</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-user fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Never Busy</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (12) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-user fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Never Busy</div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Rating: </i>
+                            </div>
+                            <div class="attribute-details-user-select">
+                              <i class="fa fa-user fa-fw user-rating-icon" data-rating-value="1" data-rating-label="Never Busy"></i><i class="fa fa-user fa-fw user-rating-icon" data-rating-value="2" data-rating-label="Rarely Busy"></i><i class="fa fa-user fa-fw user-rating-icon" data-rating-value="3" data-rating-label="Sometimes Busy"></i><i class="fa fa-user fa-fw user-rating-icon" data-rating-value="4" data-rating-label="Often Busy"></i><i class="fa fa-user fa-fw user-rating-icon" data-rating-value="5" data-rating-label="Almost Always Busy"></i>
+                            </div>
+                            <div class="attribute-details-user-description"></div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="store-profile-attribute last">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Noise</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-bullhorn fa-fw"></i>
+                          </div>
+                          <div class="attribute-description">Very Quiet</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+                          
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-bullhorn fa-fw"></i><i class="fa fa-bullhorn fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Quiet</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-bullhorn fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Very Quiet</div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (12) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-rating">
+                              <i class="fa fa-bullhorn fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-description">Very Quiet</div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Rating: </i>
+                            </div>
+                            <div class="attribute-details-user-select">
+                              <i class="fa fa-bullhorn fa-fw user-rating-icon" data-rating-value="1" data-rating-label="Very Quiet"></i><i class="fa fa-bullhorn fa-fw user-rating-icon" data-rating-value="2" data-rating-label="Quiet"></i><i class="fa fa-bullhorn fa-fw user-rating-icon" data-rating-value="3" data-rating-label="Moderate"></i><i class="fa fa-bullhorn fa-fw user-rating-icon" data-rating-value="4" data-rating-label="Loud"></i><i class="fa fa-bullhorn fa-fw user-rating-icon" data-rating-value="5" data-rating-label="Very Loud"></i>
+                            </div>
+                            <div class="attribute-details-user-description"></div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="store-profile-details small-6 columns">
+
+                  <div class="store-profile-attributes-box">
+                    <div class="store-profile-attribute-type-box">
+                      <div class="store-profile-attribute-type-header">Ambience</div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Style</div>
+                          <ul class="tags">
+                            <li style="opacity:1.0">Ethnic</li>
+                            <li style="opacity:0.5">Rustic</li>               
+                          </ul>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-tags-container">
+                              <ul class="attribute-details-tags">
+                                <li>Ethnic</li>               
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-tags-container">
+                              <ul class="attribute-details-tags">
+                                <li>Ethnic</li>
+                                <li>Rustic</li>               
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (6) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-tags-container">
+                              <ul class="attribute-details-tags">
+                                <li style="opacity:1.0">Ethnic</li>
+                                <li style="opacity:0.5">Rustic</li>               
+                                <li style="opacity:0.2">Contemporary</li>               
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Description:
+                            </div>
+                            <div class="attribute-details-user-tags">
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Personality</div>
+                          <ul class="tags">
+                            <li style="opacity:1.0">Welcoming</li>
+                            <li style="opacity:0.5">Laid Back</li>                  
+                            <li style="opacity:0.3">Friendly</li>                 
+                          </ul>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-tags-container">
+                              <ul class="attribute-details-tags">
+                                <li>Welcoming</li>               
+                                <li>Hands-Off</li>               
+                                <li>Laid Back</li>               
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-tags-container">
+                              <ul class="attribute-details-tags">
+                                <li>Welcoming</li>
+                                <li>Laid Back</li>               
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (3) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-tags-container">
+                              <ul class="attribute-details-tags">
+                                <li style="opacity:1.0">Friendly</li>
+                                <li style="opacity:0.7">Welcoming</li>               
+                                <li style="opacity:0.2">Hands-Off</li>               
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Description:
+                            </div>
+                            <div class="attribute-details-user-tags">
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Scent</div>
+                          <ul class="tags">
+                            <li style="opacity:1.0">Incense</li>
+                            <li style="opacity:0.7">Wood</li>                  
+                            <li style="opacity:0.3">Spice</li>                 
+                          </ul>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide">
+
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Store <i class="fa fa-building-o fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-tags-container">
+                              <ul class="attribute-details-tags">
+                                <li>Incense</li>               
+                                <li>Wood</li>                            
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Gusto <i class="gusto-icon">G</i>
+                            </div>
+                            <div class="attribute-details-tags-container">
+                              <ul class="attribute-details-tags">
+                                <li>Incense</li>
+                                <li>Wood</li>               
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="attribute-details-container">
+                            <div class="attribute-details-label">
+                              Users (3) <i class="fa fa-users fa-fw"></i>
+                            </div>
+                            <div class="attribute-details-tags-container">
+                              <ul class="attribute-details-tags">
+                                <li style="opacity:1.0">Incense</li>
+                                <li style="opacity:0.8">Wood</li>               
+                                <li style="opacity:0.3">Spice</li>               
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="attribute-details-container user-select">
+                            <div class="attribute-details-label">
+                              Your Description:
+                            </div>
+                            <div class="attribute-details-user-tags">
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Music</div>
+                          <ul class="tags">
+                            <li style="opacity:1.0">World</li>
+                          </ul>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide"></div>
+                      </div>
+                    
+                      <div class="store-profile-attribute last padded">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Air & Space</div>
+                          <ul class="tags">
+                            <li style="opacity:1.0">Sunny</li>
+                            <li style="opacity:0.7">Warm</li>                  
+                            <li style="opacity:0.3">Bright</li>                 
+                          </ul>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide"></div>
+                      </div>
+                    </div>
+
+                    <div class="store-profile-attribute-type-box">
+                      <div class="store-profile-attribute-type-header">Location</div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Parking</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-road fa-fw"></i>
+                          </div>
+                          <div class="attribute-description">Plentiful</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide"></div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Stores Nearby?</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-building-o"></i>
+                          </div>
+                          <div class="attribute-description">Yes</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide"></div>
+                      </div>
+
+                      <div class="store-profile-attribute">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Public Transit?</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-fighter-jet"></i>
+                          </div>
+                          <div class="attribute-description">No</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide"></div>
+                      </div>
+
+                      <div class="store-profile-attribute last">
+                        <div class="store-profile-attribute-content">
+                          <div class="attribute-label">Accessible?</div>
+                          <div class="attribute-rating">
+                            <i class="fa fa-wheelchair"></i>
+                          </div>
+                          <div class="attribute-description">Yes</div>
+                          <div class="attribute-details-icon"><i class="fa fa-plus-square-o"></i></div>
+                        </div>
+                        <div class="attribute-details hide"></div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+
+        <div class="row">
+
+
+          <div class="store-profile-maincol small-9 small-offset-3 columns">
+
+
+
+            <div class="inner-content-box store-profile-comment-box hide">
+              <div class="row">     
+                <div class="small-12 columns">
+                  <div class="store-profile-comments">
+                    <div class="store-profile-details-header">Comments</div>
+                    <ul class="store-comments">
+                      <li>Comment 1</li>
+                      <li>Comment 2</li>
+                      <li>Comment 3</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row">  
+                <div class="small-12 columns">
+                  <div class="store-profile-add-comment">
+                    <form>
+                      <div class="row">
+                        <div class="large-12 columns">
+                          <label>Add Comment
+                            <textarea placeholder="What did you think of this place?"></textarea>
+                          </label>
+                          <a href="#" class="button tiny right">Submit</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="push"></div>
+</div>
+
+<div class="contain-to-grid sticky">
+  <nav class="top-bar bottom-bar">
+    <section class="top-bar-section">
+      <!-- Left Nav Section -->
+      <ul class="title-area">  
+        <li class="name sitename">
+          Gusto
+        </li>  
+      </ul>     
+
+      <!-- Right Nav Section -->
+      <ul class="right">  
+
+        <li><a href="register.html">Contact</a></li>
+        <li><a href="">About</a></li>
+        <li class="copyright">&copy; 2014 Gusto</li>     
+      </ul>
+    </section>
+  </nav>
+</div>
+</body>
+</html>
+
+
+
+

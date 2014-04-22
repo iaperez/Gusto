@@ -158,115 +158,142 @@ $(document).ready(function() {
     $('#survey-bar').slideDown();
   });  
 
-  $("#register-submit").click(function() {
+  // User Registration Form
+  $("#register-continue").click(function() {
     event.preventDefault();
     $("#registration-form").slideUp();
-    $("#registration-form-2").slideDown();
-  })
+    $("#survey-1").slideDown();
+  });
+
+
+  $("#final-registration-form-submit").click(function() {
+    window.location.replace("index.html");
+  });
+
 
   // Store Profile Form
-
   $("#add-store-form-info-submit").click(function() {
     event.preventDefault();
     if ($("#new-store-name").val().length > 0) {
       $("#add-store-form-info").slideUp();
-      $("#add-store-survey-1").slideDown();
+      $("#survey-1").slideDown();
       $("#success-status").slideUp();
     } else { 
       $('#store-error').show();
     }
-  })
+  });
 
-  $("#add-store-survey-1-submit").click(function() {
-    event.preventDefault();
-    $("#add-store-survey-1").slideUp();
-    $("#add-store-survey-2").slideDown();
-    $('html, body').animate({ scrollTop: 0 }, 'slow');
-  })
-
-  $("#add-store-survey-2-submit").click(function() {
-    event.preventDefault();
-    $("#add-store-survey-2").slideUp();
-    $("#add-store-survey-3").slideDown();
-    $('html, body').animate({ scrollTop: 0 }, 'slow');
-
-  })
-
-  $("#add-store-survey-3-submit").click(function() {
-    event.preventDefault();
-    $("#add-store-survey-3").slideUp();
-    $("#add-store-survey-4").slideDown();
-    $('html, body').animate({ scrollTop: 0 }, 'slow');
-
-  })
-
-  $("#add-store-survey-4-submit").click(function() {
-    event.preventDefault();
-    $("#add-store-survey-4").slideUp();
-    $("#add-store-survey-5").slideDown();
-    $('html, body').animate({ scrollTop: 0 }, 'slow');    
-  })
-
-  $("#final-form-submit").click(function() {
+  $("#final-store-form-submit").click(function() {
     event.preventDefault();
     $("#add-store-form").submit();
-  })
-
-  $(".attribute-details-icon").click(function() {
-    event.preventDefault();
-    if ($(this).hasClass("open")) {
-
-      $(this).children("i").addClass("fa-plus-square-o").removeClass("fa-minus-square-o");
-      $(this).removeClass("open").parent().siblings(".attribute-details").fadeOut();
-      $(this).parents(".store-profile-attribute").animate({ height: 36}, 300, function() {});
-
-
-
-
-    } else {
-
-      $(this).children("i").addClass("fa-minus-square-o").removeClass("fa-plus-square-o");
-      $(this).parents(".store-profile-attribute").animate({ height: 100}, 300, function() {});
-
-      $(this).parent().siblings(".attribute-details").html("This will show the owner/expert/shopper breakdown of the rating");
-      $(this).parent().siblings(".attribute-details").fadeIn();
-      $(this).addClass("open");
-    }
-
-    
-    
-    
-    
-  })
-
-  $(".toggle-extra-bars").click(function(){
-    event.preventDefault();
-    if ($(this).hasClass("open")) {
-      $(this).removeClass("open").parent().siblings("#finder-extra-bars").slideUp();
-    } else {
-      $(this).addClass("open").parent().siblings("#finder-extra-bars").slideDown();
-    }
-
   });
 
-  $(".category-extra-show").click(function(){
+  // Photo Survey
+  $("#survey-1-submit").click(function() {
     event.preventDefault();
-    $(this).hide();
-    $(this).parent().siblings(".category-extra").show();
+    $("#survey-1").slideUp();
+    $("#survey-2").slideDown();
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
   });
 
-  $(".finder-extra-select").change(function() { 
-    if ($(this).text() != "label") {
-      var thisLabelText = $(this).find("option[value='label']").text();
-      console.log(thisLabelText);
-      $(this).parent().siblings(".category-name").text(thisLabelText);
+  $("#survey-2-submit").click(function() {
+    event.preventDefault();
+    $("#survey-2").slideUp();
+    $("#survey-3").slideDown();
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+  });
+
+  $("#survey-3-submit").click(function() {
+    event.preventDefault();
+    $("#survey-3").slideUp();
+    $("#survey-4").slideDown();
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+  });
+
+  $("#survey-4-submit").click(function() {
+    event.preventDefault();
+    $("#survey-4").slideUp();
+    $("#survey-5").slideDown();
+    $('html, body').animate({ scrollTop: 0 }, 'slow');    
+  });
+
+
+  // Store Attribute Details Stuff (Not Currently Used)
+
+  // $(".attribute-details-icon").click(function() {
+  //   event.preventDefault();
+  //   if ($(this).hasClass("open")) {
+
+  //     $(this).children("i").addClass("fa-plus-square-o").removeClass("fa-minus-square-o");
+  //     $(this).removeClass("open").parent().siblings(".attribute-details").fadeOut();
+  //     $(this).parents(".store-profile-attribute").animate({ height: 36}, 300, function() {});
+
+  //   } else {
+
+  //     $(this).children("i").addClass("fa-minus-square-o").removeClass("fa-plus-square-o");
+  //     $(this).parents(".store-profile-attribute").animate({ height: 160}, 300, function() {});
+  //     $(this).parent().siblings(".attribute-details").fadeIn();
+  //     $(this).addClass("open");
+  //   }
+  // });
+
+  // $('.user-rating-icon').on({
+  //   mouseover: function(){
+  //     var ratingValue = $(this).data("rating-value");
+  //     var ratingLabel = $(this).data("rating-label");
+  //     $(this).prevAll().andSelf().css("opacity", "1.0");
+  //     $(this).parent().siblings('.attribute-details-user-description').text(ratingLabel);
+  //   },
+  //   mouseleave: function(){
+  //     $(this).parent().siblings('.attribute-details-user-description').empty();
+  //     $(this).prevAll().andSelf().css("opacity", ".25");
+  //   },
+  //   click: function(){
+  //     var ratingValue = $(this).data("rating-value");
+  //     var ratingLabel = $(this).data("rating-label");
+  //     $(this).prevAll().andSelf().css("opacity", "1.0");
+  //     $(this).siblings().andSelf().off('mouseover mouseleave click').addClass("set");
+  //     $(this).parent().siblings('.attribute-details-user-description').text(ratingLabel + " - Rating Saved!");
+  //   }
+  // });
+
+  $(".toggle-extra-options").click(function(){
+    event.preventDefault();
+    if ($(this).hasClass("open")) {
+      $(this).removeClass("open").parent().siblings("#finder-extra-options").slideUp();
+      $('.option-selected').removeClass("option-selected");
+      $('.option-inactive').removeClass("option-inactive");
+    } else {
+      $(this).addClass("open").parent().siblings("#finder-extra-options").slideDown();
     }
-  }); 
+  });
+
+  $(".extra-options-hide-link").click(function(){
+    event.preventDefault();
+    $("#finder-extra-options").slideUp();
+    $('.option-selected').removeClass("option-selected");
+    $('.option-inactive').removeClass("option-inactive");
+  });
 
   $("#finder-submit").click(function(){
     event.preventDefault();
     loadResults();
   });  
+
+  // highlight/unhighlight extra search filter options
+
+  $('div.extra-option').on("click", function() {
+    if ($(this).hasClass("option-selected")) {
+      // deselect
+      $(this).removeClass("option-selected");
+      $(this).siblings(".extra-option").removeClass("option-inactive");
+    } else if ($(this).hasClass("option-inactive")) {
+      // do nothing
+    } else {
+      $(this).addClass("option-selected");
+      $(this).siblings(".extra-option").addClass("option-inactive");
+    }
+  });
 
   function loadResults() {
 
@@ -274,10 +301,21 @@ $(document).ready(function() {
     $("#store-results").fadeOut().delay(300);
     $("#store-results").fadeIn();
 
-
     var queryStoreType = $("#finder-store-type").val(); // adventure/bargain...
     var queryStoreCategory = $("#finder-store-category").val(); // furniture/clothing...
-    var queryStorePersonality = $("#finder-store-personality").val(); // welcoming/friendly...
+
+    var extraAttributes = "";
+
+    var attrCount = 0;
+    $(".extra-option.option-selected").each(function() {
+      if (attrCount) {
+        extraAttributes += ", ";
+      }
+      extraAttributes += $(this).text().toLowerCase();
+      attrCount++;
+    });
+
+
     var queryString = "Stores selling ";
 
     if (queryStoreCategory != "") {
@@ -286,15 +324,7 @@ $(document).ready(function() {
       queryString += "anything";
     }
 
-    queryString += " that are ";
-
-    if (queryStorePersonality != "") {
-      queryString += queryStorePersonality;
-    } else {
-      queryString += "any personality";
-    }
-
-    queryString += " and good for ";
+    queryString += " that are good for ";
 
     if (queryStoreType != "") {
       queryString += queryStoreType;
@@ -302,11 +332,35 @@ $(document).ready(function() {
       queryString += "all types of shopping";
     }
 
-    $(".store-result-query").hide().delay(800).text(queryString).show();
+    if (extraAttributes.length > 0){
+      queryString += " <em>and</em> are "+extraAttributes;
+    }
+
+    $(".store-result-query").hide().delay(800).html(queryString).show();
     
   };
 
+  // $('.rating-tooltip').click(function() {
+  //   var position = $('.tooltip-icon').offset();
+  //   console.log("left "+position.left);
+  //   console.log("top "+position.top);
+  //   $("#rating-tooltip-box").css({"left" : position.left, "bottom" : position.bottom}).toggle();
+  // });
 
+
+  // Unused stuff from the old drop-down extra form
+  // $(".category-extra-show").click(function(){
+  //   event.preventDefault();
+  //   $(this).hide();
+  //   $(this).parent().siblings(".category-extra").show();
+  // });
+
+  // $(".finder-extra-select").change(function() { 
+  //   if ($(this).text() != "label") {
+  //     var thisLabelText = $(this).find("option[value='label']").text();
+  //     $(this).parent().siblings(".category-name").text(thisLabelText);
+  //   }
+  // }); 
 
   // Here's how to grey out and deactivate a select box
   // $("#finder-store-goods-1").attr('disabled','disabled').css({"background-color": "#e3e3e3", "opacity": 0.5});

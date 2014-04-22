@@ -17,11 +17,14 @@
   <script src="../_js/vendor/jquery.js"></script>
   <script src="../_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
   <script src="../_js/foundation.min.js"></script>
+  <script src="../_js/foundation.dropdown.js"></script>
+  <script src="../_js/foundation.topbar.js"></script>
   <script src="../_js/script.js"></script>
+
   </head>
   <?php
 
-  require("db_vars.php");
+  require("../_php/db_vars.php");
 
   // connect to the database server and select the appropriate database for use
   $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_error() );
@@ -76,7 +79,7 @@
       </div>
     </div>
 
-    <form id="add-store-form" action="save.php" method="post">
+    <form id="add-store-form" action="../_php/save.php" method="post">
       <div class="row">
 
         <div id="add-store-form-info" class="small-12 large-4 columns">
@@ -89,9 +92,6 @@
               <small class="error" id="store-error" style="display:none;">Store Name is Required</small>
             </div>
           </div>
-<!--           <div class="row">
-            <div id="store-error" class="error small-12 columns" style="display:none;">Store Name is Required</small>
-          </div> -->
 
           <div class="row">
             <div class="small-5 columns">
@@ -122,7 +122,7 @@
 
         for ($i=1; $i<=$num_surveys; $i++) {
 
-          echo '<div id="add-store-survey-'.$i.'" class="add-store-survey small-12 columns hide">';
+          echo '<div id="survey-'.$i.'" class="add-store-survey small-12 columns hide">';
           echo '<div class="row">';
           echo '<div class="main-content-box survey-images-container">';
             echo '<h4>Click on the photo that best fits the store\'s style (page '.$i.' of '.$num_surveys.')</h4>';
@@ -136,8 +136,9 @@
               $this_survey_photo3_id = $row["survey_photo3_id"];
               $this_survey_photo4_id = $row["survey_photo4_id"];
               $this_survey_photo5_id = $row["survey_photo5_id"];
+              $this_survey_photo6_id = $row["survey_photo6_id"];
 
-              $photos = 5;
+              $photos = 6;
 
               for ($j=1; $j<=$photos; $j++) {
 
@@ -164,11 +165,11 @@
           echo '<div class="row text-center">';
 
           if ($i == $num_surveys) {
-            echo '<a href="#" class="button small" id="final-form-submit">Finish and Submit</a>';
+            echo '<a href="#" class="button small" id="final-store-form-submit">Finish and Submit</a>';
             echo '<input type="hidden" name="add_store" value="true">';
           
           } else {
-            echo '<a href="#" class="button small" id="add-store-survey-'.$i.'-submit">Continue</a>';
+            echo '<a href="#" class="button small" id="survey-'.$i.'-submit">Continue</a>';
           }
 
           echo '</div>'; // end submit row
@@ -208,7 +209,7 @@
       <!-- Right Nav Section -->
       <ul class="right">  
 
-        <li><a href="register.html">Contact</a></li>
+        <li><a href="">Contact</a></li>
         <li><a href="">About</a></li>
         <li class="copyright">&copy; 2014 Gusto</li>     
       </ul>

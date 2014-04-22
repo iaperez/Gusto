@@ -17,8 +17,18 @@
   <script src="_js/vendor/jquery.js"></script>
   <script src="_js/vendor/jquery-ui-1.10.3.custom.min.js"></script>
   <script src="_js/foundation.min.js"></script>
+  <script src="_js/foundation.dropdown.js"></script>
+  <script src="_js/foundation.topbar.js"></script>
   <script src="_js/script.js"></script>
   </head>
+  <?php
+
+  require("_php/db_vars.php");
+
+  // connect to the database server and select the appropriate database for use
+  $dblink = mysql_connect($authDBHost, $authDBUser, $authDBPasswd) or die( mysql_error() );
+  mysql_select_db($authDBName);
+  ?>
 <body>
 
 <div class="wrapper">
@@ -108,32 +118,78 @@
           </div>
 
           <div class="row text-center">
-            <a href="#" class="button small" id="register-submit">Submit</a>
+            <a href="#" class="button small" id="register-continue">Continue</a>
           </div>
         </div>
 
+        <?php
 
-        <div id="registration-form-2" class="small-6 columns hide">
+        $num_surveys = 5;  
 
-          <div class="row">
-            <div class="reg-images-box">
-              <h4>Click on the photo that best fits your style</h4>
-              <a href="index.html"><small>Skip This</small></a>
+        for ($i=1; $i<=$num_surveys; $i++) {
 
-              <div class="reg-image-row">
-                <a href="index.html"><img src="_images/uploads/sample01.jpg" class="reg-image"></a>
-              </div>
-              <div class="reg-image-row">
-                <a href="index.html"><img src="_images/uploads/sample02.jpg" class="reg-image"></a>
-              </div>
-              <div class="reg-image-row">
-                <a href="index.html"><img src="_images/uploads/sample03.jpg" class="reg-image"></a>
-              </div>
+          echo '<div id="survey-'.$i.'" class="register-survey small-12 columns hide">';
+          echo '<div class="row">';
+          echo '<div class="main-content-box survey-images-container">';
+            echo '<h4>Click on the photo that best fits your personal style (page '.$i.' of '.$num_surveys.')</h4>';
 
-            </div>
-          </div>
+            $q = "SELECT * FROM survey WHERE survey_id='$i';";
+            $result = mysql_db_query($authDBName, $q);
+            while($row = mysql_fetch_array($result)) {
+              $this_survey_caption = $row["survey_caption"];
+              $this_survey_photo1_id = $row["survey_photo1_id"];
+              $this_survey_photo2_id = $row["survey_photo2_id"];
+              $this_survey_photo3_id = $row["survey_photo3_id"];
+              $this_survey_photo4_id = $row["survey_photo4_id"];
+              $this_survey_photo5_id = $row["survey_photo5_id"];
+              $this_survey_photo6_id = $row["survey_photo6_id"];
 
-        </div>
+              $photos = 6;
+
+              for ($j=1; $j<=$photos; $j++) {
+
+                $this_photo_id_var = "this_survey_photo".$j."_id";
+                $this_photo_id = $$this_photo_id_var;
+                $q2 = "SELECT * FROM survey_photo WHERE survey_photo_id='$this_photo_id';";
+                $result2 = mysql_db_query($authDBName, $q2);
+                while($row2 = mysql_fetch_array($result2)) {
+                  $this_photo_filename = $row2["survey_photo_filename"];
+                  $this_photo_tag_id = $row2["survey_photo_tag_id"];
+                  echo '<div class="survey-image-box">';
+                  echo '<label for="survey_photo_0'.$i.'_0'.$j.'"><img src="_images/survey_photos/'.$this_photo_filename.'" class="survey-image"></label><br>';
+                  // echo 'This photo tagged #'.$this_photo_tag_id.'<br>';
+                  echo '<input type="radio" class="survey_radio" name="survey_0'.$i.'" value="'.$this_photo_tag_id.'" id="survey_photo_0'.$i.'_0'.$j.'" required>';
+                  echo '</div>'; // end survey-image-box
+                }
+
+                
+              }
+              
+
+            }            
+
+          echo '<div class="row text-center">';
+
+          if ($i == $num_surveys) {
+            echo '<a href="#" class="button small" id="final-registration-form-submit">Finish and Submit</a>';
+          
+          } else {
+            echo '<a href="#" class="button small" id="survey-'.$i.'-submit">Continue</a>';
+          }
+
+          echo '</div>'; // end submit row
+            
+          echo '</div>'; // end survey-images-container
+
+          echo '</div>'; // end row
+
+          echo '</div>'; // end register-survey-0x
+
+        }
+
+
+        ?>
+
 
 
       </div>
