@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :authenticate_user!, :set_survey, only: [:show, :edit, :update, :destroy, :answers]
+  before_action :authenticate_user!, :set_survey, only: [:show, :edit, :update, :destroy, :answers, :respond, :responses]
   before_filter :authenticate_user!
 
   # GET /surveys
@@ -77,14 +77,23 @@ class SurveysController < ApplicationController
   end
 
   def responses
-    for feedback in params[:answers_ids] do
-      resp = Response.new
-      resp.user_id=current_user.id
-      resp.answer_id=feedback
-      if Response.where(answer_id: feedback, user_id: current_user.id).count == 0
-        resp.save!
+    questions = @survey.questions
+    for qq in questions do
+      for ans in qq.answers do
+        Response.delete_all(answer_id: ans.id,user_id: current_user.id)
       end
     end
+    if params.has_key? :answers_ids
+      for feedback in params[:answers_ids] do
+        resp = Response.new
+        resp.user_id=current_user.id
+        resp.answer_id=feedback
+        if Response.where(answer_id: feedback, user_id: current_user.id).count == 0
+          resp.save!
+        end
+      end
+    end
+    redirect_to '/user/preferences'
   end
 
   private
@@ -97,6 +106,6 @@ class SurveysController < ApplicationController
   def survey_params
     params.require(:survey).permit(:name,
                                    :questions_attributes => [:id, :content, :_destroy,
-                                   :answers_attributes => [:id, :content, :_destroy, :image]])
+                                                             :answers_attributes => [:id, :content, :_destroy, :image]])
   end
 end

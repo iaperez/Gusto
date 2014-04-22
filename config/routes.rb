@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+
+  devise_scope :users do
+    get "user/preferences", to: "preferences#index"
+  end
+
+
   root :to => 'searches#new'
 
   get 'browse/home'
