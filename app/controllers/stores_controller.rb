@@ -95,6 +95,9 @@ class StoresController < ApplicationController
                                   :public_transit,
                                   :stores_nearby,
                                   :accessible,
-                                  :image)
+                                  :image,
+                                  :thumbnail1,
+                                  :thumbnail2,
+                                  :thumbnail3)
   end
 end

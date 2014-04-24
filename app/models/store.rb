@@ -12,6 +12,9 @@ class Store < ActiveRecord::Base
   has_many :music_styles, through: :store_music_styles
 
   mount_uploader :image, ImageUploader
+  mount_uploader :thumbnail1, ImageUploader
+  mount_uploader :thumbnail2, ImageUploader
+  mount_uploader :thumbnail3, ImageUploader
 
   validates_presence_of :name
 

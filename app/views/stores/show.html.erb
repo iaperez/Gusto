@@ -13,14 +13,25 @@
     <div class="row">
       <div class="store-profile-leftcol small-3 columns">
         <div id="store-profile-map">
-          <%= image_tag @store.image.to_s if @store.image? %>
+
         </div>
       </div>
 
       <div class="store-profile-maincol small-9 columns">
         <div class="inner-content-box store-main-img-container">
-          <%= image_tag @store.img_url, class: 'store-profile-main-img' %>
+          <%= image_tag @store.image.to_s if @store.image? %>
         </div>
+        <ul class="small-block-grid-3" data-clearing>
+          <li><a href="<%= @store.thumbnail1.to_s if @store.image? %>">
+            <div class="inner-content-box store-main-img-container"><%= image_tag @store.thumbnail1.to_s if @store.image? %></div>
+          </a></li>
+          <li><a href="<%= @store.thumbnail2.to_s if @store.image? %>">
+            <div class="inner-content-box store-main-img-container"><%= image_tag @store.thumbnail2.to_s if @store.image? %></div>
+          </a></li>
+          <li><a href="<%= @store.thumbnail3.to_s if @store.image? %>">
+            <div class="inner-content-box store-main-img-container"><%= image_tag @store.thumbnail3.to_s if @store.image? %></div>
+          </a></li>
+        </ul>
       </div>
     </div>
 
@@ -44,10 +55,13 @@
           <div class="store-profile-type-rating">
             <div class="attribute-label">Gusto Scores:</div>
             <ul class="type-ratings">
-              <li class="type-rating-item" data-rating="<%=@store.adventure%>">Adventure <span class="type-rating-number"><%=@store.adventure%></span></li>
-              <li class="type-rating-item" data-rating="<%=@store.convenience%>">Convenience <span class="type-rating-number"><%=@store.convenience%></span>
+              <li class="type-rating-item" data-rating="<%= @store.adventure %>">Adventure
+                <span class="type-rating-number"><%= @store.adventure %></span></li>
+              <li class="type-rating-item" data-rating="<%= @store.convenience %>">Convenience
+                <span class="type-rating-number"><%= @store.convenience %></span>
               </li>
-              <li class="type-rating-item" data-rating="<%=@store.convenience%>">Bargain <span class="type-rating-number"><%=@store.convenience%></span></li>
+              <li class="type-rating-item" data-rating="<%= @store.convenience %>">Bargain
+                <span class="type-rating-number"><%= @store.convenience %></span></li>
             </ul>
             <div class="rating-tooltip"><i class="fa fa-question-circle tooltip-icon"></i> What are these?</div>
           </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421042320) do
+ActiveRecord::Schema.define(version: 20140424015857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -235,6 +235,9 @@ ActiveRecord::Schema.define(version: 20140421042320) do
     t.string   "accessible"
     t.integer  "sales"
     t.string   "image"
+    t.string   "thumbnail1"
+    t.string   "thumbnail2"
+    t.string   "thumbnail3"
   end
 
   create_table "styles", force: true do |t|
