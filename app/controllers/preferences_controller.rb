@@ -9,6 +9,16 @@ class PreferencesController < ApplicationController
     if user_signed_in?
       @preferences = current_user.preferences.all
       @available_surveys = Survey.all
+      user_responses = Response.where(user_id: current_user.id)
+      @responses_per_survey = {}
+      for survey in @available_surveys
+        for answer in survey.answers
+          @responses_per_survey[survey.id] ||=[]
+          if Response.where(user_id: current_user.id, answer_id: answer.id).count != 0
+            @responses_per_survey[survey.id].push(Answer.find(answer.id).content)
+          end
+        end
+      end
     else
       @preferences = []
     end

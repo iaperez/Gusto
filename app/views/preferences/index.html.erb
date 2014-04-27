@@ -13,7 +13,11 @@
       <% @available_surveys.each do |survey| %>
           <tr>
             <td><%= survey.name %></td>
-
+            <td>
+              <% if @responses_per_survey.has_key?(survey.id) %>
+              <%= @responses_per_survey[survey.id].to_sentence %>
+              <% end %>
+            </td>
             <td><%= link_to 'Start the quiz!', respond_survey_path(survey) %></td>
           </tr>
       <% end %>
