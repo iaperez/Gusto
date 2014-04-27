@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: searches
+#
+#  id                :integer          not null, primary key
+#  category_id       :integer
+#  features_id       :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#  space_type_id     :integer
+#  location_type_id  :integer
+#  goods_type_id     :integer
+#  ambience_type_id  :integer
+#  character_type_id :integer
+#  access_type_id    :integer
+#
+
 class Search < ActiveRecord::Base
   belongs_to :category
   belongs_to :feature
@@ -6,6 +23,7 @@ class Search < ActiveRecord::Base
   belongs_to :goods_type
   belongs_to :character_type
   belongs_to :ambience_type
+  belongs_to :access_type
 
   def stores
     @stores ||= find_stores

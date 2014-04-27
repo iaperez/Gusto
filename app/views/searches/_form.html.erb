@@ -47,14 +47,14 @@
         </div>
 
         <div class="extra-option-container">
-          <%= f.hidden_field :location_type_id %>
-          <div class="flaticon-map32 extra-option-header-icon"></div>
-          <div class="extra-option-header gusto">Location</div>
-          <% LocationType.all.each do |nn| %>
-              <% if @search.location_type_id.blank? %>
+          <%= f.hidden_field :access_type_id %>
+          <div class="flaticon-bus3 extra-option-header-icon"></div>
+          <div class="extra-option-header gusto">Access</div>
+          <% AccessType.all.each do |nn| %>
+              <% if @search.access_type_id.blank? %>
                   <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
               <% else %>
-                  <% if @search.location_type_id == nn.id %>
+                  <% if @search.access_type_id == nn.id %>
                       <div class="extra-option option-selected" id="<%= nn.id %>"> <%= nn.name %></div>
                   <% else %>
                       <div class="extra-option option-inactive" id="<%= nn.id %>"> <%= nn.name %></div>
@@ -121,7 +121,7 @@
       </div>
     </div>
     <div class="actions">
-      <%= f.submit 'Search', :class => 'button' %>
+      <%= f.submit 'Search', :class => 'button small finder-submit' %>
     </div>
 
 <% end %>

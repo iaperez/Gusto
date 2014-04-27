@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424015857) do
+ActiveRecord::Schema.define(version: 20140427060402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "access_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "air_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ambience_types", force: true do |t|
     t.string   "name"
@@ -125,6 +137,7 @@ ActiveRecord::Schema.define(version: 20140424015857) do
     t.integer  "goods_type_id"
     t.integer  "ambience_type_id"
     t.integer  "character_type_id"
+    t.integer  "access_type_id"
   end
 
   add_index "searches", ["category_id"], name: "index_searches_on_category_id", using: :btree
@@ -135,6 +148,17 @@ ActiveRecord::Schema.define(version: 20140424015857) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "store_air_types", force: true do |t|
+    t.integer  "store_id"
+    t.integer  "air_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "degree"
+  end
+
+  add_index "store_air_types", ["air_type_id"], name: "index_store_air_types_on_air_type_id", using: :btree
+  add_index "store_air_types", ["store_id"], name: "index_store_air_types_on_store_id", using: :btree
 
   create_table "store_categories", force: true do |t|
     t.integer  "store_id"
@@ -230,7 +254,7 @@ ActiveRecord::Schema.define(version: 20140424015857) do
     t.integer  "size"
     t.integer  "organization"
     t.integer  "parking"
-    t.string   "public_transit"
+    t.integer  "public_transit"
     t.string   "stores_nearby"
     t.string   "accessible"
     t.integer  "sales"
@@ -238,6 +262,7 @@ ActiveRecord::Schema.define(version: 20140424015857) do
     t.string   "thumbnail1"
     t.string   "thumbnail2"
     t.string   "thumbnail3"
+    t.integer  "customer_service"
   end
 
   create_table "styles", force: true do |t|

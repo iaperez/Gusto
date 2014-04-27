@@ -11,15 +11,17 @@ Feature.where(name: 'Convenience').first_or_create!
 Feature.where(name: 'Bargains').first_or_create!
 
 Category.where(name: 'Clothing').first_or_create!
-Category.where(name: 'Decoration').first_or_create!
-Category.where(name: 'Accesories').first_or_create!
+Category.where(name: 'Decorations').first_or_create!
+Category.where(name: 'Accessories').first_or_create!
 
 SpaceType.where(name: 'Large').first_or_create!
 SpaceType.where(name: 'Cozy').first_or_create!
 
-
 LocationType.where(name: 'Urban').first_or_create!
 LocationType.where(name: 'Suburban').first_or_create!
+
+AccessType.where(name: 'Transit').first_or_create!
+AccessType.where(name: 'Parking').first_or_create!
 
 GoodsType.where(name: 'Affordable').first_or_create!
 GoodsType.where(name: 'High-End').first_or_create!

@@ -31,8 +31,17 @@ body {
   }
 }
 
-p { margin-bottom: .8em; }
+.row {
+  max-width: 100%;
+}
 
+button, .button {
+	background-color: #5077bf;
+  border-color: #3a5d9f;
+  font-family: 'Crimson Text', serif !important;
+}
+
+p { margin-bottom: .8em; }
 
 textarea {
 	height: 10em;

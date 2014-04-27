@@ -1,4 +1,8 @@
-<div class="store-profile-attribute last">
+<% if !local_assigns[:last].nil? %>
+  <div class="store-profile-attribute last">
+<% else %>
+  <div class="store-profile-attribute">
+<% end %>
   <div class="store-profile-attribute-content">
     <div class="attribute-label"><%= name.html_safe %></div>
     <div class="attribute-description"><%= description %></div>

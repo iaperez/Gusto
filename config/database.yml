@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: gusto_development
   pool: 5
-  username: Ignacio
+  username: Ryan
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a

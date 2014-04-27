@@ -15,28 +15,6 @@
         <div id="store-profile-map">
 
         </div>
-      </div>
-
-      <div class="store-profile-maincol small-9 columns">
-        <div class="inner-content-box store-main-img-container">
-          <%= image_tag @store.image.to_s if @store.image? %>
-        </div>
-        <ul class="small-block-grid-3" data-clearing>
-          <li><a href="<%= @store.thumbnail1.to_s if @store.image? %>">
-            <div class="inner-content-box store-main-img-container"><%= image_tag @store.thumbnail1.to_s if @store.image? %></div>
-          </a></li>
-          <li><a href="<%= @store.thumbnail2.to_s if @store.image? %>">
-            <div class="inner-content-box store-main-img-container"><%= image_tag @store.thumbnail2.to_s if @store.image? %></div>
-          </a></li>
-          <li><a href="<%= @store.thumbnail3.to_s if @store.image? %>">
-            <div class="inner-content-box store-main-img-container"><%= image_tag @store.thumbnail3.to_s if @store.image? %></div>
-          </a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="store-profile-leftcol small-3 columns">
         <div class="store-profile-location">
           <p>
             100 College Ave<br>
@@ -46,24 +24,42 @@
           </p>
         </div>
         <div class="store-profile-review">
-          <%= @store.description %>
+          <p><%= @store.description %></p>
         </div>
       </div>
 
       <div class="store-profile-maincol small-9 columns">
+        <div class="inner-content-box store-main-img-container">
+          <%= image_tag @store.image.to_s if @store.image? %>
+
+          <ul class="small-block-grid-3 store-thumb-img-container" data-clearing>
+            <li><a href="<%= @store.thumbnail1.to_s if @store.image? %>">
+              <div class="store-thumb-img"><%= image_tag @store.thumbnail1.to_s if @store.image? %></div>
+            </a></li>
+            <li><a href="<%= @store.thumbnail2.to_s if @store.image? %>">
+              <div class="store-thumb-img"><%= image_tag @store.thumbnail2.to_s if @store.image? %></div>
+            </a></li>
+            <li><a href="<%= @store.thumbnail3.to_s if @store.image? %>">
+              <div class="store-thumb-img"><%= image_tag @store.thumbnail3.to_s if @store.image? %></div>
+            </a></li>
+          </ul>
+
+        </div>
+
         <div class="inner-content-box store-profile-type-rating-container">
           <div class="store-profile-type-rating">
-            <div class="attribute-label">Gusto Scores:</div>
+            <div class="attribute-label gusto">Gusto Scores:</div>
             <ul class="type-ratings">
               <li class="type-rating-item" data-rating="<%= @store.adventure %>">Adventure
                 <span class="type-rating-number"><%= @store.adventure %></span></li>
               <li class="type-rating-item" data-rating="<%= @store.convenience %>">Convenience
                 <span class="type-rating-number"><%= @store.convenience %></span>
               </li>
-              <li class="type-rating-item" data-rating="<%= @store.convenience %>">Bargain
-                <span class="type-rating-number"><%= @store.convenience %></span></li>
+              <li class="type-rating-item" data-rating="<%= @store.bargain %>">Bargain
+                <span class="type-rating-number"><%= @store.bargain %></span></li>
             </ul>
-            <div class="rating-tooltip"><i class="fa fa-question-circle tooltip-icon"></i> What are these?</div>
+
+            <div class="rating-tooltip"><span data-tooltip class="has-tip tip-top" title="Here is the text of the tooltip!"><i class="fa fa-question-circle tooltip-icon"></i> What are these?</span></div>
           </div>
         </div>
 
@@ -76,19 +72,19 @@
                 </div>
                 <!-- CATEGORIES-->
                 <%= render "attribute_tag_list", name: 'Categories', list: @store.categories_names %>
-                <%= render "stores/attribute_count_list", name: 'Prices', rating: @store.prices, count_type: 'fa fa-usd fa-fw' %>
-                <%= render "stores/attribute_count_list", name: 'Variety', rating: @store.variety, count_type: 'fa fa-star-o fa-fw' %>
-                <%= render "stores/attribute_count_list", name: 'Sales', rating: @store.sales, count_type: 'fa fa-tag fa-fw' %>
-                <%= render "stores/attribute_count_list", name: 'Discounts', rating: @store.discounts, count_type: 'fa fa-star-o fa-fw' %>
+                <%= render "stores/attribute_count_list", name: 'Prices', value_names: {1 => 'Inexpensive', 2 => 'Moderate', 3 => 'Expensive'}, rating: @store.prices, count_type: 'fa fa-usd fa-fw' %>
+                <%= render "stores/attribute_count_list", name: 'Variety', value_names: {1 => 'Low', 2 => 'Moderate', 3 => 'High'}, rating: @store.variety, count_type: 'fa fa-shopping-cart fa-fw' %>
+                <%= render "stores/attribute_count_list", name: 'Sales', value_names: {1 => 'Rare', 2 => 'Occasional', 3 => 'Frequent'}, rating: @store.sales, count_type: 'fa fa-tag fa-fw' %>
+                <%= render "stores/attribute_count_list", name: 'Discounts', value_names: {1 => 'Slight', 2 => 'Moderate', 3 => 'Deep'}, rating: @store.discounts, last: 1, count_type: 'flaticon-sale' %>
               </div>
               <div class="store-profile-attributes-box">
-                <div class="store-profile-attribute-type-header">
+                <div class="store-profile-attribute-type-header padded">
                   Space
                 </div>
-                <%= render "stores/attribute_count_list", name: 'Size', rating: @store.size, count_type: 'fa fa-building-o fa-fw' %>
-                <%= render "stores/attribute_count_list", name: 'Organization', rating: @store.organization, count_type: 'fa fa-sitemap fa-fw' %>
-                <%= render "stores/attribute_count_list", name: 'Busyness', rating: @store.busyness, count_type: 'fa fa-group fa-fw' %>
-                <%= render "stores/attribute_count_list", name: 'Noise', rating: @store.noise, count_type: 'fa fa-volume-up fa-fw' %>
+                <%= render "stores/attribute_count_list", name: 'Size', value_names: {1 => 'Small', 2 => 'Medium', 3 => 'Large'}, rating: @store.size, count_type: 'fa fa-building-o fa-fw' %>
+                <%= render "stores/attribute_count_list", name: 'Organization', value_names: {1 => 'Disorganized', 2 => 'Moderate', 3 => 'Highly Organized'}, rating: @store.organization, count_type: 'flaticon-shelf1' %>
+                <%= render "stores/attribute_count_list", name: 'Busy', value_names: {1 => 'Rarely', 2 => 'Sometimes', 3 => 'Often'}, rating: @store.busyness, count_type: 'fa fa-user fa-fw' %>
+                <%= render "stores/attribute_count_list", name: 'Noise', value_names: {1 => 'Quiet', 2 => 'Moderate', 3 => 'Loud'}, rating: @store.noise, last: 1, count_type: 'fa fa-bullhorn fa-fw' %>
               </div>
             </div>
             <div class="store-profile-details small-6 columns">
@@ -96,21 +92,22 @@
                 <div class="store-profile-attribute-type-header">
                   Ambience
                 </div>
+                <%= render "stores/attribute_count_list", name: 'Cust. Service', value_names: {1 => 'Hands-Off', 2 => 'Friendly', 3 => 'Aggressive'}, rating: @store.customer_service, count_type: 'flaticon-staff2' %>
                 <%= render "attribute_tag_list", name: 'Style', list: @store.styles_names_degrees %>
-                <%= render "attribute_tag_list", name: 'Personality', list: @store.personalities_names_degrees %>
+                <%#= render "attribute_tag_list", name: 'Personality', list: @store.personalities_names_degrees %>
                 <%= render "attribute_tag_list", name: 'Scent', list: @store.scents_names_degrees %>
                 <%= render "attribute_tag_list", name: 'Music', list: @store.music_styles_names_degrees %>
+                <%= render "attribute_tag_list", name: 'Air & Space', last: 1, list: @store.air_types_names_degrees %>
               </div>
 
               <div class="store-profile-attributes-box">
-                <div class="store-profile-attribute-type-header">
+                <div class="store-profile-attribute-type-header padded">
                   Location
                 </div>
                 <% extra_tag = '<i class="fa fa-wheelchair"></i>' %>
-                <%= render "stores/attribute_count_list", name: 'Parking', rating: @store.parking, count_type: 'fa fa-road fa-fw' %>
-                <%= render "stores/attribute_text", name: 'Stores Nearby?', description: @store.stores_nearby %>
-                <%= render "stores/attribute_text", name: 'Public Transit?', description: @store.public_transit %>
-                <%= render "stores/attribute_text", name: 'Accessible? '+extra_tag, description: @store.accessible %>
+                <%= render "stores/attribute_count_list", name: 'Parking', value_names: {1 => 'Difficult', 2 => 'Limited', 3 => 'Easy'}, rating: @store.parking, count_type: 'flaticon-car66' %>
+                <%= render "stores/attribute_count_list", name: 'Transit', value_names: {1 => 'None', 2 => 'Available', 3 => 'Plentiful'}, rating: @store.public_transit, count_type: 'flaticon-bus21' %>
+                <%= render "stores/attribute_text", name: 'Accessible? '+extra_tag, description: @store.accessible, last: 1 %>
 
               </div>
             </div>

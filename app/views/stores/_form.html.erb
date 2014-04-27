@@ -102,17 +102,16 @@
       <%= f.text_field :img_url %>
     </div>
 
+    <div class="field">
+      <%= f.label :customer_service %>
+      <br>
+      <%= f.number_field :customer_service %>
+    </div>
 
     <div class="field">
       <%= f.label :public_transit %>
       <br>
-      <%= f.text_field :public_transit %>
-    </div>
-
-    <div class="field">
-      <%= f.label :stores_nearby %>
-      <br>
-      <%= f.text_field :stores_nearby %>
+      <%= f.number_field :public_transit %>
     </div>
 
     <div class="field">
@@ -123,33 +122,34 @@
 
 
     <div class="field">
-      <%= f.label :categories_list, "Categories (separated by comas)" %>
+      <%= f.label :categories_list, "Categories (separated by commas)" %>
       <br>
       <%= f.text_field :categories_list %>
     </div>
 
     <div class="field">
-      <%= f.label :styles_list, "Styles (separated by comas)" %>
+      <%= f.label :styles_list, "Styles (separated by commas)" %>
       <br>
       <%= f.text_field :styles_list %>
     </div>
 
     <div class="field">
-      <%= f.label :personalities_list, "Personalities (separated by comas)" %>
-      <br>
-      <%= f.text_field :personalities_list %>
-    </div>
-
-    <div class="field">
-      <%= f.label :music_styles_list, "Music Styles (separated by comas)" %>
+      <%= f.label :music_styles_list, "Music Styles (separated by commas)" %>
       <br>
       <%= f.text_field :music_styles_list %>
     </div>
 
     <div class="field">
-      <%= f.label :scents_list, "Scents (separated by comas)" %>
+      <%= f.label :scents_list, "Scents (separated by commas)" %>
       <br>
       <%= f.text_field :scents_list %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :air_types_list, "Air & Space (separated by commas)" %>
+      <br>
+      <%= f.text_field :air_types_list %>
     </div>
 
 

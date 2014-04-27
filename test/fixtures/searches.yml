@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: searches
+#
+#  id                :integer          not null, primary key
+#  category_id       :integer
+#  features_id       :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#  space_type_id     :integer
+#  location_type_id  :integer
+#  goods_type_id     :integer
+#  ambience_type_id  :integer
+#  character_type_id :integer
+#  access_type_id    :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

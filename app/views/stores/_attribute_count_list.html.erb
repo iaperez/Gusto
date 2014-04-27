@@ -1,4 +1,8 @@
-<div class="store-profile-attribute">
+<% if !local_assigns[:last].nil? %>
+  <div class="store-profile-attribute last">
+<% else %>
+  <div class="store-profile-attribute">
+<% end %>
   <div class="store-profile-attribute-content">
     <div class="attribute-label"><%= name %></div>
     <div class="attribute-rating">
@@ -6,7 +10,13 @@
           <% (1..rating).each do |n| %>
               <i class='<%= count_type %>'></i>
           <% end %>
+          <% (rating..2).each do |n| %>
+              <i class='<%= count_type %>' style="opacity:0.08;"></i>
+          <% end %>
       <% end %>
+    </div>
+    <div class="attribute-description">
+      <%= value_names[rating] %>
     </div>
   </div>
   <div class="attribute-details hide"></div>

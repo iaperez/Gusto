@@ -1,3 +1,36 @@
+# == Schema Information
+#
+# Table name: stores
+#
+#  id               :integer          not null, primary key
+#  name             :string(255)
+#  prices           :integer
+#  busyness         :integer
+#  noise            :integer
+#  adventure        :decimal(, )
+#  convenience      :decimal(, )
+#  bargain          :decimal(, )
+#  website          :string(255)
+#  description      :text
+#  created_at       :datetime
+#  updated_at       :datetime
+#  img_url          :string(255)
+#  variety          :integer
+#  discounts        :integer
+#  size             :integer
+#  organization     :integer
+#  parking          :integer
+#  public_transit   :integer
+#  stores_nearby    :string(255)
+#  accessible       :string(255)
+#  sales            :integer
+#  image            :string(255)
+#  thumbnail1       :string(255)
+#  thumbnail2       :string(255)
+#  thumbnail3       :string(255)
+#  customer_service :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
