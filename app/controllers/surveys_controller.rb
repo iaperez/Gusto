@@ -70,10 +70,6 @@ class SurveysController < ApplicationController
   def respond
     set_survey
     @responded_answers = Response.where(user_id: current_user.id).pluck(:answer_id)
-    if @responded_answers.include?(1)
-      i=2
-    end
-    i=0
   end
 
   def responses
