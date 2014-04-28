@@ -39,12 +39,16 @@ class Store < ActiveRecord::Base
   has_many :store_music_styles
   has_many :store_air_types
 
+
   has_many :categories, through: :store_categories
   has_many :styles, through: :store_styles
   has_many :personalities, through: :store_personalities
   has_many :scents, through: :store_scents
   has_many :music_styles, through: :store_music_styles
   has_many :air_types, through: :store_air_types
+
+  has_one :store_owner
+
 
   mount_uploader :image, ImageUploader
   mount_uploader :thumbnail1, ImageUploader
@@ -58,7 +62,7 @@ class Store < ActiveRecord::Base
   end
 
   def categories_names
-     categories.pluck(:name)
+    categories.pluck(:name)
   end
 
   def categories_list=(names)
@@ -72,7 +76,7 @@ class Store < ActiveRecord::Base
   end
 
   def styles_names_degrees
-    self.styles.pluck(:name,:degree)
+    self.styles.pluck(:name, :degree)
   end
 
   def styles_list=(names)
@@ -86,7 +90,7 @@ class Store < ActiveRecord::Base
   end
 
   def personalities_names_degrees
-    self.personalities.pluck(:name,:degree)
+    self.personalities.pluck(:name, :degree)
   end
 
 
@@ -101,7 +105,7 @@ class Store < ActiveRecord::Base
   end
 
   def music_styles_names_degrees
-    self.music_styles.pluck(:name,:degree)
+    self.music_styles.pluck(:name, :degree)
   end
 
   def music_styles_list=(names)
@@ -115,7 +119,7 @@ class Store < ActiveRecord::Base
   end
 
   def scents_names_degrees
-    self.scents.pluck(:name,:degree)
+    self.scents.pluck(:name, :degree)
   end
 
   def scents_list=(names)
