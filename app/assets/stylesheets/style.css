@@ -499,7 +499,7 @@ ul.store-profile-categories li {
 	display: inline;
 	list-style-type: none;
 	height: 20px;
-	margin: 2px 0px 0px 12px;
+	margin: 2px 0px 0px 0px;
 }
 
 .store-profile-details li {
@@ -571,7 +571,7 @@ ul.store-profile-categories li {
 	font-size: .8em;
 	white-space: nowrap;
 	font-weight: 400;
-	margin: 0px 6px 0px 12px;
+	margin: 0px 6px 0px 0px;
 	width: 25%;
 	color: #ABABAB;
 }
@@ -595,7 +595,7 @@ ul.store-profile-categories li {
 	float: left;
 	/*font-size: 1em;*/
 	white-space: nowrap;
-	margin: 1px 12px 0px 12px;
+	margin: 1px 12px 0px 0px;
 }
 
 .store-profile-attribute .flaticon-sale{

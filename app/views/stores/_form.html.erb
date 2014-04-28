@@ -315,80 +315,69 @@
       </div>
     </div>
 
-
     <div class="row">
       <div class="field-header small-12 columns text-center">Ambience</div>
     </div>
 
-
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :categories_list, "Categories", :class => "right inline" %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.text_field :categories_list %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> (Comma-separated)</div>
+      </div>  
+    </div> 
 
     <div class="field row">
       <div class="small-3 columns">
-        <%= f.label :category_ids, "Categories", :class => "right inline" %>
+        <%= f.label :styles_list, "Styles", :class => "right inline" %>
       </div>
-      <div class="small-9 columns left text-left">
-        <%= collection_check_boxes(:store, :category_ids, Category.all, :id, :name) do |b| %>
-          <span class="checkbox-container">
-            <%= b.check_box %>
-            <%= b.label %>
-          </span>
-        <% end %>
+      <div class="small-6 columns">
+        <%= f.text_field :styles_list %>
       </div>
-    </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> (Comma-separated)</div>
+      </div>  
+    </div>    
 
     <div class="field row">
       <div class="small-3 columns">
-        <%= f.label :style_ids, "Styles", :class => "right inline" %>
+        <%= f.label :scents_list, "Scents", :class => "right inline" %>
       </div>
-      <div class="small-9 columns left text-left">
-        <%= collection_check_boxes(:store, :style_ids, Style.all, :id, :name) do |b| %>
-          <span class="checkbox-container">
-            <%= b.check_box %>
-            <%= b.label %>
-          </span>
-        <% end %>
+      <div class="small-6 columns">
+        <%= f.text_field :scents_list %>
       </div>
-    </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> (Comma-separated)</div>
+      </div>  
+    </div>    
 
     <div class="field row">
       <div class="small-3 columns">
-        <%= f.label :scent_ids, "Scents", :class => "right inline" %>
+        <%= f.label :music_styles_list, "Music Genres", :class => "right inline" %>
       </div>
-      <div class="small-9 columns left text-left">
-        <%= collection_check_boxes(:store, :scent_ids, Scent.all, :id, :name) do |b| %>
-          <span class="checkbox-container">
-            <%= b.check_box %>
-            <%= b.label %>
-          </span>
-        <% end %>
+      <div class="small-6 columns">
+        <%= f.text_field :music_styles_list %>
       </div>
-    </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> (Comma-separated)</div>
+      </div>  
+    </div>   
 
     <div class="field row">
       <div class="small-3 columns">
-        <%= f.label :music_style_ids, "Music Genres", :class => "right inline" %>
+        <%= f.label :air_types_list, "Air & Space", :class => "right inline" %>
       </div>
-      <div class="small-9 columns left text-left">
-        <%= collection_check_boxes(:store, :music_style_ids, MusicStyle.all, :id, :name) do |b| %>
-          <span class="checkbox-container">
-            <%= b.check_box %>
-            <%= b.label %>
-          </span>
-        <% end %>
+      <div class="small-6 columns">
+        <%= f.text_field :air_types_list %>
       </div>
-    </div>
-
-
-    <div class="field row">
-      <div class="small-3 columns">
-        <%= f.label :air_type_ids, "Air & Space", :class => "right inline" %>
-      </div>
-      <div class="small-9 columns left text-left">
-        <%= collection_check_boxes(:store, :air_type_ids, AirType.all, :id, :name, {item_wrapper_class: 'checkbox_container'}) %>
-
-      </div>
-    </div>
-
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> (Comma-separated)</div>
+      </div>  
+    </div>    
 
     <div class="row">
       <div class="field-header small-12 columns text-center">Store Photos</div>
@@ -401,7 +390,7 @@
       <div class="small-3 columns left text-left">
         <%= f.file_field :image %>
       </div>
-      <div class="small-3 columns left text-left">
+      <div class="small-6 columns left text-left">
         <div class="form-instructions">Must be Panorama Dimensions (3:1 aspect ratio)</div>
       </div>
     </div>
@@ -413,7 +402,7 @@
       <div class="small-3 columns left text-left">
         <%= f.file_field :thumbnail1 %>
       </div>
-      <div class="small-3 columns left text-left">
+      <div class="small-6 columns left text-left">
         <div class="form-instructions"> (Standard 4:3 aspect ratio)</div>
       </div>
     </div>
@@ -425,7 +414,7 @@
       <div class="small-3 columns left text-left">
         <%= f.file_field :thumbnail2 %>
       </div>
-      <div class="small-3 columns left text-left">
+      <div class="small-6 columns left text-left">
         <div class="form-instructions"> (Standard 4:3 aspect ratio)</div>
       </div>      
     </div>
@@ -437,7 +426,7 @@
       <div class="small-3 columns left text-left">
         <%= f.file_field :thumbnail3 %>
       </div>
-      <div class="small-3 columns left text-left">
+      <div class="small-6 columns left text-left">
         <div class="form-instructions"> (Standard 4:3 aspect ratio)</div>
       </div>      
     </div>
