@@ -1,4 +1,4 @@
-<%= form_for @store, :html => {:multipart => true} do |f| %>
+<%= form_for @store, :html => {:multipart => true, :class => 'add-store-form columns small-12 small-centered'} do |f| %>
     <% if @store.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@store.errors.count, "error") %> prohibited this store from being saved:</h2>
@@ -11,174 +11,440 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :name %>
-      <br>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :prices %>
-      <br>
-      <%= f.number_field :prices %>
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :name, "Store Name", :class => "right inline" %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.text_field :name %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :variety %>
-      <br>
-      <%= f.number_field :variety %>
-    </div>
+<!--     <div class="field">
+      <div class="small-3 columns">
+        <%#= f.label :address, "Address", :class => "right inline"%>
+      </div>
+      <div class="small-9 columns">
+        <%#= f.text_field :address %>
+      </div>
+    </div> -->
 
-    <div class="field">
-      <%= f.label :sales %>
-      <br>
-      <%= f.number_field :sales %>
-    </div>
 
-    <div class="field">
-      <%= f.label :discounts %>
-      <br>
-      <%= f.number_field :discounts %>
-    </div>
-
-    <div class="field">
-      <%= f.label :size %>
-      <br>
-      <%= f.number_field :size %>
-    </div>
-
-    <div class="field">
-      <%= f.label :organization %>
-      <br>
-      <%= f.number_field :organization %>
-    </div>
-
-    <div class="field">
-      <%= f.label :busyness %>
-      <br>
-      <%= f.number_field :busyness %>
-    </div>
-    <div class="field">
-      <%= f.label :noise %>
-      <br>
-      <%= f.number_field :noise %>
-    </div>
-
-    <div class="field">
-      <%= f.label :parking %>
-      <br>
-      <%= f.number_field :parking %>
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :website, "Website", :class => "right inline" %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.text_field :website %>
+      </div>
     </div>
 
 
-
-    <div class="field">
-      <%= f.label :adventure %>
-      <br>
-      <%= f.text_field :adventure %>
-    </div>
-    <div class="field">
-      <%= f.label :convenience %>
-      <br>
-      <%= f.text_field :convenience %>
-    </div>
-    <div class="field">
-      <%= f.label :bargain %>
-      <br>
-      <%= f.text_field :bargain %>
-    </div>
-    <div class="field">
-      <%= f.label :website %>
-      <br>
-      <%= f.text_field :website %>
-    </div>
-    <div class="field">
-      <%= f.label :description %>
-      <br>
-      <%= f.text_field :description %>
-    </div>
-    <div class="field">
-      <%= f.label :img_url %>
-      <br>
-      <%= f.text_field :img_url %>
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :img_url, "Image URL", :class => "right inline" %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.text_field :img_url %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :customer_service %>
-      <br>
-      <%= f.number_field :customer_service %>
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :description, "Description", :class => "right inline" %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.text_area :description, :size => "24x12" %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :public_transit %>
-      <br>
-      <%= f.number_field :public_transit %>
+    <div class="row">
+      <div class="field-header small-12 columns text-center">Gusto Scores</div>
     </div>
 
-    <div class="field">
-      <%= f.label :accessible %>
-      <br>
-      <%= f.text_field :accessible %>
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :adventure, "Adventure Rating", :class => "right inline" %>
+      </div>
+      <div class="small-3 columns left">
+        <%= f.text_field :adventure, :placeholder => "0.0 to 10.0" %>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :convenience, "Convenience Rating", :class => "right inline"  %>
+      </div>
+      <div class="small-3 columns left">
+        <%= f.text_field :convenience, :placeholder => "0.0 to 10.0" %>
+      </div>
+    </div>
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :bargain, "Bargain Rating", :class => "right inline"  %>
+      </div>
+      <div class="small-3 columns left">
+      <%= f.text_field :bargain, :placeholder => "0.0 to 10.0" %>
+      </div>
     </div>
 
 
-    <div class="field">
-      <%= f.label :categories_list, "Categories (separated by commas)" %>
-      <br>
-      <%= f.text_field :categories_list %>
+    <div class="row">
+      <div class="field-header small-12 columns text-center">Goods</div>
+    </div>    
+
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :prices, "Prices", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_prices_1, "Inexpensive", class: "secondary") %>
+        <%= f.radio_button :prices, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_prices_2, "Moderate", class: "secondary") %>
+        <%= f.radio_button :prices, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_prices_3, "Expensive", class: "secondary") %>
+        <%= f.radio_button :prices, 3 %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :styles_list, "Styles (separated by commas)" %>
-      <br>
-      <%= f.text_field :styles_list %>
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :variety, "Variety", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_variety_1, "Low", class: "secondary") %>
+        <%= f.radio_button :variety, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_variety_2, "Moderate", class: "secondary") %>
+        <%= f.radio_button :variety, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_variety_3, "High", class: "secondary") %>
+        <%= f.radio_button :variety, 3 %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :music_styles_list, "Music Styles (separated by commas)" %>
-      <br>
-      <%= f.text_field :music_styles_list %>
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :sales, "Sales", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_sales_1, "Rare", class: "secondary") %>
+        <%= f.radio_button :sales, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_sales_2, "Occasional", class: "secondary") %>
+        <%= f.radio_button :sales, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_sales_3, "Frequent", class: "secondary") %>
+        <%= f.radio_button :sales, 3 %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :scents_list, "Scents (separated by commas)" %>
-      <br>
-      <%= f.text_field :scents_list %>
-    </div>
-
-
-    <div class="field">
-      <%= f.label :air_types_list, "Air & Space (separated by commas)" %>
-      <br>
-      <%= f.text_field :air_types_list %>
-    </div>
-
-
-    <div class="field">
-      <%= f.label :image, "Main Image" %>
-      <br>
-      <%= f.file_field :image %>
-    </div>
-
-    <div class="field">
-      <%= f.label :image, "Thumbnail 1" %>
-      <br>
-      <%= f.file_field :thumbnail1 %>
-    </div>
-
-    <div class="field">
-      <%= f.label :image, "Thumbnail 2" %>
-      <br>
-      <%= f.file_field :thumbnail2 %>
-    </div>
-
-    <div class="field">
-      <%= f.label :image, "Thumbnail 3" %>
-      <br>
-      <%= f.file_field :thumbnail3 %>
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :discounts, "Discounts", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_discounts_1, "Slight", class: "secondary") %>
+        <%= f.radio_button :discounts, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_discounts_2, "Moderate", class: "secondary") %>
+        <%= f.radio_button :discounts, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_discounts_3, "Deep", class: "secondary") %>
+        <%= f.radio_button :discounts, 3 %>
+      </div>
     </div>
 
 
-    <div class="actions">
-      <%= f.submit %>
+    <div class="row">
+      <div class="field-header small-12 columns text-center">Space</div>
+    </div>
+
+
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :size, "Size", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_size_1, "Small", class: "secondary") %>
+        <%= f.radio_button :size, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_size_2, "Medium", class: "secondary") %>
+        <%= f.radio_button :size, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_size_3, "Large", class: "secondary") %>
+        <%= f.radio_button :size, 3 %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :organization, "Organization", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_organization_1, "Disorganized", class: "secondary") %>
+        <%= f.radio_button :organization, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_organization_2, "Moderate", class: "secondary") %>
+        <%= f.radio_button :organization, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_organization_3, "Highly Organized", class: "secondary") %>
+        <%= f.radio_button :organization, 3 %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :busyness, "Busyness", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_busyness_1, "Rarely", class: "secondary") %>
+        <%= f.radio_button :busyness, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_busyness_2, "Sometimes", class: "secondary") %>
+        <%= f.radio_button :busyness, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_busyness_3, "Often", class: "secondary") %>
+        <%= f.radio_button :busyness, 3 %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :noise, "Noise", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_noise_1, "Quiet", class: "secondary") %>
+        <%= f.radio_button :noise, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_noise_2, "Moderate", class: "secondary") %>
+        <%= f.radio_button :noise, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_noise_3, "Loud", class: "secondary") %>
+        <%= f.radio_button :noise, 3 %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field-header small-12 columns text-center">Convenience</div>
+    </div>
+
+
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :customer_service, "Customer Service", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_customer_service_1, "Hands-Off", class: "secondary") %>
+        <%= f.radio_button :customer_service, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_customer_service_2, "Friendly", class: "secondary") %>
+        <%= f.radio_button :customer_service, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_customer_service_3, "Aggressive", class: "secondary") %>
+        <%= f.radio_button :customer_service, 3 %>
+      </div>
+    </div>    
+
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :parking, "Parking", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_parking_1, "Difficult", class: "secondary") %>
+        <%= f.radio_button :parking, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_parking_2, "Limited", class: "secondary") %>
+        <%= f.radio_button :parking, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_parking_3, "Easy", class: "secondary") %>
+        <%= f.radio_button :parking, 3 %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :public_transit, "Public Transit", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_public_transit_1, "None", class: "secondary") %>
+        <%= f.radio_button :public_transit, 1 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_public_transit_2, "Available", class: "secondary") %>
+        <%= f.radio_button :public_transit, 2 %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_public_transit_3, "Plentiful", class: "secondary") %>
+        <%= f.radio_button :public_transit, 3 %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+      <%= f.label :accessible, "Wheelchair Accessible?", :class => "right inline" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_accessible_yes, "Yes", class: "secondary") %>
+        <%= f.radio_button :accessible, "Yes" %>
+      </div>
+      <div class="small-2 columns left text-left">
+        <%= label_tag(:store_accessible_no, "No", class: "secondary") %>
+        <%= f.radio_button :accessible, "No" %>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="field-header small-12 columns text-center">Ambience</div>
+    </div>
+
+
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :category_ids, "Categories", :class => "right inline" %>
+      </div>
+      <div class="small-9 columns left text-left">
+        <%= collection_check_boxes(:store, :category_ids, Category.all, :id, :name) do |b| %>
+          <span class="checkbox-container">
+            <%= b.check_box %>
+            <%= b.label %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :style_ids, "Styles", :class => "right inline" %>
+      </div>
+      <div class="small-9 columns left text-left">
+        <%= collection_check_boxes(:store, :style_ids, Style.all, :id, :name) do |b| %>
+          <span class="checkbox-container">
+            <%= b.check_box %>
+            <%= b.label %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :scent_ids, "Scents", :class => "right inline" %>
+      </div>
+      <div class="small-9 columns left text-left">
+        <%= collection_check_boxes(:store, :scent_ids, Scent.all, :id, :name) do |b| %>
+          <span class="checkbox-container">
+            <%= b.check_box %>
+            <%= b.label %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :music_style_ids, "Music Genres", :class => "right inline" %>
+      </div>
+      <div class="small-9 columns left text-left">
+        <%= collection_check_boxes(:store, :music_style_ids, MusicStyle.all, :id, :name) do |b| %>
+          <span class="checkbox-container">
+            <%= b.check_box %>
+            <%= b.label %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :air_type_ids, "Air & Space", :class => "right inline" %>
+      </div>
+      <div class="small-9 columns left text-left">
+        <%= collection_check_boxes(:store, :air_type_ids, AirType.all, :id, :name, {item_wrapper_class: 'checkbox_container'}) %>
+
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="field-header small-12 columns text-center">Store Photos</div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :image, "Primary Image", :class => "right inline" %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <%= f.file_field :image %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions">Must be Panorama Dimensions (3:1 aspect ratio)</div>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :thumbnail1, "Detail 1", :class => "right inline" %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <%= f.file_field :thumbnail1 %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> (Standard 4:3 aspect ratio)</div>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :thumbnail2, "Detail 2", :class => "right inline" %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <%= f.file_field :thumbnail2 %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> (Standard 4:3 aspect ratio)</div>
+      </div>      
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :thumbnail3, "Detail 3", :class => "right inline" %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <%= f.file_field :thumbnail3 %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> (Standard 4:3 aspect ratio)</div>
+      </div>      
+    </div>
+
+    <div class="actions row">
+      <div class="small-3 columns small-centered">
+        <%= f.submit 'Submit Store', :class => 'button' %>
+      </div>
     </div>
 <% end %>
