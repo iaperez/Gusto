@@ -57,6 +57,28 @@ class Search < ActiveRecord::Base
   def find_stores
     stores = Store.order(:name)
     stores = stores.joins(:store_categories).where(store_categories: {category_id: category_id}) if category_id.present?
+    if space_type.present?
+      stores = stores.where(:size => 1..2) if space_type.name == 'Cozy'
+      stores = stores.where(:size => 2..3) if space_type.name == 'Large'
+    end
+    if access_type.present?
+      stores = stores.where(['public_transit in (?) OR parking in (?)', 2..3, 1..2]) if access_type.name == 'Transit'
+      stores = stores.where(['public_transit in (?) OR parking in (?)', 1..2, 2..3]) if access_type.name == 'Parking'
+    end
+    if goods_type.present?
+      stores = stores.where(:prices => 1..2) if goods_type.name == 'Affordable'
+      stores = stores.where(:prices => 2..3) if goods_type.name == 'High-End'
+    end
+
+    if ambience_type.present?
+      stores = stores.where(['busyness in (?) OR noise in (?)', 1..2, 1..2]) if ambience_type.name == 'Mellow'
+      stores = stores.where(['busyness in (?) OR noise in (?)', 2..3, 2..3]) if ambience_type.name == 'Bustling'
+    end
+
+    if character_type.present?
+      stores = stores.where(:customer_service => 2..3) if character_type.name == 'Friendly'
+      stores = stores.where(:customer_service => 1..2) if character_type.name == 'Hands-Off'
+    end
     stores
   end
 
