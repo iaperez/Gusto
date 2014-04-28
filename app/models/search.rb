@@ -16,6 +16,8 @@
 #
 
 class Search < ActiveRecord::Base
+  include SearchesHelper
+
   belongs_to :category
   belongs_to :feature
   belongs_to :space_type
@@ -31,12 +33,13 @@ class Search < ActiveRecord::Base
     if User.exists?(id: user_id)
       searching_user = User.find(user_id)
       user_vector = searching_user.get_response_vector
-       stores_vector = {}
-      store_vector = []
-      for store in @stores
-        owner = User.find(store.store_owner.user_id)
-        store_vector = owner.get_response_vector
-      end
+      stores_vectorized = @stores.map { |i| [i, find_store_vector(i)] }
+      stores_similarities = stores_vectorized.map {
+        |store, store_vector|
+        [store, cosine_similarity(store_vector, user_vector)]
+      }
+      sorted_stores = stores_similarities.sort_by { |a| -a[1] }
+      @stores = sorted_stores.map{|store,similarity| store }
     end
 
 
@@ -57,4 +60,10 @@ class Search < ActiveRecord::Base
     stores
   end
 
+  private
+  def find_store_vector(store)
+    #TODO check if the store has an owner.
+    owner = User.find(store.store_owner.user_id)
+    store_vector = owner.get_response_vector
+  end
 end

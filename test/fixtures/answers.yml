@@ -14,8 +14,8 @@
 
 one:
   question_id: 1
-  content: MyString
+  content: traditional
 
 two:
   question_id: 1
-  content: MyString
+  content: contemporary

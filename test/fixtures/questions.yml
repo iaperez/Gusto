@@ -13,8 +13,16 @@
 
 one:
   survey_id: 1
-  content: MyText
+  content: furniture
 
 two:
   survey_id: 1
-  content: MyText
+  content: clothing
+
+three:
+  survey_id: 1
+  content: table
+
+four:
+  survey_id: 1
+  content: person

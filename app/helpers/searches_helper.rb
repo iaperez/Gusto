@@ -12,5 +12,4 @@ module SearchesHelper
   def cosine_similarity(a, b)
     dot_product(a, b) / (magnitude(a) * magnitude(b))
   end
-
 end

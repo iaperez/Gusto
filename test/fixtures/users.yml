@@ -26,9 +26,36 @@
 one:
   id: 1
   email: john_jobs@test123.com
+  encrypted_password: $2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy
+  created_at: 2012-11-27 00:00:00
+  updated_at: 2012-11-27 00:00:00
 # column: value
 #
 two:
   id: 2
   email: mmstearts@test123.com
+  encrypted_password: $2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy
+  created_at: 2012-11-27 00:00:00
+  updated_at: 2012-11-27 00:00:00
 #  column: value
+
+three:
+  id: 3
+  email: test@owner1.com
+  encrypted_password: $2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy
+  created_at: 2012-11-27 00:00:00
+  updated_at: 2012-11-27 00:00:00
+
+four:
+  id: 4
+  email: test@owner2.com
+  encrypted_password: $2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy
+  created_at: 2012-11-27 00:00:00
+  updated_at: 2012-11-27 00:00:00
+
+five:
+  id: 5
+  email: test@owner3.com
+  encrypted_password: $2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy
+  created_at: 2012-11-27 00:00:00
+  updated_at: 2012-11-27 00:00:00
