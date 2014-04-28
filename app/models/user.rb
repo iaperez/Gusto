@@ -26,4 +26,22 @@ class User < ActiveRecord::Base
   has_many :preferences
   has_many :responses
   has_many :questions, through: :responses
+
+
+  def get_response_vector
+    surveys = Survey.order(:id).all
+    vector = []
+    for ss in surveys
+      for qq in ss.questions.order(:id).all
+        for answer in qq.answers.order(:id).all
+          if Response.where(user_id: self.id,answer_id: answer.id).count !=0
+            vector.push(1)
+          else
+            vector.push(0)
+          end
+        end
+      end
+    end
+    vector
+  end
 end

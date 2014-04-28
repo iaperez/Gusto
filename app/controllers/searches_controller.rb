@@ -11,6 +11,13 @@ class SearchesController < ApplicationController
   # GET /searches/1.json
   def show
     @search = Search.find(params[:id])
+    @results=[]
+    if user_signed_in?
+      @results= @search.stores(current_user.id)
+    else
+      @results= @search.stores(-1)
+    end
+
   end
 
   # GET /searches/new
