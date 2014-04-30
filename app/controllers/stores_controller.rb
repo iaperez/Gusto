@@ -17,6 +17,7 @@ class StoresController < ApplicationController
   # GET /stores/new
   def new
     @store = Store.new
+    @store.store_location = StoreLocation.new
   end
 
   # GET /stores/1/edit
@@ -67,6 +68,9 @@ class StoresController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_store
     @store = Store.find(params[:id])
+    if @store.store_location.blank?
+      @store.store_location = StoreLocation.new
+    end
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
@@ -105,6 +109,7 @@ class StoresController < ApplicationController
                                   :image,
                                   :thumbnail1,
                                   :thumbnail2,
-                                  :thumbnail3)
+                                  :thumbnail3,
+                                  :store_location_attributes => [ :address])
   end
 end

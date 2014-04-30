@@ -17,8 +17,7 @@
         </div>
         <div class="store-profile-location">
           <p>
-            100 College Ave<br>
-            Berkeley, CA 94705<br>
+            <%= @store.store_location.address if @store.store_location?%><br>
             310-850-1928<br>
             <a href=""> <%= @store.website %></a>
           </p>

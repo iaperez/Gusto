@@ -49,6 +49,22 @@
       </div>
     </div>
 
+
+    <div class="field row">
+      <div class="small-3 columns">
+        <%= f.label :address, "Address", :class => "right inline" %>
+      </div>
+      <div class="small-6 columns">
+
+       <%= f.fields_for :store_location do |builder| %>
+            <%= builder.text_field :address %>
+        <% end %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> Number, Street, Zip Code, State</div>
+      </div>
+    </div>
+
     <div class="field row">
       <div class="small-3 columns">
         <%= f.label :description, "Description", :class => "right inline" %>

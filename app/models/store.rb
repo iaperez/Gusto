@@ -39,6 +39,8 @@ class Store < ActiveRecord::Base
   has_many :store_music_styles
   has_many :store_air_types
 
+  has_one :store_location
+  accepts_nested_attributes_for :store_location
 
   has_many :categories, through: :store_categories
   has_many :styles, through: :store_styles
