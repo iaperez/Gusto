@@ -57,6 +57,14 @@ class Search < ActiveRecord::Base
   def find_stores
     stores = Store.order(:name)
     stores = stores.joins(:store_categories).where(store_categories: {category_id: category_id}) if category_id.present?
+
+    if features_id.present?
+      feature_name = Feature.where(id: features_id).pluck(:name)
+      stores = stores.where(:adventure > 5.0) if feature_name == 'Adventure'
+      stores = stores.where(:convenience > 5.0) if feature_name == 'Convenience'
+      stores = stores.where(:bargain > 5.0) if feature_name == 'Bargains'
+    end
+
     if space_type.present?
       stores = stores.where(:size => 1..2) if space_type.name == 'Cozy'
       stores = stores.where(:size => 2..3) if space_type.name == 'Large'
