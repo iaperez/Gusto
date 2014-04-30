@@ -1177,8 +1177,11 @@ a.extra-options-hide-link:hover{
 .black {
 	color: #000;
 }
+.normal-weight {
+	font-weight: $font-weight-normal;
+}
 .bold {
-	font-weight: bold;
+	font-weight: $font-weight-bold;
 }
 .white {
 	color: #FFF;
