@@ -21,7 +21,7 @@
               <% maplink = maplink+"markers=color:blue%7C" %>
               <% maplink = maplink+@store.store_location.latitude.to_s+","+@store.store_location.longitude.to_s %>
               <% maplink = maplink+"&sensor=false" %>
-              <% maptarget = "http://maps.google.com/?q="+@store.store_location.formatted_address %>
+              <% maptarget = "http://maps.google.com/?q="+@store.store_location.formatted_address.to_s %>
               <%= link_to image_tag(maplink), maptarget %>
             </div>
             <br>
