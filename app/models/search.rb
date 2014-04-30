@@ -90,6 +90,33 @@ class Search < ActiveRecord::Base
     stores
   end
 
+  def get_search_params
+    search_params = []
+
+    if space_type.present?
+      search_params.push(space_type.name.downcase)
+    end
+
+    if goods_type.present?
+      search_params.push(goods_type.name.downcase)
+    end
+
+    if ambience_type.present?
+      search_params.push(ambience_type.name.downcase)
+    end
+
+    if character_type.present?
+      search_params.push(character_type.name.downcase)
+    end
+
+    if access_type.present?
+      search_params.push(access_type.name.downcase+" is easy")
+    end
+
+    search_params=search_params.to_sentence
+    search_params
+  end
+
   private
   def find_store_vector(store)
     #TODO check if the store has an owner.

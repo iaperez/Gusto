@@ -24,7 +24,13 @@
     </div>
     <div class="row">
       <div class="finder-extra-header small-12 columns">
-        <a href="" class="toggle-extra-options">And I <em>specifically prefer</em> stores that are ...</a>
+        <a href="" class="toggle-extra-options">And I <em>specifically prefer</em> stores that are
+          <% if @search.get_search_params.blank? %>
+              ...
+          <% else %>
+              <%= @search.get_search_params %>
+          <% end %>
+        </a>
         <br><span class="gray-ital">(optional)</span>
       </div>
       <div id="finder-extra-options" class="inner-content-box small-12 columns">
