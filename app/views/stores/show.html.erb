@@ -17,8 +17,13 @@
         </div>
         <div class="store-profile-location">
           <p>
-            <%= @store.store_location.address if @store.store_location?%><br>
-            310-850-1928<br>
+            <% if !@store.store_location.blank?   %>
+                <%= @store.store_location.street_address %><br>
+                <%= @store.store_location.city %><br>
+                <%= @store.store_location.postal_code %>, <%= @store.store_location.state %><br>
+            <% end %>
+            <%= @store.phone_number %><br>
+            <br>
             <a href=""> <%= @store.website %></a>
           </p>
         </div>

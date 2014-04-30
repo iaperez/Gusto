@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140427223201) do
+ActiveRecord::Schema.define(version: 20140430005533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -188,6 +188,12 @@ ActiveRecord::Schema.define(version: 20140427223201) do
     t.integer  "store_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city"
+    t.string   "postal_code"
+    t.string   "state"
+    t.string   "country"
+    t.string   "formatted_address"
+    t.string   "street_address"
   end
 
   add_index "store_locations", ["store_id"], name: "index_store_locations_on_store_id", using: :btree
@@ -273,6 +279,7 @@ ActiveRecord::Schema.define(version: 20140427223201) do
     t.string   "thumbnail2"
     t.string   "thumbnail3"
     t.integer  "customer_service"
+    t.string   "phone_number"
   end
 
   create_table "styles", force: true do |t|

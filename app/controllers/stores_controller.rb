@@ -110,6 +110,7 @@ class StoresController < ApplicationController
                                   :thumbnail1,
                                   :thumbnail2,
                                   :thumbnail3,
+                                  :phone_number,
                                   :store_location_attributes => [ :address])
   end
 end

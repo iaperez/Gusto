@@ -67,6 +67,18 @@
 
     <div class="field row">
       <div class="small-3 columns">
+        <%= f.label :phone_number, "Phone number", :class => "right inline" %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.text_field :phone_number %>
+      </div>
+      <div class="small-3 columns left text-left">
+        <div class="form-instructions"> Ex. 555-344-3344</div>
+      </div>
+    </div>
+
+    <div class="field row">
+      <div class="small-3 columns">
         <%= f.label :description, "Description", :class => "right inline" %>
       </div>
       <div class="small-9 columns">
