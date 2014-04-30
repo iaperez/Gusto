@@ -12,16 +12,30 @@
     </div>
     <div class="row">
       <div class="store-profile-leftcol small-3 columns">
-        <div id="store-profile-map">
-
-        </div>
+        <% if !@store.store_location.blank? %>
+            <div id="store-profile-map">
+              <% maplink = "http://maps.googleapis.com/maps/api/staticmap?" %>
+              <% maplink = maplink+"zoom=13&" %>
+              <% maplink = maplink+"size=300x430&" %>
+              <% maplink = maplink+"maptype=roadmap&" %>
+              <% maplink = maplink+"markers=color:blue%7C" %>
+              <% maplink = maplink+@store.store_location.latitude.to_s+","+@store.store_location.longitude.to_s %>
+              <% maplink = maplink+"&sensor=false" %>
+              <% maptarget = "http://maps.google.com/?q="+@store.store_location.formatted_address %>
+              <%= link_to image_tag(maplink), maptarget %>
+            </div>
+            <br>
+        <% end %>
         <div class="store-profile-location">
           <p>
-            <% if !@store.store_location.blank?   %>
-                <%= @store.store_location.street_address %><br>
-                <%= @store.store_location.city %><br>
-                <%= @store.store_location.postal_code %>, <%= @store.store_location.state %><br>
-            <% end %>
+            <a href="<%=maptarget%>">
+              <% if !@store.store_location.blank? %>
+                  <%= @store.store_location.street_address %><br>
+                  <%= @store.store_location.city %><br>
+                  <%= @store.store_location.postal_code %>, <%= @store.store_location.state %><br>
+                  <%#link_to "Get Directions",maptarget %>
+              <% end %>
+            </a>
             <%= @store.phone_number %><br>
             <br>
             <a href=""> <%= @store.website %></a>
@@ -63,7 +77,9 @@
                 <span class="type-rating-number"><%= @store.bargain %></span></li>
             </ul>
 
-            <div class="rating-tooltip"><span data-tooltip class="has-tip tip-top" title="Here is the text of the tooltip!"><i class="fa fa-question-circle tooltip-icon"></i> What are these?</span></div>
+            <div class="rating-tooltip">
+              <span data-tooltip class="has-tip tip-top" title="Here is the text of the tooltip!"><i class="fa fa-question-circle tooltip-icon"></i> What are these?</span>
+            </div>
           </div>
         </div>
 
