@@ -16,7 +16,7 @@
             <div id="store-profile-map">
               <% maplink = "http://maps.googleapis.com/maps/api/staticmap?" %>
               <% maplink = maplink+"zoom=13&" %>
-              <% maplink = maplink+"size=300x430&" %>
+              <% maplink = maplink+"size=300x300&" %>
               <% maplink = maplink+"maptype=roadmap&" %>
               <% maplink = maplink+"markers=color:blue%7C" %>
               <% maplink = maplink+@store.store_location.latitude.to_s+","+@store.store_location.longitude.to_s %>
@@ -28,17 +28,22 @@
         <% end %>
         <div class="store-profile-location">
           <p>
-            <a href="<%=maptarget%>">
+            
               <% if !@store.store_location.blank? %>
+                <a href="<%=maptarget%>" target="_new">
+                  <i class="fa fa-map-marker"></i>
                   <%= @store.store_location.street_address %><br>
-                  <%= @store.store_location.city %><br>
-                  <%= @store.store_location.postal_code %>, <%= @store.store_location.state %><br>
+                  <%= @store.store_location.city %>, <%= @store.store_location.state %>  <%= @store.store_location.postal_code %><br>
                   <%#link_to "Get Directions",maptarget %>
+                </a>
               <% end %>
-            </a>
-            <%= @store.phone_number %><br>
-            <br>
-            <a href=""> <%= @store.website %></a>
+            
+            <% if !@store.phone_number.blank? %>
+              <%= @store.phone_number %><br>
+            <% end %>
+            <% if !@store.website.blank? %>
+              <%= link_to @store.website, @store.website %><br>
+            <% end %>
           </p>
         </div>
         <div class="store-profile-review">

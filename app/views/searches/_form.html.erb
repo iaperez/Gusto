@@ -12,15 +12,13 @@
 
 <%= form_for(@search) do |f| %>
     <div class="row">
-      <div class="finder-main-bar small-12 columns">
         <div class="finder-header">
           I'm looking for stores...<br>
         </div>
         that sell
-        <%= f.collection_select :category_id, Category.order(:name), :id, :name, {include_blank: true}, {:class => "finder-main-select"} %>
+        <%= f.collection_select :category_id, Category.order(:name), :id, :name, {:include_blank => 'Anything'}, {:class => "finder-main-select"} %>
         and I want
-        <%= f.collection_select :features_id, Feature.order(:name), :id, :name, {include_blank: true}, {:class => "finder-main-select"} %>
-      </div>
+        <%= f.collection_select :features_id, Feature.order(:name), :id, :name, {:include_blank => 'It All'}, {:class => "finder-main-select"} %>
     </div>
     <div class="row">
       <div class="finder-extra-header small-12 columns">

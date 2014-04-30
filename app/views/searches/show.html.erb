@@ -8,22 +8,37 @@
   </div>
 </div>
 <div id="store-results" style="display:block;">
-  <div class="content-box-transparent store-result-query"></div>
+  <!-- <div class="content-box-transparent store-result-query"></div> -->
   <% @results.each do |store| %>
       <div class="main-content-box store-result">
         <div class="row">
           <div class="store-result-details">
             <div class="store-result-top-bar">
-              <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a>
+<!--               <a href="#" class="add-to-bookmarks"><i class="fa fa-bookmark-o bookmark"></i>&nbsp;&nbsp;<span class="bookmark-message">Add to Bookmarks</span></a> -->
+              <a href="../stores/<%= store.id %>">View Store Profile</a>
             </div>
             <div class="store-result-title">
-              <a href=""> <%= store.name %></a>
+              <a href="../stores/<%= store.id %>"> <%= store.name %></a>
             </div>
             <div class="store-result-location">
-              <a href=""><i class="fa fa-map-marker" style="color: #6f6f6f;"></i></a>
-              123 Main Street | Berkeley, CA
+              <% if !store.store_location.blank? %>
+                  <% maptarget = "http://maps.google.com/?q="+store.store_location.formatted_address.to_s %>
+                  <a href="<%= maptarget %>" target="_new">
+                    <i class="fa fa-map-marker"></i><%= store.store_location.street_address %> | <%= store.store_location.city %>, <%= store.store_location.state %>  <%= store.store_location.postal_code %>
+                  </a>
+              <% end %>
             </div>
             <div class="inner-content store-result-attributes-box">
+              <div class="store-result-attribute">
+                <div class="store-result-type-rating">
+
+                  <ul class="type-ratings">
+                    <li class="type-rating-item" data-rating="6.1">Adventure <span class="type-rating-number">6.1</span></li>
+                    <li class="type-rating-item" data-rating="9.0">Convenience <span class="type-rating-number">9.0</span></li>                  
+                    <li class="type-rating-item" data-rating="8.0">Bargain <span class="type-rating-number">8.0</span></li>                  
+                  </ul>
+                </div>
+              </div>
               <%= render "attribute_tag_list_store_result", name: 'Categories', list: store.categories_names %>
               <%= render "attribute_tag_list_store_result", name: 'Style', list: store.styles_names_degrees %>
             </div>
@@ -32,9 +47,9 @@
             <img class="store-result-main-img" src="<%= store.image.to_s %>">
           </div>
 
-          <div class="inner-content-box-shaded store-result-bottom-bar">
+<!--           <div class="inner-content-box-shaded store-result-bottom-bar">
             <a href="../stores/<%= store.id %>">View Store Profile</a>
-          </div>
+          </div> -->
         </div>
       </div>
   <% end %>

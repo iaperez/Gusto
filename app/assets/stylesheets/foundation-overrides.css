@@ -2,8 +2,8 @@
  * This stylesheet should hold rules that directly override something in foundation.css
  */
 
-body,p,h1,h2,h3,h4,h5,h6,div,a,nav {
-	font-family: 'Crimson Text', serif !important;
+body {
+	font-family: 'PT Serif', serif;
 	color: #212121;
 }
 
@@ -13,10 +13,14 @@ p{
 	color: #404040;
 }
 
+em {
+  padding-right: 3px;
+}
+
 body {
   /*background-image: url('../_images/background/squared_metal.png');*/
   /*background-image: url('../_images/background/tweed.png');*/
-  background-image: url('../_images/background/squairy_light.png');
+  /*background-image: url('../_images/background/squairy_light.png');*/
   background-size: 200px 200px;
 }
 
@@ -25,7 +29,7 @@ body {
   body{
     /*background-image:url('../_images/background/squared_metal_@2X.png');*/
     /*background-image:url('../_images/background/tweed_@2X.png');*/
-    background-image:url('../_images/background/squairy_light_@2X.png');
+    /*background-image:url('../_images/background/squairy_light_@2X.png');*/
     background-size: 200px 200px;
   }
 }
@@ -105,7 +109,6 @@ button.mini, .button.mini {
 }
 
 button, .button {
-	font-family: 'Crimson Text', serif !important;
   border-style: solid;
   border-width: 0px;
   cursor: pointer;
