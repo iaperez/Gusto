@@ -1,6 +1,8 @@
 /*
  * This stylesheet should hold rules that directly override something in foundation.css
  */
+@import 'colors';
+@import 'fonts';
 
 body {
 	font-family: 'PT Serif', serif;
@@ -69,35 +71,35 @@ table {
 }
 
 .top-bar {
+  font-family: $header-font;
 	overflow: inherit;
 	color: white;
-}
-.top-bar .sitename {
-	font-family: 'Oleo Script Swash Caps', cursive !important;
-	font-size: 1.6rem;
-	padding: 0px 12px 0px 6px;
-}
-.top-bar label {
-	color: white;
-	padding-right: 6px;
-}
-.top-bar ul li > a{
-	font-size: .9rem;
-}
-.top-bar input#set-location, #set-location-button {
-	height: 1.9rem;
-}
-.top-bar a.sitename{
-	color: white;
+  .sitename {
+    font-family: $fancy-font;
+    font-size: 1.6rem;
+    padding: 0px 12px 0px 6px;
+
+  }
+  a.sitename{
+    color: white;
+  }
+  label {
+    color: white;
+    padding-right: 6px;
+    height: 30px;
+    line-height: 28px;
+  }
+  ul li > a{
+    font-size: .9rem;
+  }
+  input#set-location, #set-location-button {
+    height: 1.9rem;
+  }
+
 }
 
-a.button {
-	text-decoration:none;
-}
 
-a.button:hover {
-	text-decoration:none;
-}
+
 
 button.mini, .button.mini {
 	padding-top: 0.225rem;
@@ -109,10 +111,11 @@ button.mini, .button.mini {
 }
 
 button, .button {
+  font-family: $header-font !important;
   border-style: solid;
   border-width: 0px;
   cursor: pointer;
-  font-weight: normal;
+  font-weight: $font-weight-light;
   line-height: normal;
   margin: 0 0 1.25rem;
   position: relative;
@@ -125,8 +128,8 @@ button, .button {
   padding-left: 2rem;
   font-size: 1rem;
   /*     @else                            { font-size: $padding - rem-calc(2); } */
-  background-color: #5077bf;
-  border-color: #3a5d9f;
+  background-color: $dusky-purple;
+  border-color: $medium-purple;
   color: white;
   -webkit-transition: background-color 300ms ease-out;
   -moz-transition: background-color 300ms ease-out;
@@ -138,7 +141,7 @@ button, .button {
   font-size: 1rem;
   /*     @else                            { font-size: $padding - rem-calc(2); } */ }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #3a5d9f; }
+    background-color: $bright-purple; }
   button:hover, button:focus, .button:hover, .button:focus {
     color: white; }
   button.secondary, .button.secondary {
@@ -203,8 +206,8 @@ button, .button {
     -webkit-border-radius: 1000px;
     border-radius: 1000px; }
   button.disabled, button[disabled], .button.disabled, .button[disabled] {
-    background-color: #5077bf;
-    border-color: #3a5d9f;
+    background-color: #534857;
+    border-color: $dark-purple;
     color: white;
     cursor: default;
     opacity: 0.7;

@@ -13,30 +13,32 @@
 <%= form_for(@search) do |f| %>
     <div class="row">
         <div class="finder-header">
-          I'm looking for stores...<br>
+          <div class="finder-header-title">I'm looking for stores...</div><br>
+        
+          that sell
+          <%= f.collection_select :category_id, Category.order(:name), :id, :name, {:include_blank => 'Anything'}, {:class => "finder-main-select"} %>
+          and I want
+          <%= f.collection_select :features_id, Feature.order(:name), :id, :name, {:include_blank => 'It All'}, {:class => "finder-main-select"} %>
         </div>
-        that sell
-        <%= f.collection_select :category_id, Category.order(:name), :id, :name, {:include_blank => 'Anything'}, {:class => "finder-main-select"} %>
-        and I want
-        <%= f.collection_select :features_id, Feature.order(:name), :id, :name, {:include_blank => 'It All'}, {:class => "finder-main-select"} %>
     </div>
     <div class="row">
       <div class="finder-extra-header small-12 columns">
         <a href="" class="toggle-extra-options">And I <em>specifically prefer</em> stores that are
           <% if @search.get_search_params.blank? %>
               ...
+              <br><div class="note">(optional)</div>
           <% else %>
               <%= @search.get_search_params %>
+              <br><div class="note">(click to edit)</div>
           <% end %>
         </a>
-        <br><span class="gray-ital">(optional)</span>
       </div>
       <div id="finder-extra-options" class="inner-content-box small-12 columns">
 
         <div class="extra-option-container">
           <%= f.hidden_field :space_type_id %>
           <div class="flaticon-store1 extra-option-header-icon"></div>
-          <div class="extra-option-header gusto">Space</div>
+          <div class="extra-option-header">Space</div>
           <% SpaceType.all.each do |nn| %>
               <% if @search.space_type_id.blank? %>
                   <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
@@ -53,7 +55,7 @@
         <div class="extra-option-container">
           <%= f.hidden_field :access_type_id %>
           <div class="flaticon-bus3 extra-option-header-icon"></div>
-          <div class="extra-option-header gusto">Access</div>
+          <div class="extra-option-header">Access</div>
           <% AccessType.all.each do |nn| %>
               <% if @search.access_type_id.blank? %>
                   <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
@@ -70,7 +72,7 @@
         <div class="extra-option-container">
           <%= f.hidden_field :goods_type_id %>
           <div class="flaticon-full22 extra-option-header-icon"></div>
-          <div class="extra-option-header gusto">Goods</div>
+          <div class="extra-option-header">Goods</div>
           <% GoodsType.all.each do |nn| %>
               <% if @search.goods_type_id.blank? %>
                   <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
@@ -87,7 +89,7 @@
         <div class="extra-option-container">
           <%= f.hidden_field :ambience_type_id %>
           <div class="flaticon-bright1 extra-option-header-icon"></div>
-          <div class="extra-option-header gusto">Ambience</div>
+          <div class="extra-option-header">Ambience</div>
           <% AmbienceType.all.each do |nn| %>
               <% if @search.ambience_type_id.blank? %>
                   <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
@@ -104,7 +106,7 @@
         <div class="extra-option-container">
           <%= f.hidden_field :character_type_id %>
           <div class="flaticon-face3 extra-option-header-icon"></div>
-          <div class="extra-option-header gusto">Character</div>
+          <div class="extra-option-header">Character</div>
           <% CharacterType.all.each do |nn| %>
               <% if @search.character_type_id.blank? %>
                   <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
@@ -125,7 +127,7 @@
       </div>
     </div>
     <div class="actions">
-      <%= f.submit 'Search', :class => 'button small finder-submit' %>
+      <%= f.submit 'Search', :class => 'button finder-submit' %>
     </div>
 
 <% end %>

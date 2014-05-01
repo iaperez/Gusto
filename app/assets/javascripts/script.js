@@ -71,31 +71,6 @@ $(document).ready(function() {
         // navigator.geolocation.getCurrentPosition(success,error,options);
     }
 
-
-    // This takes the rating from the data-rating tag and sets the color and width of the bar
-
-    $(".rating-item-bar").each(function() {
-        var rating = $(this).data("rating");
-        var version = $(this).data("version");
-        var barwidth = rating*10;
-        if (version == "result") {
-            barwidth = barwidth/1.5;
-        } else if (version == "profile") {
-            barwidth = barwidth/1.5;
-        }
-        barwidth = barwidth + "%";
-        var barcolor = "#000";
-        if (rating < 5) {
-            barcolor = "#DE5F28"; // red
-        } else if (rating > 5 && rating < 7.5) {
-            barcolor = "#E6CF4E"; // yellow
-        } else if (rating > 7.5) {
-            barcolor = "#469E50"; // green
-        }
-        $(this).css({"background-color" : barcolor, "width" : barwidth});
-        $(this).text(rating);
-    });
-
     // This takes the rating from the data-rating tag and sets the color of the border
 
     $(".type-rating-item").each(function() {
@@ -103,62 +78,18 @@ $(document).ready(function() {
         var version = $(this).data("version");
         var bordercolor = "#d9d9d9";
         if (rating < 5) {
-            // bordercolor = "#DE5F28"; // red
+
             bordercolor = "#C5D7E8"; // blue gray
         } else if (rating > 5 && rating < 7.5) {
-            // bordercolor = "#E6CF4E"; // yellow
+
             bordercolor = "#83B9EB"; // muted blue
         } else if (rating > 7.5) {
-            // bordercolor = "#469E50"; // green
+
             bordercolor = "#3693EB"; // bright blue
         }
         $(this).css({"border-color" : bordercolor});
         $(this).children(".type-rating-number").text(rating);
     });
-
-    // Finder Bar Navigation Scripts
-    // var extraBarCount = 0;
-    // var finderBar = "<div class='finder-extra-bar'>and that \
-    //             <select id='finder-store-extra-COUNT' class='finder-extra-select'> \
-    //               <option value=''></option> \
-    //               <option value=''>have a quiet ambience</option> \
-    //               <option value=''>have plentiful parking</option> \
-    //               <option value=''>have a very attentive staff</option> \
-    //             </select> \
-    //             <i class='fa fa-times fa-lg extra-bar-delete'></i> \
-    //             </div>";
-
-
-    // These add the extra select bar when use makes selection from the main bars
-
-    // $("#finder-store-type, #finder-store-quality").change(function() {
-
-    //   if (extraBarCount == 0) {
-    //     var thisFinderBar = finderBar.replace("COUNT", extraBarCount+1);
-    //     $("#finder-extra-bars").append(thisFinderBar).show();
-    //   }
-    //   extraBarCount++;
-
-    // });
-
-    // $(document).on("change", ".finder-extra-select", function() {
-
-    //   var thisFinderBar = finderBar.replace("COUNT", extraBarCount+1);
-    //   $("#finder-extra-bars").append(thisFinderBar);
-    //   extraBarCount++;
-    // });
-
-    // $(document).on("click", ".extra-bar-delete", function() {
-    //   event.preventDefault();
-    //   $(this).parent().remove();
-    //   extraBarCount--;
-    // });
-
-    // $("#finder-more").click(function() {
-    //   var thisFinderBar = finderBar.replace("COUNT", extraBarCount+1);
-    //   $("#finder-extra-bars").append(thisFinderBar).show();
-    //   extraBarCount++;
-    // });
 
     // Add store to favorites
     $(document).on("click", ".add-to-bookmarks", function () {

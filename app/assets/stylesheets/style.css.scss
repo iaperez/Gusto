@@ -1007,15 +1007,58 @@ img.store-result-main-img-thumb.last {
 }
 
 .finder-header {
-	/* Find a cool font here, maybe? */
-	font-size: 1.3em;
-	margin-bottom: 12px;	
+	text-transform: uppercase;
+	font-size: .9em;
+	margin-bottom: 4px;
+		
+	.finder-header-title{
+		font-size: 1.6em;
+
+	}
+}
+
+div.menu-item-vertical {
+	list-style-type: none;
+	font-size: 16pt;
+	border-radius: 4px;
+	border: 1px solid white;
+    -webkit-transition: border, background .3s ease;  
+
+    transition: border, background .3s ease;	
+}
+div.menu-item-vertical:hover {
+	border: 1px solid gray;
+	background: #f8f8f8;
 }
 
 .finder-extra-header {
-	margin: 0px auto 10px auto;
+	margin: 0px auto;
 	text-align: center;
 	font-size: 1.0em;
+	color: $medium-gray;
+
+	a {
+		color: inherit;
+		border: 1px solid $almost-white;
+		text-decoration: none;
+		-webkit-transition: color .5s ease;
+		-moz-transition: color .5s ease;  
+    -o-transition: color .5s ease;  
+    -ms-transition: color .5s ease;  
+		transition: color .5s ease;
+		&:hover { 
+
+			color: $bright-purple;
+		}
+	}
+	.note{
+
+		margin-top: 9px;
+		font-style: italic;
+		color: $pale-gray;
+		font-size: .8em;
+}
+
 }
 .toggle-extra-options{
 	/*color: #7D7D7D;*/
@@ -1024,7 +1067,7 @@ img.store-result-main-img-thumb.last {
 .finder-main-bar {
 	font-family: $header-font;
 	font-weight: $font-weight-light;
-	text-transform: uppercase;
+/*	text-transform: uppercase;*/
 	margin: 10px auto 0px auto;
 	width: 90%;
 	float: none;
@@ -1040,11 +1083,29 @@ img.store-result-main-img-thumb.last {
 	line-height: 20px;
 }
 
-.finder-submit{
+.button.finder-submit{
+	font-family: $header-font;
+	color: $white;
 	margin-top: 8px;
-	margin-bottom: 0px;
-	padding: .5rem 1.5rem !important;
+	margin-bottom: 4px;
+	background-color: $dusky-purple;
+	/*border-radius: 2px;*/
+  padding-top: 1.125rem;
+  padding-right: 2.25rem;
+  padding-bottom: 1.1875rem;
+  padding-left: 2.25rem;
+	-webkit-transition: background-color .5s ease;
+	-moz-transition: background-color .5s ease;  
+  -o-transition: background-color .5s ease;  
+  -ms-transition: background-color .5s ease;  
+	transition: background-color .5s ease;
+
+	&:hover { 
+
+		background-color: $medium-purple;
+	}
 }
+
 
 #finder-extra-options {
 	display: none;
@@ -1052,6 +1113,8 @@ img.store-result-main-img-thumb.last {
 	margin: 10px auto 10px auto;
 	text-align: center;
 	width: 85%;
+	border: 1px dotted $cloudy-gray;
+	background-color: $white;
 }
 
 .extra-options-hide{
@@ -1078,6 +1141,7 @@ a.extra-options-hide-link:hover{
 	color: #575757;
 	text-align: center;
 	padding: 0px 4px 12px 4px;
+
 }
 
 .extra-option-header-icon {
@@ -1089,7 +1153,8 @@ a.extra-options-hide-link:hover{
 
 .extra-option-header {
 	text-align: center;
-	font-size: 1.4rem;
+	font-size: 1.0rem;
+	font-weight: $font-weight-normal;
 	color: inherit;
 	padding: 8px 0px;
 	border-bottom: 1px dotted #e3e3e3;
@@ -1097,7 +1162,7 @@ a.extra-options-hide-link:hover{
 }
 
 .extra-option {
-	font-size: 1.1rem;
+	font-size: 1.0rem;
 	padding: 8px 0px;
 	color: inherit;
 	border: 1px solid #fff;
@@ -1105,14 +1170,14 @@ a.extra-options-hide-link:hover{
 }
 
 .extra-option.option-inactive {
-	font-size: 1.1rem;
+	font-size: 1.0rem;
 	padding: 8px 0px;
 	color: #e3e3e3;
 	border: 1px solid #fff;
 }
 
 .extra-option.option-selected {
-	font-size: 1.1rem;
+	font-size: 1.0rem;
 	padding: 8px 0px;
 	color: #000;
 	border-radius: 3px;
@@ -1168,6 +1233,13 @@ a.extra-options-hide-link:hover{
 /*/////////////////////////////////////////////////*/
 /* Text and Miscellaneous Styles */
 /*/////////////////////////////////////////////////*/
+
+.set-location-button {
+
+
+
+}
+
 
 .gray-ital{
 	font-style: italic;
