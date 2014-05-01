@@ -1,11 +1,33 @@
-$main-font: 'Roboto Slab', serif !important;
-/*$main-font: 'PT Serif', serif !important;
+/*
+
+Sans Serif options
+
+'Lato', sans-serif;
+'Raleway', sans-serif; 100,200,300,400,600,700
+'Montserrat', sans-serif;
+
+Serif options
+
+'PT Serif', serif;
+'Droid Serif', serif;
+'Crimson Text', serif 400,600,700,400italic,600italic,700italic
+
+Logo options
+
+'Montez', cursive;
+'Vast Shadow', cursive;
+'Sacramento', cursive;
+'Norican', cursive;
+'Damion', cursive;
+'Oleo Script Swash Caps', cursive
+
 */
+
+$main-font: 'Roboto Slab', serif !important;
 $header-font: 'Raleway', sans-serif !important;
-$fancy-font: 'Oleo Script Swash Caps', cursive !important;
+$fancy-font: 'Norican', cursive !important;
 
 $font-weight-bold: 600;
-
 $font-weight-medium: 500;
 $font-weight-normal: 400;
 $font-weight-kinda-light: 300;

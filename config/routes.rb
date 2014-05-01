@@ -21,11 +21,14 @@ Rails.application.routes.draw do
 
   root :to => 'searches#new'
 
+  get '/about', to: 'browse#about'
+  get '/contact', to: 'browse#contact'
+
   get 'browse/home'
 
   get 'browse/profile'
 
-  get 'browse/aboutus'
+  get 'browse/about'
 
   get 'welcome/index'
 
