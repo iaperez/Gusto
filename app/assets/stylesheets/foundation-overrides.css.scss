@@ -5,7 +5,8 @@
 @import 'fonts';
 
 body {
-	font-family: 'PT Serif', serif;
+	font-family: $main-font;
+  font-weight: $font-weight-light;
 	color: #212121;
 }
 
@@ -92,8 +93,11 @@ table {
   ul li > a{
     font-size: .9rem;
   }
-  input#set-location, #set-location-button {
+  input {
     height: 1.9rem;
+  }
+  .button{
+    font-family: $header-font;
   }
 
 }

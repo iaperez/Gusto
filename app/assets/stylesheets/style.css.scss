@@ -947,9 +947,7 @@ img.store-result-main-img-thumb.last {
 	width: 100%;
 	float: left;
 	padding: 4px 8px 0px 0px;
-/*	overflow: scroll;
-	max-height: 250px;
-	border: 1px solid #e6e6e6;*/
+
 }
 
 .store-result-attribute{
@@ -959,36 +957,36 @@ img.store-result-main-img-thumb.last {
 	width: 100%;
 	border-bottom: 1px dotted #f0f0f0;
 	position: relative;
+
+	.last{
+		border-bottom: none;
+	}
+
+	.attribute-label {
+		float: left;
+		font-size: .8em;
+		white-space: nowrap;
+		/*font-weight: 600;*/
+		margin-right: 8px;
+	}
+
+	.attribute-rating {
+		float: left;
+		font-size: .7em;
+		white-space: nowrap;
+		margin: 1px 12px 0px 12px;
+	}
+
+	.attribute-description {
+		float: left;
+		font-size: .7em;
+	}
 }
 
 .store-result-attribute-content{
 	height: 30px;
 	line-height: 28px;
 	float: none;
-}
-
-.store-result-attribute.last{
-	border-bottom: none;
-}
-
-.store-result-attribute .attribute-label {
-	float: left;
-	font-size: .8em;
-	white-space: nowrap;
-	font-weight: 600;
-	margin-right: 8px;
-}
-
-.store-result-attribute .attribute-rating {
-	float: left;
-	font-size: .7em;
-	white-space: nowrap;
-	margin: 1px 12px 0px 12px;
-}
-
-.store-result-attribute .attribute-description {
-	float: left;
-	font-size: .7em;
 }
 
 
@@ -1039,7 +1037,6 @@ div.menu-item-vertical:hover {
 
 	a {
 		color: inherit;
-		border: 1px solid $almost-white;
 		text-decoration: none;
 		-webkit-transition: color .5s ease;
 		-moz-transition: color .5s ease;  
@@ -1057,7 +1054,7 @@ div.menu-item-vertical:hover {
 		font-style: italic;
 		color: $pale-gray;
 		font-size: .8em;
-}
+	}
 
 }
 .toggle-extra-options{
@@ -1234,12 +1231,17 @@ a.extra-options-hide-link:hover{
 /* Text and Miscellaneous Styles */
 /*/////////////////////////////////////////////////*/
 
-.set-location-button {
-
-
-
+a.fade {
+	color: inherit;
+	-webkit-transition: color .5s ease;
+	-moz-transition: color .5s ease;  
+  -o-transition: color .5s ease;  
+  -ms-transition: color .5s ease;  
+	transition: color .5s ease;
+	&:hover { 
+		color: $bright-purple;
+	}
 }
-
 
 .gray-ital{
 	font-style: italic;
