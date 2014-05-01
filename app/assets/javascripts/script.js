@@ -2,7 +2,7 @@
 
 $(function(){ $(document).foundation();});
 
-console.log("foo");
+
 // Google maps code
 
 var map;
@@ -166,45 +166,6 @@ $(document).ready(function() {
     });
 
 
-    // Store Attribute Details Stuff (Not Currently Used)
-
-    // $(".attribute-details-icon").click(function() {
-    //   event.preventDefault();
-    //   if ($(this).hasClass("open")) {
-
-    //     $(this).children("i").addClass("fa-plus-square-o").removeClass("fa-minus-square-o");
-    //     $(this).removeClass("open").parent().siblings(".attribute-details").fadeOut();
-    //     $(this).parents(".store-profile-attribute").animate({ height: 36}, 300, function() {});
-
-    //   } else {
-
-    //     $(this).children("i").addClass("fa-minus-square-o").removeClass("fa-plus-square-o");
-    //     $(this).parents(".store-profile-attribute").animate({ height: 160}, 300, function() {});
-    //     $(this).parent().siblings(".attribute-details").fadeIn();
-    //     $(this).addClass("open");
-    //   }
-    // });
-
-    // $('.user-rating-icon').on({
-    //   mouseover: function(){
-    //     var ratingValue = $(this).data("rating-value");
-    //     var ratingLabel = $(this).data("rating-label");
-    //     $(this).prevAll().andSelf().css("opacity", "1.0");
-    //     $(this).parent().siblings('.attribute-details-user-description').text(ratingLabel);
-    //   },
-    //   mouseleave: function(){
-    //     $(this).parent().siblings('.attribute-details-user-description').empty();
-    //     $(this).prevAll().andSelf().css("opacity", ".25");
-    //   },
-    //   click: function(){
-    //     var ratingValue = $(this).data("rating-value");
-    //     var ratingLabel = $(this).data("rating-label");
-    //     $(this).prevAll().andSelf().css("opacity", "1.0");
-    //     $(this).siblings().andSelf().off('mouseover mouseleave click').addClass("set");
-    //     $(this).parent().siblings('.attribute-details-user-description').text(ratingLabel + " - Rating Saved!");
-    //   }
-    // });
-
     $(".toggle-extra-options").click(function(){
         event.preventDefault();
         if ($(this).hasClass("open")) {
@@ -232,13 +193,17 @@ $(document).ready(function() {
 
     $('div.extra-option').on("click", function() {
         if ($(this).hasClass("option-selected")) {
-            // deselect
+            // deselect selected option
             $(this).removeClass("option-selected");
             $(this).siblings(".extra-option").removeClass("option-inactive");
             $(this).siblings("input[type=hidden]").val('')
 
         } else if ($(this).hasClass("option-inactive")) {
-            // do nothing
+            // select a deselected option - grey out the other one
+            $(this).removeClass("option-inactive").addClass("option-selected");
+            $(this).siblings(".extra-option").removeClass("option-selected").addClass("option-inactive");
+            $(this).siblings("input[type=hidden]").val(this.id)
+
         } else {
             $(this).addClass("option-selected");
             $(this).siblings(".extra-option").addClass("option-inactive");
@@ -246,72 +211,6 @@ $(document).ready(function() {
         }
     });
 
-    function loadResults() {
-
-        $("#finder-extra-bars").slideUp();
-        $("#store-results").fadeOut().delay(300);
-        $("#store-results").fadeIn();
-
-        var queryStoreType = $("#finder-store-type").val(); // adventure/bargain...
-        var queryStoreCategory = $("#finder-store-category").val(); // furniture/clothing...
-
-        var extraAttributes = "";
-
-        var attrCount = 0;
-        $(".extra-option.option-selected").each(function() {
-            if (attrCount) {
-                extraAttributes += ", ";
-            }
-            extraAttributes += $(this).text().toLowerCase();
-            attrCount++;
-        });
-
-
-        var queryString = "Stores selling ";
-
-        if (queryStoreCategory != "") {
-            queryString += queryStoreCategory;
-        } else {
-            queryString += "anything";
-        }
-
-        queryString += " that are good for ";
-
-        if (queryStoreType != "") {
-            queryString += queryStoreType;
-        } else {
-            queryString += "all types of shopping";
-        }
-
-        if (extraAttributes.length > 0){
-            queryString += " <em>and</em> are "+extraAttributes;
-        }
-
-        $(".store-result-query").hide().delay(800).html(queryString).show();
-
-    };
-
-    // $('.rating-tooltip').click(function() {
-    //   var position = $('.tooltip-icon').offset();
-    //   console.log("left "+position.left);
-    //   console.log("top "+position.top);
-    //   $("#rating-tooltip-box").css({"left" : position.left, "bottom" : position.bottom}).toggle();
-    // });
-
-
-    // Unused stuff from the old drop-down extra form
-    // $(".category-extra-show").click(function(){
-    //   event.preventDefault();
-    //   $(this).hide();
-    //   $(this).parent().siblings(".category-extra").show();
-    // });
-
-    // $(".finder-extra-select").change(function() {
-    //   if ($(this).text() != "label") {
-    //     var thisLabelText = $(this).find("option[value='label']").text();
-    //     $(this).parent().siblings(".category-name").text(thisLabelText);
-    //   }
-    // });
 
     // Here's how to grey out and deactivate a select box
     // $("#finder-store-goods-1").attr('disabled','disabled').css({"background-color": "#e3e3e3", "opacity": 0.5});

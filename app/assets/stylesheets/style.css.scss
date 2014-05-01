@@ -1,35 +1,6 @@
-
-@import 'fonts';
-@import 'colors';
-
 /*/////////////////////////////////////////////////*/
 /* Reference and Notes */
-/*/////////////////////////////////////////////////*/
-/* 
-
-COLORS 
-almost-white: #fcfcfc;
-gray01: #f5f5f5;
-gray02: #f0f0f0;
-gray03: #e3e3e3;
-gray04: #d9d9d9;
-gray05: #BDBDBD;
-gray06: #ABABAB;
-gray07: #7D7D7D; //
-gray08: #575757;
-gray09: #404040;
-gray10: #212121;
-
-FONTS
-
-font-family: 'Droid Serif', serif;
-font-family: 'PT Serif', serif;
-
-font-family: 'Lato', sans-serif;
-font-family: 'Raleway', sans-serif; 100,200,300,400,600,700
-font-family: 'Montserrat', sans-serif;
-font-family: 'Crimson Text', serif 400,600,700,400italic,600italic,700italic
-font-family: 'Oleo Script Swash Caps', cursive
+/*/////////////////////////////////////////////////
 
 VENDOR PREFIX REFERENCE:
 
@@ -38,6 +9,9 @@ VENDOR PREFIX REFERENCE:
 none - Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+
 
 */
+
+@import 'fonts';
+@import 'colors';
 
 /*/////////////////////////////////////////////////*/
 /* Site-Wide Styles */
@@ -120,37 +94,37 @@ html, body { width:100%; height:100%; }
 	border-top: 1px dotted #e3e3e3;
 	padding-top: 20px;
 	margin: 20px auto 0px auto;
-}
 
-.bottom-bar ul {
-	list-style-type: none;
-	margin: -16px 0px 0px 0px;
-}
+	ul {
+		list-style-type: none;
+		margin: -16px 0px 0px 0px;
 
-.bottom-bar ul > li {
-	padding-right: 14px;
-	display: inline;
-	font-size: 1rem;
-}
-.bottom-bar ul > li a {
-	color: #7D7D7D;
-}
+		li {
+			padding-right: 14px;
+			display: inline;
+			font-size: 1rem;
 
-.bottom-bar ul.left {
-	float: left;
-}
+			a {
+				color: #7D7D7D;
+			}
+			&.copyright{
+				font-size: .9rem;
+				padding: 0 20px 2px 0px;
+				line-height: 45px;
+			}
+		}
 
-.bottom-bar ul.right {
-	float: right;
-}
-.bottom-bar ul.middle {
-	float: none;
-	text-align: center;
-}
-.bottom-bar li.copyright{
-	font-size: .9rem;
-	padding: 0 20px 2px 0px;
-	line-height: 45px;
+		&.left {
+			float: left;
+		}
+		&.right {
+			float: right;
+		}
+		&.middle {
+			float: none;
+			text-align: center;
+		}
+	}
 }
 
 /*.bottom-bar{
@@ -816,7 +790,8 @@ img.store-result-main-img-thumb.last {
 .store-result-title {
 	font-family: $header-font;
 	font-weight: $font-weight-light;
-	font-size: 18pt;
+	text-transform: uppercase;
+	font-size: $font-size-xlarge;
 	margin-bottom: 6px;
 }
 
@@ -827,11 +802,6 @@ img.store-result-main-img-thumb.last {
 .store-result-location {
 	font-size: .7em;
 	margin-bottom: 4px;
-/*  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;*/
-
 	color: $dark-orange;
 	a {
 		text-overflow: ellipsis;	
@@ -1036,7 +1006,7 @@ div.menu-item-vertical:hover {
 .finder-extra-header {
 	margin: 0px auto 12px auto;
 	text-align: center;
-	font-size: 1.0em;
+	font-size: .9em;
 	color: $medium-gray;
 
 
@@ -1053,9 +1023,8 @@ div.menu-item-vertical:hover {
 			color: $bright-purple;
 		}
 	}
-	.note{
-
-		margin-top: 9px;
+	.note {
+		margin-top: 4px;
 		font-style: italic;
 		color: $pale-gray;
 		font-size: .8em;
@@ -1187,51 +1156,6 @@ a.extra-options-hide-link:hover{
 	background-color: #fcfcfc;
 }
 
-/* Unused Finder Stuff */
-
-/*.text-vert-center{
-	height: 30px;
-	line-height: 35px;
-}
-.finder-extra-bar-category{
-  width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.finder-extra-bar-category .category-name {
-	float: left;
-	text-align: right;
-	height: 30px;
-	line-height: 35px;
-	width: 40%;
-	padding-right: 12px;
-}
-.finder-extra-bar-category .category-select {
-	float: left;
-	text-align: left;
-}
-.finder-extra-bar-category .category-extra-show {
-	height: 30px;
-	line-height: 35px;
-	float: left;
-	text-align: left;
-}
-.finder-extra-bar-category .category-extra {
-	float: left;
-	text-align: left;
-	display: none;
-}
-.finder-extra-bar {
-	float: none;
-}
-.finder-extra-select {
-	font-size: 1.0rem;
-	width: 250px;
-	margin-right: 8px;
-}*/
-/* End unused finder stuff */
-
 /*/////////////////////////////////////////////////*/
 /* Text and Miscellaneous Styles */
 /*/////////////////////////////////////////////////*/
@@ -1272,18 +1196,18 @@ i.inactive {
 	opacity: .2;
 }
 .gusto {
-	font-family: 'Oleo Script Swash Caps', cursive !important;
+	font-family: $fancy-font;
 	font-weight: normal !important;
 	font-size: 1.3rem !important;
 }
 .gusto-sm {
-	font-family: 'Oleo Script Swash Caps', cursive !important;
+	font-family: $fancy-font;
 	font-weight: normal !important;
 	font-size: 1rem !important;
 }
 
 .gusto-icon {
-	font-family: 'Oleo Script Swash Caps', cursive !important;
+	font-family: $fancy-font;
 	padding: 0px 5px 0px 4px;
 }
 

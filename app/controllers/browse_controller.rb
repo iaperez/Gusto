@@ -5,6 +5,6 @@ class BrowseController < ApplicationController
   def profile
   end
 
-  def aboutus
+  def about
   end
 end
