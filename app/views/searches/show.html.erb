@@ -11,6 +11,7 @@
   <!-- <div class="content-box-transparent store-result-query"></div> -->
   <% @results.each do |store| %>
       <div class="main-content-box store-result">
+        
         <div class="row">
           <div class="store-result-details">
             <div class="store-result-top-bar">
@@ -34,8 +35,10 @@
 
                   <ul class="type-ratings">
                     <li class="type-rating-item" data-rating="<%= store.adventure %>">Adventure <span class="type-rating-number"><%= store.adventure %></span></li>
+               
+                    <li class="type-rating-item" data-rating="<%= store.bargain %>">Bargain <span class="type-rating-number"><%= store.bargain %></span></li>  
+                     
                     <li class="type-rating-item" data-rating="<%= store.convenience %>">Convenience <span class="type-rating-number"><%= store.convenience %></span></li>                  
-                    <li class="type-rating-item" data-rating="<%= store.bargain %>">Bargain <span class="type-rating-number"><%= store.bargain %></span></li>                  
                   </ul>
                 </div>
               </div>
@@ -44,13 +47,16 @@
             </div>
           </div>
           <div class="inner-content-box store-result-main-img-box">
-            <img class="store-result-main-img" src="<%= store.image.to_s %>">
+            <a href="../stores/<%= store.id %>"> 
+              <img class="store-result-main-img" src="<%= store.image.to_s %>">
+            </a>
           </div>
 
 <!--           <div class="inner-content-box-shaded store-result-bottom-bar">
             <a href="../stores/<%= store.id %>">View Store Profile</a>
           </div> -->
         </div>
+
       </div>
   <% end %>
 </div>

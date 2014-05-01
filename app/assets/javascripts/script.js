@@ -1,7 +1,8 @@
 // Foundation CSS
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation();});
 
+console.log("foo");
 // Google maps code
 
 var map;

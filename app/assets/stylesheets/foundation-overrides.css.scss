@@ -8,12 +8,19 @@ body {
 	font-family: $main-font;
   font-weight: $font-weight-light;
 	color: #212121;
+  line-height: 1.2em;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: $header-font;
+  font-weight: $font-weight-normal;
 }
 
 p{
-	line-height: 1.3;
+	line-height: 1.5em;
 	font-size: 0.9rem;
-	color: #404040;
+	color: $black;
+  font-weight: $font-weight-light;
 }
 
 em {
@@ -75,6 +82,7 @@ table {
   font-family: $header-font;
 	overflow: inherit;
 	color: white;
+/*  background-color: $medium-gray;*/
   .sitename {
     font-family: $fancy-font;
     font-size: 1.6rem;
@@ -90,9 +98,22 @@ table {
     height: 30px;
     line-height: 28px;
   }
-  ul li > a{
-    font-size: .9rem;
+  ul {
+    background-color: inherit;
+    li {
+      background-color: inherit;
+      a {
+        font-family: $header-font;
+        
+        font-size: .9rem;
+        &.button{
+          margin-left: 2px;
+          width: 70%;
+        }
+      }
+    }
   }
+
   input {
     height: 1.9rem;
   }
