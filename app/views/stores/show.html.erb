@@ -119,7 +119,7 @@
                 <div class="store-profile-attribute-type-header">
                   Ambience
                 </div>
-                <%= render "stores/attribute_count_list", name: 'Cust. Service', value_names: {1 => 'Hands-Off', 2 => 'Friendly', 3 => 'Aggressive'}, rating: @store.customer_service, count_type: 'flaticon-staff2' %>
+                <%= render "stores/attribute_count_list", name: 'Service', value_names: {1 => 'Hands-Off', 2 => 'Friendly', 3 => 'Aggressive'}, rating: @store.customer_service, count_type: 'flaticon-staff2' %>
                 <%= render "attribute_tag_list", name: 'Style', list: @store.styles_names_degrees %>
                 <%#= render "attribute_tag_list", name: 'Personality', list: @store.personalities_names_degrees %>
                 <%= render "attribute_tag_list", name: 'Scent', list: @store.scents_names_degrees %>

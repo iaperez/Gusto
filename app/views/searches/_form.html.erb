@@ -106,7 +106,7 @@
         <div class="extra-option-container">
           <%= f.hidden_field :character_type_id %>
           <div class="flaticon-face3 extra-option-header-icon"></div>
-          <div class="extra-option-header">Character</div>
+          <div class="extra-option-header">Service</div>
           <% CharacterType.all.each do |nn| %>
               <% if @search.character_type_id.blank? %>
                   <div class="extra-option" id="<%= nn.id %>"> <%= nn.name %></div>
