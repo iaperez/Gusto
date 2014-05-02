@@ -1,12 +1,10 @@
+
 <div class="row">
-  <div class="main-content-box finder-form-container small-12 columns">
-    <div class="row">
-      <div class="finder-main-bar small-12 columns">
-        <%= render 'form' %>
-      </div>
-    </div>
+  <div class="finder-main-bar main-content-box">
+    <%= render 'form' %>
   </div>
 </div>
+
 <div id="store-results" style="display:block;">
   <!-- <div class="content-box-transparent store-result-query"></div> -->
   <% @results.each do |store| %>
@@ -31,17 +29,15 @@
               <% end %>
             </div>
             <div class="inner-content store-result-attributes-box">
-              <div class="store-result-attribute">
-                <div class="store-result-type-rating">
 
-                  <ul class="type-ratings">
-                    <li class="type-rating-item" data-rating="<%= store.adventure %>">Adventure <span class="type-rating-number"><%= store.adventure %></span></li>
-               
-                    <li class="type-rating-item" data-rating="<%= store.bargain %>">Bargain <span class="type-rating-number"><%= store.bargain %></span></li>  
+              <div class="store-result-type-rating">
+                <ul class="type-ratings">
+                  <li class="type-rating-item" data-rating="<%= store.adventure %>">Adventure <span class="type-rating-number"><%= store.adventure %></span></li>
+             
+                  <li class="type-rating-item" data-rating="<%= store.bargain %>">Bargain <span class="type-rating-number"><%= store.bargain %></span></li>  
 
-                    <li class="type-rating-item" data-rating="<%= store.convenience %>">Convenience <span class="type-rating-number"><%= store.convenience %></span></li>                  
-                  </ul>
-                </div>
+                  <li class="type-rating-item" data-rating="<%= store.convenience %>">Convenience <span class="type-rating-number"><%= store.convenience %></span></li>                  
+                </ul>
               </div>
               <%= render "attribute_tag_list_store_result", name: 'Categories', list: store.categories_names %>
               <%= render "attribute_tag_list_store_result", name: 'Style', list: store.styles_names_degrees %>
