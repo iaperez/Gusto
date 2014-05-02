@@ -93,7 +93,7 @@ describe "StoreSearches" do
 
     visit '/searches/new'
     click_button 'Search'
-    save_and_open_page
+    #save_and_open_page
     page.body.index("StoreNameTwo").should < page.body.index("StoreNameOne")
 
     visit '/user/preferences'
@@ -108,10 +108,27 @@ describe "StoreSearches" do
 
     visit '/searches/new'
     click_button 'Search'
-    save_and_open_page
+    #save_and_open_page
     page.body.index("StoreNameOne").should < page.body.index("StoreNameTwo")
-
   end
 
+  it "shows store one and two when user searches without choosing elements" do
+    visit '/searches/new'
+    click_button 'Search'
+    page.should have_content "StoreNameOne"
+    page.should have_content "StoreNameTwo"
+
+    visit '/searches/new'
+    select 'accessories', :from => 'search[category_id]'
+    click_button 'Search'
+    page.should have_content "StoreNameOne"
+    page.should have_no_content "StoreNameTwo"
+
+    visit '/searches/new'
+    select 'decorations', :from => 'search[category_id]'
+    click_button 'Search'
+    page.should have_no_content "StoreNameOne"
+    page.should have_content "StoreNameTwo"
+  end
 
 end
