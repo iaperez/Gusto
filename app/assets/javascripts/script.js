@@ -72,23 +72,15 @@ $(document).ready(function() {
         // navigator.geolocation.getCurrentPosition(success,error,options);
     }
 
-    // This takes the rating from the data-rating tag and sets the color of the border
+    // This takes the rating from the data-rating tag and sets the color of the background
 
     $(".type-rating-item").each(function() {
         var rating = $(this).data("rating");
         var version = $(this).data("version");
-        var bordercolor = "#d9d9d9";
-        if (rating < 5) {
+        var saturation = 90 - rating*5 + "%";
+        var backgroundColor = "hsla(320, 50%, "+saturation+", 1)";
 
-            bordercolor = "#C5D7E8"; // blue gray
-        } else if (rating > 5 && rating < 7.5) {
-
-            bordercolor = "#83B9EB"; // muted blue
-        } else if (rating > 7.5) {
-
-            bordercolor = "#3693EB"; // bright blue
-        }
-        $(this).css({"border-color" : bordercolor});
+        $(this).css({"background-color" : backgroundColor});
         $(this).children(".type-rating-number").text(rating);
     });
 

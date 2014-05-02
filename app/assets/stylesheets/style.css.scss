@@ -443,22 +443,13 @@ ul.store-profile-categories li {
 	}
 
 	ul.type-ratings {
-		float: left;
-		display: inline;
-		list-style-type: none;
-		margin: 2px 6px 2px 0px;
+
 		width: 80%;
 
 		li.type-rating-item {
-			display: inline;
-			font-size: 1em;
-			color: #000;
-			background-color: #fff;
+
 			padding: 2px 8px;
 			margin-right: 6px;
-			border-radius: 8px;
-			border: 1px solid #d9d9d9;
-			white-space: nowrap;
 		}
 	}
 
@@ -846,8 +837,6 @@ img.store-result-main-img-thumb.last {
 	color: #6f6f6f;
 }
 
-
-
 .store-result-main-img-box {
 	width: 70%;
 	float: right;
@@ -893,20 +882,9 @@ img.store-result-main-img-thumb.last {
 	}
 
 	ul.type-ratings {
-		float: left;
-		display: inline;
-		list-style-type: none;
-		margin: 2px 0px;
 
 		li.type-rating-item {
-			display: inline;
-			font-size: .8em;
-			color: #000;
-			background-color: #fff;
-			padding: 2px 4px;
-			border-radius: 8px;
-			border: 1px solid #d9d9d9;
-			white-space: nowrap;
+			font-size: 0.8em;
 		}
 
 	}
@@ -974,6 +952,22 @@ img.store-result-main-img-thumb.last {
 	float: none;
 }
 
+/* Type Rating Items - same in both pages */
+
+ul.type-ratings {
+
+	margin: 2px 0px;
+
+	li.type-rating-item {
+		display: inline;
+		font-size: .9em;
+		color: $white;
+		background-color: $medium-gray;
+		padding: 2px 4px;
+		white-space: nowrap;
+	}
+
+}
 
 /*/////////////////////////////////////////////////*/
 /* Finder Bar Styles */
