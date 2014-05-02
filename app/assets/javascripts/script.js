@@ -198,6 +198,7 @@ $(document).ready(function() {
             $(this).siblings(".extra-option").removeClass("option-inactive");
             $(this).siblings("input[type=hidden]").val('')
 
+            
         } else if ($(this).hasClass("option-inactive")) {
             // select a deselected option - grey out the other one
             $(this).removeClass("option-inactive").addClass("option-selected");
