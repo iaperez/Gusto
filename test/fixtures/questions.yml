@@ -12,17 +12,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   survey_id: 1
   content: furniture
-
-two:
-  survey_id: 1
-  content: clothing
-
-three:
-  survey_id: 1
-  content: table
-
-four:
-  survey_id: 1
-  content: person
