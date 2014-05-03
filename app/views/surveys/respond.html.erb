@@ -7,7 +7,7 @@
 
         <% for question in @survey.questions %>
 
-          <div class="row text-center survey-header">
+          <div class="row survey-header">
             <h3><%= question.content %></h3>
             (Click as many as you'd like)
           </div>
@@ -38,7 +38,7 @@
             <div class="actions">
               <%= submit_tag "Send your answers!", :class => 'button' %>
               <br>
-              <%= link_to 'Back', surveys_path %>
+              <%= link_to 'Back', user_preferences_path %>
             </div>
           </div>
         </div>

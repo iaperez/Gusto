@@ -65,27 +65,27 @@
     </nav>
   </div>
   <div class="content-wrapper">
-  <% if notice %>
+    <% if notice %>
       <!-- <p class="alert alert-success"><%= notice %></p>    -->
-  <% end %>
-  <% if alert %>
+    <% end %>
+    <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+    <% end %>
 
-  <%= yield %>
+    <%= yield %>
+    <div>
+      <nav class="bottom-bar">
+        <ul class="left">
+          
+        </ul>
+        <ul class="right">
+          <li class="copyright">&copy; 2014 Gusto</li>
+          <li class="gusto">Gusto</li>
+        </ul>
+      </nav>
+    </div>
   </div>
-  <div>
-    <nav class="bottom-bar">
-      <ul class="left">
-        
-      </ul>
-      <ul class="right">
 
-        <li class="copyright">&copy; 2014 Gusto</li>
-        <li class="gusto">Gusto</li>
-      </ul>
-    </nav>
-  </div>
 </div>
 
 </body>

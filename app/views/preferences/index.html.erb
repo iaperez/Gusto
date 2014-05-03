@@ -1,30 +1,42 @@
-<div class="survey">
-  <div class="main-content-box  large-12 columns">
-    <h1>Preferences</h1>
-    <table>
-      <thead>
-      <tr>
-        <th>Category</th>
-        <th>Users Answers</th>
-      </tr>
-      </thead>
+<div class="row">
+  <div class="main-content-box large-12 columns survey-menu">
 
-      <tbody>
-      <% @available_surveys.each do |survey| %>
-          <tr>
-            <td><%= survey.name %></td>
-            <td>
-              <% if @responses_per_survey.has_key?(survey.id) %>
-              <%= @responses_per_survey[survey.id].to_sentence %>
-              <% end %>
-            </td>
-            <td><%= link_to 'Start the quiz!', respond_survey_path(survey) %></td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
+        <div class="survey-menu-header">
+          <h3>Create your Style Profile</h3>
+          (Complete as many surveys as you'd like! The more, the better!)
+        </div>
+        <div class="row">
+          <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-5 survey-menu-container">
+            <% @available_surveys.each do |survey| %>
+
+              <li class="survey-box">
+                <div class="survey-name">
+                  <%= survey.name %>
+                </div>
+                <div class="survey-image">
+                  <% question = survey.questions.take %>
+                  <% answer = question.answers.take %>
+                  <a href="<%= respond_survey_path(survey) %>">
+                  <% if answer.image? %>
+                    <%= image_tag answer.image.to_s %>
+                  <% else %>
+                    [No Image]
+                  <% end %>
+                  </a>
+                </div>
+                <div class="survey-status">
+                  <% if @responses_per_survey[survey.id].count != 0 %>
+                    <%= link_to raw('Completed!<br>(click to take again)'), respond_survey_path(survey) %>
+                  <% else %>
+                    <%= link_to 'Start the Survey!', respond_survey_path(survey) %>
+                  <% end %>
+                </div>
+              </li>
+
+            <% end %>
+          </ul>
+        </div>
 
 
-    <br>
   </div>
 </div>
