@@ -72,6 +72,18 @@ $(document).ready(function() {
         // navigator.geolocation.getCurrentPosition(success,error,options);
     }
 
+    $(".survey-image").hover(
+        function() {
+            $(this).addClass( "hover" );
+        }, function() {
+            $(this).removeClass( "hover" );
+        }
+    );
+
+    $(".survey-image").click(function() {
+        $(this).toggleClass("selected");
+    });
+
     // This takes the rating from the data-rating tag and sets the color of the background
 
     $(".type-rating-item").each(function() {

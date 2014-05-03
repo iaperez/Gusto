@@ -1,44 +1,40 @@
 <p id="notice"><%= notice %></p>
-<div class = "survey">
-<div class="main-content-box  large-12 columns">
+<div class="row">
+
+  <div class="main-content-box survey-container">
 
     <%= form_tag responses_survey_path, method: :put do %>
 
-            <h1><%= @survey.name %></h1>
-
         <% for question in @survey.questions %>
-            <div class="large-12 columns">
-              <div class="row">
-                <h3><%= question.content %></h3>
-              </div>
-            </div>
-            <div class="large-12 columns">
-              <div class="row">
-                <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-                  <% for answer in question.answers %>
-                      <li>
-                        <div class="panel">
-                          <h6 class="subheader"></h6>
-                          <h5>
-                            <% if @responded_answers.include?(answer.id) %>
-                                <%= check_box_tag "answers_ids[]", answer.id, checked = true %>
-                            <% else %>
-                                <%= check_box_tag "answers_ids[]", answer.id %>
-                            <% end %>
-                            <%= h answer.content %>
-                          </h5>
-                          <%= image_tag answer.image.to_s if answer.image? %>
-                        </div>
 
-
-                      </li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-        <% end %>
-        <div class="large-12 columns text-center">
+          <div class="row text-center survey-header">
+            <h3><%= question.content %></h3>
+            (Click as many as you'd like)
+          </div>
           <div class="row">
+            <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 survey-images-container">
+              <% for answer in question.answers %>
+
+                <li class="survey-image-box">
+                  <div>
+                    <% if @responded_answers.include?(answer.id) %>
+                        <%= check_box_tag "answers_ids[]", answer.id, true, :id => "answers_id_#{answer.id}" %>
+                        <label class="survey-image selected" for="answers_id_<%= answer.id %>"><%= image_tag answer.image.to_s if answer.image? %></label>
+                    <% else %>
+                        <%= check_box_tag "answers_ids[]", answer.id, false, :id => "answers_id_#{answer.id}" %>
+                        <label class="survey-image" for="answers_id_<%= answer.id %>"><%= image_tag answer.image.to_s if answer.image? %></label>
+                    <% end %>
+                  </div>
+                </li>
+
+              <% end %>
+            </ul>
+          </div>
+
+        <% end %>
+        
+        <div class="row">
+          <div class="small-12 columns text-center">
             <div class="actions">
               <%= submit_tag "Send your answers!", :class => 'button' %>
               <br>
@@ -46,6 +42,7 @@
             </div>
           </div>
         </div>
+
     <% end %>
   </div>
 </div>
