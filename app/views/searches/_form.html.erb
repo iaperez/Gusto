@@ -26,7 +26,7 @@
         <a href="" class="toggle-extra-options">And I <em>specifically prefer</em> stores that are
           <% if @search.get_search_params.blank? %>
               ...
-              <!-- <br><div class="note">(optional)</div> -->
+              <br><div class="note">(click for more options)</div>
           <% else %>
               <%= @search.get_search_params %>
               <br><div class="note">(click to edit)</div>
@@ -121,7 +121,7 @@
         </div>
 
         <div class="extra-options-hide">
-          <a class="extra-options-hide-link">[Hide These Options]</a>
+          <a class="extra-options-hide-link">Hide These Options</a>
         </div>
 
       </div>

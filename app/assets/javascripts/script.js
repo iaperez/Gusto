@@ -84,6 +84,15 @@ $(document).ready(function() {
         $(this).toggleClass("selected");
     });
 
+    $(".store-profile-attribute-content .attribute-rating, .attribute-label").hover(
+        function() {
+            $(this).siblings('.attribute-description').show();
+        }, function() {
+            $(this).siblings('.attribute-description').hide();
+        }
+    );
+
+
     // This takes the rating from the data-rating tag and sets the color of the background
 
     $(".type-rating-item").each(function() {

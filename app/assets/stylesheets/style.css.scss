@@ -498,17 +498,15 @@ ul.store-profile-categories li {
 	width: 100%;
 
 	.type-rating-label{
-		font-size: 1.1rem;
+		font-size: 1.5rem;
 		font-weight: bold;
 		float: left;
 		padding-top: 6px;
 		margin: 0px 20px 0px 10px;
-		width: 12%;	
+		white-space: nowrap;
 	}
 
 	ul.type-ratings {
-
-		width: 80%;
 
 		li.type-rating-item {
 
@@ -545,8 +543,6 @@ ul.store-profile-categories li {
 li.rating-tooltip-container {
 	display: inline;
 	font-size: 1em;
-	color: #000;
-	background-color: #fff;
 	margin-left: 12px;
 	cursor: pointer;
 
@@ -609,7 +605,7 @@ li.rating-tooltip-container {
 
 .store-profile-attribute {
 
-	padding: 2px 4px;
+	padding: 2px 0px;
 	margin-bottom: 2px;
 	float: left;
 	width: 100%;
@@ -619,6 +615,11 @@ li.rating-tooltip-container {
 	.store-profile-attribute-content{
 		line-height: 28px;
 		float: none;
+		ul.tags{
+			li {
+
+			}
+		}
 	}
 
 	&.last{
@@ -632,22 +633,30 @@ li.rating-tooltip-container {
 		float: left;
 		font-size: .9em;
 		white-space: nowrap;
-		margin: 0px 6px;
-		width: 25%;
+		margin: 0px;
+		width: 30%;
+
 	}
 	.attribute-description {
+		display: none;
 		float: left;
 		font-size: .7em;
-		white-space: nowrap;
+		/*white-space: nowrap;*/
 		margin: 0px 6px 0px 0px;
 		width: 25%;
 		color: $charcoal-gray;
+	}	
+	.attribute-tags {
+		float: left;
+		font-size: .7em;
+		padding-left: 2px;
+		margin: 0px;
+		color: $medium-gray;
 	}
 	.attribute-details {
 		display: none;
 		float: left;
 		width: 100%;
-		/*height: 80px;*/
 		padding-left: 20px;
 		font-size: .9rem;
 	}
@@ -658,7 +667,6 @@ li.rating-tooltip-container {
 	}
 	.attribute-rating {
 		float: left;
-		/*font-size: 1em;*/
 		white-space: nowrap;
 		margin: 1px 12px 0px 0px;
 	}
@@ -1154,10 +1162,10 @@ a.extra-options-hide-link{
 	text-transform: uppercase;
 	font-size: 0.5rem;
 	opacity: 0.5;
-}
+	&:hover{
+		opacity: 1.0;
+	}
 
-a.extra-options-hide-link:hover{
-	opacity: 1.0;
 }
 
 .extra-option-container {
@@ -1166,7 +1174,7 @@ a.extra-options-hide-link:hover{
 	background-color: #fff;
 	color: #575757;
 	text-align: center;
-	padding: 0px 4px 12px 4px;
+	padding: 4px 4px 12px 4px;
 
 }
 
@@ -1253,7 +1261,7 @@ i.inactive {
 .gusto {
 	font-family: $fancy-font;
 	font-weight: normal !important;
-	font-size: 1.3rem !important;
+	font-size: 1.5rem;
 }
 .gusto-sm {
 	font-family: $fancy-font;

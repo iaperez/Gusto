@@ -77,6 +77,10 @@ class Store < ActiveRecord::Base
     self.styles.map(&:name).join(", ")
   end
 
+  def styles_names
+    self.styles.pluck(:name)
+  end
+
   def styles_names_degrees
     self.styles.pluck(:name, :degree)
   end
@@ -106,6 +110,10 @@ class Store < ActiveRecord::Base
     self.music_styles.map(&:name).join(", ")
   end
 
+  def music_styles_names
+    self.music_styles.pluck(:name)
+  end
+
   def music_styles_names_degrees
     self.music_styles.pluck(:name, :degree)
   end
@@ -120,6 +128,10 @@ class Store < ActiveRecord::Base
     self.scents.map(&:name).join(", ")
   end
 
+  def scents_names
+    self.scents.pluck(:name)
+  end
+
   def scents_names_degrees
     self.scents.pluck(:name, :degree)
   end
@@ -132,6 +144,10 @@ class Store < ActiveRecord::Base
 
   def air_types_list
     self.air_types.map(&:name).join(", ")
+  end
+
+  def air_types_names
+    self.air_types.pluck(:name)
   end
 
   def air_types_names_degrees

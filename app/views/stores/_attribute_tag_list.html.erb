@@ -4,8 +4,8 @@
   <div class="store-profile-attribute">
 <% end %>
   <div class="store-profile-attribute-content">
-    <div class="attribute-label"><%=name%></div>
-    <%= render "stores/tags/store_tag_list", tag_list: list %>
+    <div class="attribute-label"><%= name %></div>
+    <div class="attribute-tags"><%= list.to_sentence %></div>
+    <%#= render "stores/tags/store_tag_list", tag_list: list %>
   </div>
-  <div class="attribute-details hide"></div>
 </div>

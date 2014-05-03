@@ -5,11 +5,19 @@
 <% end %>
   <div class="store-profile-attribute-content">
     <div class="attribute-label"><%= name.html_safe %></div>
+    <div class="attribute-rating">
+    <% if description == "Yes" %>
+      <i class="fa <%= tag_type %>"></i>
+    <% else %>
+      <i class="fa <%= tag_type %>" style="opacity:0.1;"></i>
+    <% end %>
+    </div>
+
     <div class="attribute-description">
     <% if description == "Yes" %>
-    	<i class="fa <%= tag_type %>"></i> Yes
+    	Yes
     <% else %>
-    	<i class="fa <%= tag_type %>" style="opacity:0.1;"></i> No
+    	No
     <% end %>
     </div>
     
