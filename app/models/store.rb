@@ -166,9 +166,10 @@ class Store < ActiveRecord::Base
         puts 'New Store Owner'+st.id.to_s
         if User.where(email: 'test@owner'+st.id.to_s+'.com').count == 0
           tt= User.new
-          tt.password = '$2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy'
+          tt.password = ENV['TEST_PASSWORD']
+          tt.password = ENV['TEST_PASSWORD']
           tt.email = 'test@owner'+st.id.to_s+'.com'
-          tt.save
+          tt.save!
         else
           tt =  User.where(email: 'test@owner'+st.id.to_s+'.com').first
         end
