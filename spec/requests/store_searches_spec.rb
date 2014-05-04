@@ -31,12 +31,12 @@ describe "StoreSearches" do
     #users set specific preferences
     visit '/user/preferences'
 
-    page.all(:link, 'Start the quiz!').each do |link_to_preferences|
+    page.all(:css,".link_to_survey").each do |link_to_preferences|
       link_to_preferences.click
-      find(:css, "#answers_ids_[value='1']").set(true)
-      find(:css, "#answers_ids_[value='2']").set(true)
-      find(:css, "#answers_ids_[value='3']").set(false)
-      find(:css, "#answers_ids_[value='4']").set(false)
+      find(:css, "#answers_id_1[value='1']").set(true)
+      find(:css, "#answers_id_2[value='2']").set(true)
+      find(:css, "#answers_id_3[value='3']").set(false)
+      find(:css, "#answers_id_4[value='4']").set(false)
       click_button 'Send your answers!'
     end
     Capybara.reset_sessions!
@@ -49,12 +49,13 @@ describe "StoreSearches" do
     click_button 'Sign in'
     #users set specific preferences
     visit '/user/preferences'
-    page.all(:link, 'Start the quiz!').each do |link_to_preferences|
+    page.all(:css,".link_to_survey").each do |link_to_preferences|
       link_to_preferences.click
-      find(:css, "#answers_ids_[value='1']").set(true)
-      find(:css, "#answers_ids_[value='2']").set(true)
-      find(:css, "#answers_ids_[value='3']").set(false)
-      find(:css, "#answers_ids_[value='4']").set(false)
+      puts "setting store one"
+      find(:css, "#answers_id_1[value='1']").set(true)
+      find(:css, "#answers_id_2[value='2']").set(true)
+      find(:css, "#answers_id_3[value='3']").set(false)
+      find(:css, "#answers_id_4[value='4']").set(false)
       click_button 'Send your answers!'
     end
     Capybara.reset_sessions!
@@ -65,12 +66,13 @@ describe "StoreSearches" do
     click_button 'Sign in'
     #users set specific preferences
     visit '/user/preferences'
-    page.all(:link, 'Start the quiz!').each do |link_to_preferences|
+    page.all(:css,".link_to_survey").each do |link_to_preferences|
       link_to_preferences.click
-      find(:css, "#answers_ids_[value='1']").set(false)
-      find(:css, "#answers_ids_[value='2']").set(false)
-      find(:css, "#answers_ids_[value='3']").set(true)
-      find(:css, "#answers_ids_[value='4']").set(true)
+      puts "setting store two"
+      find(:css, "#answers_id_1[value='1']").set(false)
+      find(:css, "#answers_id_2[value='2']").set(false)
+      find(:css, "#answers_id_3[value='3']").set(true)
+      find(:css, "#answers_id_4[value='4']").set(true)
       click_button 'Send your answers!'
     end
     Capybara.reset_sessions!
@@ -81,34 +83,32 @@ describe "StoreSearches" do
     click_button 'Sign in'
     #users set specific preferences
     visit '/user/preferences'
-
-    page.all(:link, 'Start the quiz!').each do |link_to_preferences|
+    page.all(:css,".link_to_survey").each do |link_to_preferences|
       link_to_preferences.click
-      find(:css, "#answers_ids_[value='1']").set(true)
-      find(:css, "#answers_ids_[value='2']").set(true)
-      find(:css, "#answers_ids_[value='3']").set(false)
-      find(:css, "#answers_ids_[value='4']").set(false)
+      puts "setting store two"
+      find(:css, "#answers_id_1[value='1']").set(true)
+      find(:css, "#answers_id_2[value='2']").set(true)
+      find(:css, "#answers_id_3[value='3']").set(false)
+      find(:css, "#answers_id_4[value='4']").set(false)
       click_button 'Send your answers!'
     end
 
     visit '/searches/new'
     click_button 'Search'
-    #save_and_open_page
     page.body.index("StoreNameTwo").should < page.body.index("StoreNameOne")
 
     visit '/user/preferences'
-    page.all(:link, 'Start the quiz!').each do |link_to_preferences|
+    page.all(:css,".link_to_survey").each do |link_to_preferences|
       link_to_preferences.click
-      find(:css, "#answers_ids_[value='1']").set(false)
-      find(:css, "#answers_ids_[value='2']").set(false)
-      find(:css, "#answers_ids_[value='3']").set(true)
-      find(:css, "#answers_ids_[value='4']").set(true)
+      find(:css, "#answers_id_1[value='1']").set(false)
+      find(:css, "#answers_id_2[value='2']").set(false)
+      find(:css, "#answers_id_3[value='3']").set(true)
+      find(:css, "#answers_id_4[value='4']").set(true)
       click_button 'Send your answers!'
     end
 
     visit '/searches/new'
     click_button 'Search'
-    #save_and_open_page
     page.body.index("StoreNameOne").should < page.body.index("StoreNameTwo")
   end
 

@@ -26,9 +26,9 @@
                 </div>
                 <div class="survey-status">
                   <% if @responses_per_survey[survey.id].count != 0 %>
-                    <%= link_to raw('Completed!<br>(click to take again)'), respond_survey_path(survey) %>
+                    <%= link_to raw('Completed!<br>(click to take again)'), respond_survey_path(survey), class: :link_to_survey %>
                   <% else %>
-                    <%= link_to 'Start the Survey!', respond_survey_path(survey) %>
+                    <%= link_to 'Start the Survey!', respond_survey_path(survey), class: :link_to_survey %>
                   <% end %>
                 </div>
               </li>
