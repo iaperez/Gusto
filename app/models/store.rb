@@ -163,7 +163,7 @@ class Store < ActiveRecord::Base
   def update_owners
     Store.all.each do |st|
       if StoreOwner.where(store_id: st.id).count == 0
-        puts 'New Store Owner'+st.id
+        puts 'New Store Owner'+st.id.to_s
         tt= User.new
         tt.pasword = '$2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy'
         tt.email = 'test@owner'+st.id.to_s+'.com'
