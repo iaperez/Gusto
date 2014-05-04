@@ -163,13 +163,17 @@ class Store < ActiveRecord::Base
   def update_owners
     Store.all.each do |st|
       if StoreOwner.where(store_id: st.id).count == 0
-        puts 'New Store Owner'+st.id.to_s
         if User.where(email: 'test@owner'+st.id.to_s+'.com').count == 0
+          puts 'New Store Owner'+st.id.to_s
           tt= User.new
           tt.password = ENV['TEST_PASSWORD']
-          tt.password = ENV['TEST_PASSWORD']
+          tt.password_confirmation = ENV['TEST_PASSWORD']
           tt.email = 'test@owner'+st.id.to_s+'.com'
-          tt.save!
+          tt.current_sign_in_at = Time.now
+          tt.last_sign_in_at = Time.now
+          tt.current_sign_in_ip = '127.0.0.1'
+          tt.last_sign_in_ip = '127.0.0.1'
+          tt.save
         else
           tt =  User.where(email: 'test@owner'+st.id.to_s+'.com').first
         end
