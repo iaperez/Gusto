@@ -229,4 +229,13 @@ $(document).ready(function() {
     // Here's how to grey out and deactivate a select box
     // $("#finder-store-goods-1").attr('disabled','disabled').css({"background-color": "#e3e3e3", "opacity": 0.5});
 
+    $(".list-dropdown-option").click(function(){
+        event.preventDefault();
+        tt=$(this).text()
+        $(this).parent().parent().parent().find("input[type=hidden]").val($(this).attr('id'));
+        $(this).parent().parent().parent().find(".header-dropdown").text($(this).text());
+        $(this).parent().parent().parent().find(".header-dropdown").click();
+    });
+
+
 });

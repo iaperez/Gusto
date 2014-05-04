@@ -4,7 +4,6 @@ describe "StoreSearches" do
 
   it "shows store one when user searches by category" do
     visit '/searches/new'
-    select 'accessories', :from => 'search[category_id]'
     click_button 'Search'
     page.should have_content "StoreNameOne"
   end
@@ -119,16 +118,10 @@ describe "StoreSearches" do
     page.should have_content "StoreNameTwo"
 
     visit '/searches/new'
-    select 'accessories', :from => 'search[category_id]'
     click_button 'Search'
     page.should have_content "StoreNameOne"
-    page.should have_no_content "StoreNameTwo"
-
-    visit '/searches/new'
-    select 'decorations', :from => 'search[category_id]'
-    click_button 'Search'
-    page.should have_no_content "StoreNameOne"
     page.should have_content "StoreNameTwo"
+
   end
 
 end

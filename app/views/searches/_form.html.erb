@@ -16,9 +16,58 @@
           <div class="finder-header-title">I'm looking for stores...</div><br>
         
           that sell
-          <%= f.collection_select :category_id, Category.order(:name), :id, :name, {:include_blank => 'Anything'}, {:class => "finder-main-select"} %>
+          <span class="search-selector">
+          <%= f.hidden_field :category_id %>
+            <a href="#" class="header-dropdown" data-dropdown="drop1">
+              <% if !@search.category_id.blank? and @search.category_id != 0 %>
+                  <%= @search.category.name %>
+              <% else %>
+                  Anything
+              <% end %>
+            </a>
+          <ul id="drop1" class="f-dropdown" data-dropdown-content>
+            <li>
+              <a id="" href="#" class="list-dropdown-option">
+                Anything
+              </a>
+            </li>
+            <% Category.all.each do |nn| %>
+                <li>
+                  <a id="<%= nn.id %>" href="#" class="list-dropdown-option">
+                    <%= nn.name %>
+                  </a>
+                </li>
+            <% end %>
+          </ul>
+          </span>
+          <% f.collection_select :category_id, Category.order(:name), :id, :name, {:include_blank => 'Anything'}, {:class => "finder-main-select"} %>
           and I want
-          <%= f.collection_select :features_id, Feature.order(:name), :id, :name, {:include_blank => 'It All'}, {:class => "finder-main-select"} %>
+          <span>
+          <%= f.hidden_field :features_id %>
+            <a href="#" class="header-dropdown" data-dropdown="drop2">
+              <% if !@search.features_id.blank? and @search.features_id != 0 %>
+                  <%= Feature.find(@search.features_id).name %>
+              <% else %>
+                  It All
+              <% end %>
+            </a>
+          <ul id="drop2" class="f-dropdown" data-dropdown-content>
+            <li>
+              <a id="" href="#" class="list-dropdown-option">
+                It All
+              </a>
+            </li>
+            <% Feature.all.each do |nn| %>
+                <li>
+                  <a id="<%= nn.id %>" href="#" class="list-dropdown-option">
+                    <%= nn.name %>
+                  </a>
+                </li>
+            <% end %>
+          </ul>
+          </span>
+          <% f.collection_select :features_id, Feature.order(:name), :id, :name, {:include_blank => 'It All'}, {:class => "finder-main-select"} %>
+         <br>
         </div>
     </div>
     <div class="row">
