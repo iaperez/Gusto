@@ -167,17 +167,28 @@ class Store < ActiveRecord::Base
         tt= User.new
         tt.password = '$2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy'
         tt.email = 'test@owner'+st.id.to_s+'.com'
-        tt.save!
+        tt.save
 
         ownership = StoreOwner.new
         ownership.store_id = st.id
         ownership.user_id = tt.id
-        tt.save!
+        tt.save
+        ans = Answer.all.first
+        resp = Response.new
+        resp.answer_id = ans.id
+        resp.user_id = tt.id
+        resp.save
+
       else
         puts 'Updating owner '+ st.id.to_s
         tt = User.find(StoreOwner.where(store_id: st.id).first.user_id)
         tt.email = 'test@owner'+st.id.to_s+'.com'
-        tt.save!
+        tt.save
+        ans = Answer.all.first
+        resp = Response.new
+        resp.answer_id = ans.id
+        resp.user_id = tt.id
+        resp.save
       end
     end
   end
