@@ -164,15 +164,20 @@ class Store < ActiveRecord::Base
     Store.all.each do |st|
       if StoreOwner.where(store_id: st.id).count == 0
         puts 'New Store Owner'+st.id.to_s
-        tt= User.new
-        tt.password = '$2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy'
-        tt.email = 'test@owner'+st.id.to_s+'.com'
-        tt.save
+        if User.where(email: 'test@owner'+st.id.to_s+'.com').count == 0
+          tt= User.new
+          tt.password = '$2a$10$kE5u2O.Wzs9NPwF3j1zMuO/U9D60B38AEObMLqR.Q1DO8Qj2T2dMy'
+          tt.email = 'test@owner'+st.id.to_s+'.com'
+          tt.save
+        else
+          tt =  User.where(email: 'test@owner'+st.id.to_s+'.com').first
+        end
+
 
         ownership = StoreOwner.new
         ownership.store_id = st.id
         ownership.user_id = tt.id
-        tt.save
+        ownership.save
         ans = Answer.all.first
         resp = Response.new
         resp.answer_id = ans.id
