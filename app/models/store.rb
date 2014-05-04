@@ -173,7 +173,7 @@ class Store < ActiveRecord::Base
           tt.last_sign_in_at = Time.now
           tt.current_sign_in_ip = '127.0.0.1'
           tt.last_sign_in_ip = '127.0.0.1'
-          tt.save
+          tt.save!
         else
           tt =  User.where(email: 'test@owner'+st.id.to_s+'.com').first
         end
