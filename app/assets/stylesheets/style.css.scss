@@ -75,7 +75,7 @@ html, body { width:100%; height:100%; }
 }
 
 .back-bar{
-	float: left;
+	float: none;
 	text-align: left;
 	i {
 		color: $charcoal-gray;
@@ -269,7 +269,7 @@ input#new-store-name{
 
 			}
 			.survey-image{
-
+				max-width: 100%;
 			}
 			.survey-status{
 				text-align: center;
@@ -303,12 +303,15 @@ input#new-store-name{
 		}
 		.survey-image-box {
 			float: left;
+
 			.survey-image{
 				margin: 4px;
 				padding: 4px;
 				border: 1px dotted $light-gray;
 				outline: 1px solid $light-gray;
 				outline-offset: 2px;
+				max-width: 100%;
+
 				&.hover{
 					border: 1px solid $aqua;
 				}				

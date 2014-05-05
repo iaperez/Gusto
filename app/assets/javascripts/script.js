@@ -106,7 +106,7 @@ $(document).ready(function() {
     });
 
     // Add store to favorites
-    $(document).on("click", ".add-to-bookmarks", function () {
+    $(document).on("click", ".add-to-bookmarks", function (event) {
         event.preventDefault();
         $(this).children("i.bookmark").addClass("fa-bookmark").removeClass("fa-bookmark-o");
         $(this).children("span.bookmark-message").text("Saved to Bookmarks");
@@ -114,26 +114,26 @@ $(document).ready(function() {
     });
 
     // The one-question survey at the top of store profiles
-    $("#store-survey-link").click(function() {
+    $("#store-survey-link").click(function(event) {
         event.preventDefault();
         $('#survey-bar').slideDown();
     });
 
     // User Registration Form
-    $("#register-continue").click(function() {
+    $("#register-continue").click(function(event) {
         event.preventDefault();
         $("#registration-form").slideUp();
         $("#survey-1").slideDown();
     });
 
 
-    $("#final-registration-form-submit").click(function() {
+    $("#final-registration-form-submit").click(function(event) {
         window.location.replace("index.html");
     });
 
 
     // Store Profile Form
-    $("#add-store-form-info-submit").click(function() {
+    $("#add-store-form-info-submit").click(function(event) {
         event.preventDefault();
         if ($("#new-store-name").val().length > 0) {
             $("#add-store-form-info").slideUp();
@@ -144,34 +144,34 @@ $(document).ready(function() {
         }
     });
 
-    $("#final-store-form-submit").click(function() {
+    $("#final-store-form-submit").click(function(event) {
         event.preventDefault();
         $("#add-store-form").submit();
     });
 
     // Photo Survey
-    $("#survey-1-submit").click(function() {
+    $("#survey-1-submit").click(function(event) {
         event.preventDefault();
         $("#survey-1").slideUp();
         $("#survey-2").slideDown();
         $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
 
-    $("#survey-2-submit").click(function() {
+    $("#survey-2-submit").click(function(event) {
         event.preventDefault();
         $("#survey-2").slideUp();
         $("#survey-3").slideDown();
         $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
 
-    $("#survey-3-submit").click(function() {
+    $("#survey-3-submit").click(function(event) {
         event.preventDefault();
         $("#survey-3").slideUp();
         $("#survey-4").slideDown();
         $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
 
-    $("#survey-4-submit").click(function() {
+    $("#survey-4-submit").click(function(event) {
         event.preventDefault();
         $("#survey-4").slideUp();
         $("#survey-5").slideDown();
@@ -179,7 +179,7 @@ $(document).ready(function() {
     });
 
 
-    $(".toggle-extra-options").click(function(){
+    $(".toggle-extra-options").click(function(event){
         event.preventDefault();
         if ($(this).hasClass("open")) {
             $(this).removeClass("open").parent().siblings("#finder-extra-options").slideUp();
@@ -190,14 +190,14 @@ $(document).ready(function() {
         }
     });
 
-    $(".extra-options-hide-link").click(function(){
+    $(".extra-options-hide-link").click(function(event){
         event.preventDefault();
         $("#finder-extra-options").slideUp();
         $('.option-selected').removeClass("option-selected");
         $('.option-inactive').removeClass("option-inactive");
     });
 
-    $("#finder-submit").click(function(){
+    $("#finder-submit").click(function(event){
         event.preventDefault();
         loadResults();
     });
@@ -229,7 +229,7 @@ $(document).ready(function() {
     // Here's how to grey out and deactivate a select box
     // $("#finder-store-goods-1").attr('disabled','disabled').css({"background-color": "#e3e3e3", "opacity": 0.5});
 
-    $(".list-dropdown-option").click(function(){
+    $(".list-dropdown-option").click(function(event){
         event.preventDefault();
         tt=$(this).text()
         $(this).parent().parent().parent().find("input[type=hidden]").val($(this).attr('id'));
