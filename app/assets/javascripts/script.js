@@ -98,8 +98,12 @@ $(document).ready(function() {
     $(".type-rating-item").each(function() {
         var rating = $(this).data("rating");
         var version = $(this).data("version");
-        var saturation = 90 - rating*5 + "%";
-        var backgroundColor = "hsla(320, 50%, "+saturation+", 1)";
+        var lightness = 100 - rating*5 + "%";
+
+        // hsla(107, 50%, 50%, 1) - green (max score)
+        // hsla(0, 75%, 40%, 1) - pink/purple (max score)
+
+        var backgroundColor = "hsla(107, 60%, "+lightness+", 1)";
 
         $(this).css({"background-color" : backgroundColor});
         $(this).children(".type-rating-number").text(rating);

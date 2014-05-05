@@ -1125,7 +1125,7 @@ div.menu-item-vertical:hover {
 	color: $white;
 	margin-top: 8px;
 	margin-bottom: 4px;
-	background-color: $dusky-purple;
+	/*background-color: $dusky-purple;*/
 	/*border-radius: 2px;*/
   padding-top: 1.125rem;
   padding-right: 2.25rem;
@@ -1139,7 +1139,7 @@ div.menu-item-vertical:hover {
 
 	&:hover { 
 
-		background-color: $medium-purple;
+		/*background-color: $medium-purple;*/
 	}
 }
 
@@ -1234,7 +1234,7 @@ a.fade {
   -ms-transition: color .5s ease;  
 	transition: color .5s ease;
 	&:hover { 
-		color: $bright-purple;
+		color: $primary-color;
 		text-decoration: underline;
 	}
 }
