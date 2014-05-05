@@ -1106,7 +1106,7 @@ div.menu-item-vertical:hover {
 
 }
 .toggle-extra-options{
-	/*color: #7D7D7D;*/
+
 }
 
 .finder-main-select {
@@ -1232,6 +1232,7 @@ a.fade {
 	transition: color .5s ease;
 	&:hover { 
 		color: $bright-purple;
+		text-decoration: underline;
 	}
 }
 
