@@ -98,12 +98,14 @@ $(document).ready(function() {
     $(".type-rating-item").each(function() {
         var rating = $(this).data("rating");
         var version = $(this).data("version");
-        var lightness = 100 - rating*5 + "%";
+        var lightness = 77 - rating*5 + "%"; // The first number here should be max score lightness + 50
 
         // hsla(107, 50%, 50%, 1) - green (max score)
         // hsla(0, 75%, 40%, 1) - pink/purple (max score)
+        // hsla(180, 50%, 27%, 1) - teal
+        // hsla(311, 37%, 37%, 1) - darker purple
 
-        var backgroundColor = "hsla(107, 60%, "+lightness+", 1)";
+        var backgroundColor = "hsla(180, 30%, "+lightness+", 1)";
 
         $(this).css({"background-color" : backgroundColor});
         $(this).children(".type-rating-number").text(rating);

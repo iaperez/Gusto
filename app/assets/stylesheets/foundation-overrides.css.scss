@@ -44,9 +44,7 @@ body {
   }
 }
 
-.contain-to-grid .top-bar {
-  max-width: 70.5em;
-}
+
 .row {
   max-width: 70.5em;
 }
@@ -78,33 +76,53 @@ table {
 	
 }
 
+.contain-to-grid .top-bar {
+  max-width: 70.5em;
+  margin: 10px auto 8px auto;
+  border-bottom: 1px dotted #f0f0f0;
+}
+
 .top-bar {
+
   font-family: $header-font;
+  color: $charcoal-gray;
+  background-color: $white;
 	overflow: inherit;
-	color: white;
-/*  background-color: $medium-gray;*/
+  height: 50px;
+  line-height: 50px;
+  /*padding: 10px 0px;*/
+  margin: 20px auto;
+
   .sitename {
     font-family: $fancy-font;
-    font-size: 1.6rem;
-    padding: 0px 12px 0px 6px;
-
-  }
-  a.sitename{
-    color: white;
-  }
-  label {
-    color: white;
+    font-size: 1.9rem;
+    color: inherit;
     padding-right: 6px;
-    height: 30px;
-    line-height: 28px;
+    -webkit-transition: color .5s ease;
+    -moz-transition: color .5s ease;  
+    -o-transition: color .5s ease;  
+    -ms-transition: color .5s ease;  
+    transition: color .5s ease;
+
+    &:hover { 
+      color: $primary-color;
+    }
   }
+
+  label {
+
+    padding-right: 6px;
+    height: 40px;
+    line-height: 24px;
+  }
+
   ul {
     background-color: inherit;
     li {
       background-color: inherit;
       a {
         font-family: $header-font;
-        
+        color: #7D7D7D;
         font-size: .9rem;
         &.button{
           margin-left: 2px;
