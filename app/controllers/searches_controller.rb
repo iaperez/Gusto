@@ -11,11 +11,27 @@ class SearchesController < ApplicationController
   # GET /searches/1.json
   def show
     @search = Search.find(params[:id])
+    @search_status = ""
     @results=[]
     if user_signed_in?
       @results= @search.stores(current_user.id)
     else
       @results= @search.stores(-1)
+    end
+    if @results.count == 0
+
+      @search.space_type_id = nil
+      @search.character_type_id = nil
+      @search.goods_type_id = nil
+      @search.ambience_type_id = nil
+      @search.access_type_id = nil
+
+      @search_status = "Sorry! Your search did not match any stores. But please check on these results..."
+      if user_signed_in?
+        @results= @search.stores(current_user.id)
+      else
+        @results= @search.stores(-1)
+      end
     end
 
   end

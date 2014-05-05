@@ -5,6 +5,14 @@
   </div>
 </div>
 
+<% if @search_status !="" %>
+    <div class="row">
+      <div data-alert class="alert-box info radius">
+        <%= @search_status %>
+        <a href="#" class="close">&times;</a>
+      </div>
+    </div>
+<% end %>
 <div id="store-results" style="display:block;">
   <!-- <div class="content-box-transparent store-result-query"></div> -->
   <% @results.each do |store| %>

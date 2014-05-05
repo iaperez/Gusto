@@ -28,7 +28,7 @@ class Search < ActiveRecord::Base
   belongs_to :access_type
 
   def stores(user_id)
-    @stores ||= find_stores
+    @stores = find_stores
 
     if User.exists?(id: user_id)
       searching_user = User.find(user_id)
