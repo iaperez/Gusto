@@ -395,10 +395,11 @@ $global-rounded: 1000px;
 // $include-html-dropdown-classes: $include-html-classes;
 
 // We use these to controls height and width styles.
-// $f-dropdown-max-width: 200px;
-// $f-dropdown-height: auto;
-// $f-dropdown-max-height: none;
-// $f-dropdown-margin-top: 2px;
+$f-dropdown-max-width: 200px;
+$f-dropdown-height: auto;
+$f-dropdown-max-height: none;
+$f-dropdown-margin-top: 2px;
+
 
 // We use this to control the background color
 // $f-dropdown-bg: #fff;
@@ -409,18 +410,18 @@ $global-rounded: 1000px;
 // $f-dropdown-border-color: scale-color(#fff, $lightness: -20%);
 
 // We use these to style the triangle pip.
-// $f-dropdown-triangle-size: 6px;
-// $f-dropdown-triangle-color: #fff;
-// $f-dropdown-triangle-side-offset: 10px;
-
+$f-dropdown-triangle-size: 6px;
+$f-dropdown-triangle-color: #fff;
+$f-dropdown-triangle-side-offset: 0px;
+// 
 // We use these to control styles for the list elements.
-// $f-dropdown-list-style: none;
-// $f-dropdown-font-color: #555;
-// $f-dropdown-font-size: rem-calc(14);
-// $f-dropdown-list-padding: rem-calc(5, 10);
-// $f-dropdown-line-height: rem-calc(18);
-// $f-dropdown-list-hover-bg: #eeeeee  ;
-// $dropdown-mobile-default-float: 0;
+$f-dropdown-list-style: none;
+$f-dropdown-font-color: #555;
+$f-dropdown-font-size: 1.1rem;
+$f-dropdown-list-padding: rem-calc(5, 10);
+$f-dropdown-line-height: 1.4rem;
+$f-dropdown-list-hover-bg: #eeeeee  ;
+$dropdown-mobile-default-float: 0;
 
 // We use this to control the styles for when the dropdown has custom content.
 // $f-dropdown-content-padding: rem-calc(20);

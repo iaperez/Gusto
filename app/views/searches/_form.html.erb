@@ -28,8 +28,7 @@
           <ul id="drop1" class="f-dropdown" data-dropdown-content>
             <li>
               <a id="" href="#" class="list-dropdown-option">
-                Anything
-              </a>
+                Anything</a>
             </li>
             <% Category.all.each do |nn| %>
                 <li>
@@ -42,7 +41,7 @@
           </span>
           <% f.collection_select :category_id, Category.order(:name), :id, :name, {:include_blank => 'Anything'}, {:class => "finder-main-select"} %>
           and I want
-          <span>
+          <span class="search-selector">
           <%= f.hidden_field :features_id %>
             <a href="#" class="header-dropdown" data-dropdown="drop2">
               <% if !@search.features_id.blank? and @search.features_id != 0 %>

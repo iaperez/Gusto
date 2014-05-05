@@ -110,7 +110,7 @@ class Search < ActiveRecord::Base
     end
 
     if access_type.present?
-      search_params.push(" have convenient "+access_type.name.downcase)
+      search_params.push(" are good for "+access_type.name.downcase)
     end
 
     search_params=search_params.to_sentence

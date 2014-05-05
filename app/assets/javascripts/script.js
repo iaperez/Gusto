@@ -209,19 +209,19 @@ $(document).ready(function() {
             // deselect selected option
             $(this).removeClass("option-selected");
             $(this).siblings(".extra-option").removeClass("option-inactive");
-            $(this).siblings("input[type=hidden]").val('')
+            $(this).siblings("input[type=hidden]").val('');
 
             
         } else if ($(this).hasClass("option-inactive")) {
             // select a deselected option - grey out the other one
             $(this).removeClass("option-inactive").addClass("option-selected");
             $(this).siblings(".extra-option").removeClass("option-selected").addClass("option-inactive");
-            $(this).siblings("input[type=hidden]").val(this.id)
+            $(this).siblings("input[type=hidden]").val(this.id);
 
         } else {
             $(this).addClass("option-selected");
             $(this).siblings(".extra-option").addClass("option-inactive");
-            $(this).siblings("input[type=hidden]").val(this.id)
+            $(this).siblings("input[type=hidden]").val(this.id);
         }
     });
 

@@ -1275,8 +1275,8 @@ i.inactive {
 }
 
 .header-dropdown {
-  font-weight:500;
-  border-bottom: 3px dashed #999;
+  font-weight:$font-weight-medium;
+  border-bottom: 2px dashed $charcoal-gray;
   font-family: $header-font;
   text-transform: uppercase;
   width: 200px;
@@ -1284,7 +1284,29 @@ i.inactive {
 }
 
 .search-selector{
-  width: 1400px;
+  /*width: 1400px;*/
+  margin: 0px 4px;
+
+  .f-dropdown{
+  	text-align: left;
+  }
+
+/*  #drop1.f-dropdown {
+	  	margin-left: -36px;
+	  	&.open::before {
+				left: 93.5px;
+			}
+			&.open::after {
+				left: 92.5px;
+			}
+
+	}
+	#drop2.f-dropdown {
+	  	margin-left: -62px;
+
+
+	}*/
+
 }
 
 .alert-box.info {
