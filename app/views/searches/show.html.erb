@@ -21,9 +21,6 @@
         <div class="row">
         
           <div class="store-result-details">
-            <div class="store-result-top-bar">
-              <%= link_to "View Store Profile", store_path(store) %>
-            </div>
             <div class="store-result-title">
               <%= link_to store.name, store_path(store), class: "fade" %>
               <!-- <a href="<%= store_path(store) %>" class="fade"> <%= store.name %></a> -->
@@ -36,7 +33,7 @@
                   </a>
               <% end %>
             </div>
-            <div class="inner-content store-result-attributes-box">
+            <div class="store-result-attributes-box">
 
               <div class="store-result-type-rating">
                 <ul class="type-ratings">
@@ -51,7 +48,7 @@
               <%= render "attribute_tag_list_store_result", name: 'Style', list: store.styles_names_degrees %>
             </div>
           </div>
-          <div class="inner-content-box store-result-main-img-box">
+          <div class="store-result-main-img-box">
             <a href="../stores/<%= store.id %>"> 
               <img class="store-result-main-img" src="<%= store.image.to_s %>">
             </a>

@@ -74,11 +74,10 @@
         <a href="" class="toggle-extra-options fade">And I <em>specifically prefer</em> stores that are
           <% if @search.get_search_params.blank? %>
               ...
-              <br><div class="note">(click for more options)</div>
           <% else %>
               <%= @search.get_search_params %>
-              <br><div class="note">(click to edit)</div>
           <% end %>
+          <br><div class="note">(show options)</div>
         </a>
       </div>
       <div id="finder-extra-options" class="inner-content-box small-12 columns">
@@ -166,10 +165,6 @@
                   <% end %>
               <% end %>
           <% end %>
-        </div>
-
-        <div class="extra-options-hide">
-          <a class="extra-options-hide-link">Hide These Options</a>
         </div>
 
       </div>

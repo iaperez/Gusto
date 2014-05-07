@@ -102,7 +102,7 @@ $(document).ready(function() {
 
         // hsla(107, 50%, 50%, 1) - green (max score)
         // hsla(0, 75%, 40%, 1) - pink/purple (max score)
-        // hsla(180, 50%, 27%, 1) - teal
+        // hsla(180, 30%, 27%, 1) - teal
         // hsla(311, 37%, 37%, 1) - darker purple
 
         var backgroundColor = "hsla(180, 30%, "+lightness+", 1)";
@@ -191,8 +191,11 @@ $(document).ready(function() {
             $(this).removeClass("open").parent().siblings("#finder-extra-options").slideUp();
             $('.option-selected').removeClass("option-selected");
             $('.option-inactive').removeClass("option-inactive");
+            $(this).children('.note').text("(show options)");
         } else {
             $(this).addClass("open").parent().siblings("#finder-extra-options").slideDown();
+            $(this).children('.note').text("(hide options)");
+
         }
     });
 
