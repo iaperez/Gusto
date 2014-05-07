@@ -10,6 +10,12 @@ module SearchesHelper
   end
 
   def cosine_similarity(a, b)
-    dot_product(a, b) / (magnitude(a) * magnitude(b))
+    magnitude_a = magnitude(a)
+    magnitude_b = magnitude(b)
+    if magnitude_a!=0 && magnitude_b!=0
+      result=dot_product(a, b) / (magnitude(a) * magnitude(b))
+    else
+      result = 0
+    end
   end
 end
