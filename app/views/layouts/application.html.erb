@@ -13,6 +13,7 @@
   <%= stylesheet_link_tag "style" %>
   <%= stylesheet_link_tag "flaticon" %>
   <%= javascript_include_tag "script" %>
+  <%= favicon_link_tag 'favicon.png' %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
@@ -73,6 +74,7 @@
     <% end %>
 
     <%= yield %>
+    <div class="push"></div>
     <div>
       <nav class="bottom-bar">
         <ul class="left">
