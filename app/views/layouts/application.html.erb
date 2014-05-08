@@ -32,19 +32,11 @@
 
         <!-- Right Nav Section -->
         <ul class="right">
-          <li class="has-form">
-            <div class="row collapse">
-              <div class="small-3 columns">
-                <label for="set-location" class="right inline">Location:</label>
-              </div>
-              <div class="small-6 columns">
-                <input id="set-location" type="text" placeholder="City, State or ZIP" value="Berkeley, CA">
-              </div>
-              <div class="small-3 columns">
-                <a href="#" id="set-location-button" class="set-location-button button secondary expand">Set</a>
-              </div>
-            </div>
+
+          <li class="location">
+            <span class="location-label">Location:</span><span class="location-text">Berkeley, CA</span>
           </li>
+
           <% if user_signed_in? %>
               <li class="has-dropdown">
                 <a href="#">
