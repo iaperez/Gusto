@@ -23,23 +23,13 @@ p{
   font-weight: $font-weight-light;
 }
 
-em {
-  /*padding-right: 3px;*/
-}
-
 body {
-  /*background-image: url('../_images/background/squared_metal.png');*/
-  /*background-image: url('../_images/background/tweed.png');*/
-  /*background-image: url('../_images/background/squairy_light.png');*/
   background-size: 200px 200px;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), 
 (min-resolution: 192dppx) { 
   body{
-    /*background-image:url('../_images/background/squared_metal_@2X.png');*/
-    /*background-image:url('../_images/background/tweed_@2X.png');*/
-    /*background-image:url('../_images/background/squairy_light_@2X.png');*/
     background-size: 200px 200px;
   }
 }

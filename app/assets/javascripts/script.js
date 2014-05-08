@@ -246,5 +246,4 @@ $(document).ready(function() {
         $(this).parent().parent().parent().find(".header-dropdown").click();
     });
 
-
 });
